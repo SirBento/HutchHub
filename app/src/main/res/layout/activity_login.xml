@@ -136,6 +136,7 @@
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/lgn_facebook"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginEnd="16dp"
@@ -153,7 +154,7 @@
                     app:srcCompat="@drawable/facebook" />
 
                 <TextView
-                    android:id="@+id/lgn_facebook"
+                    android:id="@+id/facebookText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -165,6 +166,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/lgn_google"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"
@@ -181,7 +183,7 @@
                     app:srcCompat="@drawable/google" />
 
                 <TextView
-                    android:id="@+id/lgn_google"
+                    android:id="@+id/googleText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
