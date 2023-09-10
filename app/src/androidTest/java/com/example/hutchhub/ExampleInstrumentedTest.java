@@ -1,4 +1,4 @@
-package com.example.hutchhiub;
+package com.example.hutchhub;
 
 import android.content.Context;
 

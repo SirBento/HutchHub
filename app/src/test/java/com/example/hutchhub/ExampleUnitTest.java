@@ -1,4 +1,4 @@
-package com.example.hutchhiub;
+package com.example.hutchhub;
 
 import org.junit.Test;
 
