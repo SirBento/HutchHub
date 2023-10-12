@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "499374994199",
+    "project_id": "hutchhub-ccace",
+    "storage_bucket": "hutchhub-ccace.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499374994199:android:be8866c649a50359993d52",
+        "android_client_info": {
+          "package_name": "com.example.hutchhub"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsHLhkVRUcY4EHycEsNkpdhbOVCXxYE38"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
