@@ -10,6 +10,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         android:id="@+id/pic"
         >
 
@@ -19,12 +21,11 @@
             android:layout_width="match_parent"
             android:layout_height="240dp"
             android:scaleType="fitXY"
-
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/background_top" />
+            app:srcCompat="@drawable/backtop" />
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/lottieHome"
@@ -40,8 +41,8 @@
             app:layout_constraintVertical_bias="0.0"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
-            app:lottie_rawRes="@raw/rabbit2"
-            app:lottie_repeatMode="restart"/>
+            app:lottie_rawRes="@raw/rabbit4"
+            app:lottie_repeatMode="restart" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 <ScrollView
@@ -70,7 +71,8 @@
                 android:layout_margin="5dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/back_1_1"
-                tools:layout_margin="10dp">
+                tools:layout_margin="10dp"
+                android:clickable="true">
 
                 <TextView
                     android:id="@+id/breading"
@@ -88,8 +90,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout1"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
@@ -117,7 +119,8 @@
                 android:layout_margin="5dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/back_2_1"
-                tools:layout_margin="10dp">
+                tools:layout_margin="10dp"
+                android:clickable="true">
 
                 <TextView
                     android:id="@+id/pregnancyTracker"
@@ -135,8 +138,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout2"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
@@ -171,7 +174,8 @@
                 android:layout_margin="5dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/back_3_1"
-                tools:layout_margin="10dp">
+                tools:layout_margin="10dp"
+                android:clickable="true">
 
                 <TextView
                     android:id="@+id/Chat"
@@ -188,8 +192,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout5"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
@@ -217,7 +221,8 @@
                 android:layout_margin="5dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/back_4_1"
-                tools:layout_margin="10dp">
+                tools:layout_margin="10dp"
+                android:clickable="true">
 
                 <TextView
                     android:id="@+id/FeedingSchedule"
@@ -235,8 +240,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout3"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
@@ -271,7 +276,8 @@
                 android:layout_margin="5dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/back_5_1"
-                tools:layout_margin="10dp">
+                tools:layout_margin="10dp"
+                android:clickable="true">
 
                 <TextView
                     android:id="@+id/buySell"
@@ -289,8 +295,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout4"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
@@ -318,7 +324,8 @@
                 android:layout_margin="5dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/back_6_1"
-                tools:layout_margin="10dp">
+                tools:layout_margin="10dp"
+                android:clickable="true">
 
                 <TextView
                     android:id="@+id/records"
@@ -336,8 +343,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout6"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
@@ -372,7 +379,8 @@
                 android:layout_margin="5dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/back_7_1"
-                tools:layout_margin="10dp">
+                tools:layout_margin="10dp"
+                android:clickable="true">
 
                 <TextView
                     android:id="@+id/growthAndWeight"
@@ -390,8 +398,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout7"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
@@ -419,7 +427,8 @@
                 android:layout_margin="5dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/back_8_1"
-                tools:layout_margin="10dp">
+                tools:layout_margin="10dp"
+                android:clickable="true">
 
                 <TextView
                     android:id="@+id/knowledge"
@@ -429,7 +438,7 @@
                     android:layout_marginLeft="8dp"
                     android:text="Get\nKnowledge"
                     android:textColor="#0020bf"
-                    android:textSize="20sp"
+                    android:textSize="19sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
                     app:layout_constraintStart_toEndOf="@+id/constraintLayout"
@@ -437,8 +446,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
@@ -474,7 +483,8 @@
                 android:layout_margin="5dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/back_2_1"
-                tools:layout_margin="10dp">
+                tools:layout_margin="10dp"
+                android:clickable="true">
 
                 <TextView
                     android:id="@+id/btn_Logout"

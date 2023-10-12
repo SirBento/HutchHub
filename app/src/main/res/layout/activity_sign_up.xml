@@ -33,7 +33,7 @@
 
     <LinearLayout
         android:layout_width="390dp"
-        android:layout_height="567dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -51,7 +51,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/lgn_email"
+            android:id="@+id/signUp_Name"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="12dp"
@@ -99,7 +99,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/signUp_email"
+            android:id="@+id/signUp_pass"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="12dp"
@@ -124,7 +124,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/lgn_pass"
+            android:id="@+id/signUp_pass2"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="12dp"
@@ -138,7 +138,7 @@
             android:textStyle="italic" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_login"
+            android:id="@+id/btn_CreateAcc"
             style="@android:style/Widget.Button"
             android:layout_width="match_parent"
             android:layout_height="50dp"
