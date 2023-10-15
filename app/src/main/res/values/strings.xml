@@ -1,3 +1,68 @@
 <resources>
     <string name="app_name">HutchHub</string>
+    <string name="default_notification_channel_id">PushNotifications</string>
+
+
+    <string name="last_seen">Last Seen</string>
+    <string name="sender_messages">Sender messages ...</string>
+    <string name="receiver_messages">Receiver messages ...</string>
+    <string name="write_your_message_here">Write your message here...</string>
+    <string name="display_username">Display Username</string>
+    <string name="todo">TODO</string>
+
+    <string-array name="rabbitBreeds">
+        <item>Alaska</item>
+        <item>Altex</item>
+        <item>Angora</item>
+        <item>Belgian Hare</item>
+        <item>Blanc de Bouscat</item>
+        <item>Blanc de Hotot</item>
+        <item>Blanc de Termonde</item>
+        <item>Blanc de Vendée</item>
+        <item>Beveren</item>
+        <item>Britannia Petite</item>
+        <item>Californian</item>
+        <item>Champagne d\'Argent</item>
+        <item>Checkered Giant</item>
+        <item>Chinchilla</item>
+        <item>Cinnamon</item>
+        <item>Creme d\'Argent</item>
+        <item>Dutch</item>
+        <item>English Lop</item>
+        <item>English Spot</item>
+        <item>Fauve de Bourgogne</item>
+        <item>Flemish Giant</item>
+        <item>Florida White</item>
+        <item>French Angora</item>
+        <item>French Lop</item>
+        <item>Giant Angora</item>
+        <item>Giant Chinchilla</item>
+        <item>Harlequin</item>
+        <item>Havana</item>
+        <item>Himalayan</item>
+        <item>Hotot</item>
+        <item>Jersery Wooly</item>
+        <item>Lilac</item>
+        <item>Lionhead</item>
+        <item>Mini Lop</item>
+        <item>Netherland Dwarf</item>
+        <item>New Zealand</item>
+        <item>Palomino</item>
+        <item>Polish</item>
+        <item>Rex</item>
+        <item>Rhinelander</item>
+        <item>Sable</item>
+        <item>Satin</item>
+        <item>Silver</item>
+        <item>Silver Fox</item>
+        <item>Silver Marten</item>
+        <item>Smoke Pearl</item>
+        <item>Standard Chinchilla</item>
+        <item>Swiss Fox</item>
+        <item>Tan</item>
+        <item>Thrianta</item>
+        <item>Trix</item>
+        <item>Vienna</item>
+        <item>Wheaten</item>
+    </string-array>
 </resources>

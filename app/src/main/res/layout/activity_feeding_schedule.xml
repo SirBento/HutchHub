@@ -6,4 +6,68 @@
     android:layout_height="match_parent"
     tools:context=".FeedingSchedule">
 
+    <TextView
+        android:id="@+id/rabbitCountLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Number of Rabbits:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/rabbitCountEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/rabbitCountLabel"
+        app:layout_constraintTop_toTopOf="@id/rabbitCountLabel" />
+
+    <TextView
+        android:id="@+id/feedingTimesLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Feeding Times:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rabbitCountEditText"
+        android:layout_marginTop="16dp" />
+
+    <!-- Add EditText fields dynamically based on rabbit count -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/feedingTimesLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/feedingTimesLabel"
+        app:layout_constraintTop_toTopOf="@id/feedingTimesLabel"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/feedingTimesLayout"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/scheduleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/submitButton"
+        android:layout_marginTop="16dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+

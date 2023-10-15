@@ -66,6 +66,8 @@
             android:orientation="horizontal">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+
+                android:id="@+id/breedAndCare"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_margin="5dp"
@@ -114,6 +116,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/pregTrack"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_margin="5dp"
@@ -123,7 +126,7 @@
                 android:clickable="true">
 
                 <TextView
-                    android:id="@+id/pregnancyTracker"
+                    android:id="@+id/pregnancyTrackertext"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -169,6 +172,7 @@
             android:orientation="horizontal">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/Chat"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_margin="5dp"
@@ -178,7 +182,7 @@
                 android:clickable="true">
 
                 <TextView
-                    android:id="@+id/Chat"
+                    android:id="@+id/ChatText"
                     android:layout_width="74dp"
                     android:layout_height="24dp"
                     android:layout_marginStart="8dp"
@@ -216,6 +220,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/FeedingSchedule"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_margin="5dp"
@@ -225,7 +230,7 @@
                 android:clickable="true">
 
                 <TextView
-                    android:id="@+id/FeedingSchedule"
+                    android:id="@+id/FeedingScheduletext"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -271,6 +276,7 @@
             android:orientation="horizontal">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/buySell"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_margin="5dp"
@@ -280,7 +286,7 @@
                 android:clickable="true">
 
                 <TextView
-                    android:id="@+id/buySell"
+                    android:id="@+id/buySelltext"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -319,6 +325,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/records"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_margin="5dp"
@@ -328,7 +335,7 @@
                 android:clickable="true">
 
                 <TextView
-                    android:id="@+id/records"
+                    android:id="@+id/recordsText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -374,6 +381,7 @@
             android:orientation="horizontal">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/growthAndWeight"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_margin="5dp"
@@ -383,7 +391,7 @@
                 android:clickable="true">
 
                 <TextView
-                    android:id="@+id/growthAndWeight"
+                    android:id="@+id/growthAndWeightText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -422,6 +430,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/knowledge"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_margin="5dp"
@@ -431,7 +440,7 @@
                 android:clickable="true">
 
                 <TextView
-                    android:id="@+id/knowledge"
+                    android:id="@+id/knowledgeText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -478,6 +487,7 @@
             android:layout_marginLeft="70dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/btn_Logout"
                 android:layout_width="30dp"
                 android:layout_height="90dp"
                 android:layout_margin="5dp"
@@ -487,7 +497,7 @@
                 android:clickable="true">
 
                 <TextView
-                    android:id="@+id/btn_Logout"
+                    android:id="@+id/btn_LogoutText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
