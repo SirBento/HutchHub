@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-import com.example.hutchhub.Adapters.MessadeAdapter;
+import com.example.hutchhub.Adapters.MessageAdapter;
 import com.example.hutchhub.Models.Message;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
@@ -34,7 +34,7 @@ public class Chat extends AppCompatActivity {
     FirebaseAuth auth;
     FirebaseDatabase database;
     DatabaseReference messagedb, userRef;
-    MessadeAdapter messadeAdapter;
+    MessageAdapter messageAdapter;
     ImageButton sendButton;
     EditText input_message;
    List<Message> message;
@@ -88,9 +88,10 @@ public class Chat extends AppCompatActivity {
         CurrentTime = new SimpleDateFormat("hh:mm a", Locale.getDefault()).format(new Date());
         date =  new SimpleDateFormat("dd/LLL/yyyy", Locale.getDefault()).format(new Date());
         HashMap<String, Object> saveMessage = new HashMap<>();
+
+        saveMessage.put("id",currentuserId);
         saveMessage.put("name",currentusername);
         saveMessage.put("message",message);
-        saveMessage.put("id",currentuserId);
         saveMessage.put("time",CurrentTime);
         saveMessage.put("date",date);
         messagedb.push().setValue(saveMessage);
@@ -127,10 +128,10 @@ public class Chat extends AppCompatActivity {
                         if(dataSnapshot.exists()){
 
                             DisplayMessages(dataSnapshot);
-                            Messages messages = dataSnapshot.getValue(Messages.class);
-                            messagesList.add(messages);
-                            messageAdapter.notifyDataSetChanged();
-                            userMessagesList.smoothScrollToPosition(userMessagesList.getAdapter().getItemCount());
+                            //Messages messages = dataSnapshot.getValue(Messages.class);
+                            //messagesList.add(messages);
+                            //messageAdapter.notifyDataSetChanged();
+                            //userMessagesList.smoothScrollToPosition(userMessagesList.getAdapter().getItemCount());
                         }
 
 
