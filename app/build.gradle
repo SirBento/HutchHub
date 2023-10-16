@@ -31,11 +31,9 @@ android {
 
 dependencies {
 
-
+    final lottieVersion = '3.4.0'
     implementation 'com.google.firebase:firebase-inappmessaging-display:20.3.5'
     implementation 'jp.wasabeef:recyclerview-animators:4.0.2'
-
-    final lottieVersion = '3.4.0'
    // implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'com.google.firebase:firebase-auth:22.1.2'
     implementation 'com.google.firebase:firebase-database:20.2.2'
@@ -50,6 +48,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation "com.airbnb.android:lottie:$lottieVersion"
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
 
 }
 apply plugin: 'com.google.gms.google-services'

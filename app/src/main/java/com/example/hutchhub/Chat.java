@@ -51,8 +51,10 @@ public class Chat extends AppCompatActivity {
         setContentView(R.layout.activity_chat);
 
         chatToolbar = findViewById(R.id.chat_toolbar);
+        chatToolbar.setTitleTextColor(getResources().getColor(R.color.backgroundcolor));
         setSupportActionBar(chatToolbar);
         getSupportActionBar().setTitle("Farmer's Chat");
+
 
 
 

@@ -42,4 +42,17 @@ public class Screen extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        if(LoggediNuser!= null){
+            LoggediNuser.getUid();
+
+        }else {
+            startActivity(new Intent(Screen.this,Login.class));
+            finish();
+        }
+    }
 }
