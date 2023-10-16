@@ -106,6 +106,7 @@ public class Login extends AppCompatActivity {
 
                             if(user.isEmailVerified()){
                                 loadingDialog.dismissDialog();
+                                startActivity( new Intent(Login.this ,MainActivity.class));
 
                             }else{
 

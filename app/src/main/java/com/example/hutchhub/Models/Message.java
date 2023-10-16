@@ -2,15 +2,17 @@ package com.example.hutchhub.Models;
 
 public class Message {
 
-    String message, name, key;
+    String message, name,id, time, date;
 
     public Message() {
     }
 
-    public Message(String message, String name, String key) {
+    public Message(String message, String name, String id) {
         this.message = message;
         this.name = name;
-        this.key = key;
+        this.id = id;
+        this.time = time;
+        this.date = date;
     }
 
     public String getMessage() {
@@ -29,11 +31,27 @@ public class Message {
         this.name = name;
     }
 
-    public String getKey() {
-        return key;
+    public String getId() {
+        return id;
     }
 
-    public void setKey(String key) {
-        this.key = key;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

@@ -1,5 +1,6 @@
 package com.example.hutchhub.Adapters;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +16,9 @@ import java.util.List;
 
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageViewHolder> {
 
-    private List<Message> userMessageList;
-    private FirebaseAuth Auth;
-    private DatabaseReference usersRef;
+    List<Message> userMessageList;
+     FirebaseAuth Auth;
+
 
     public MessageAdapter(List<Message> userMessagesList)
     {
@@ -43,17 +44,41 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
     public MessageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_messages_layout,null);
 
+        Auth = FirebaseAuth.getInstance();
+
         return new MessageViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MessageViewHolder holder, int position) {
 
+        String messageSenderID = Auth.getCurrentUser().getUid();
+        Message messages = userMessageList.get(position);
+        String fromUserID = messages.getId();
+
+        if(messageSenderID.equals(fromUserID)){
+
+            holder.senderMessageText.setVisibility(View.VISIBLE);
+            holder.receiverMessageText.setVisibility(View.INVISIBLE);
+            holder.senderMessageText.setTextColor(Color.BLACK);
+            holder.senderMessageText.setBackgroundResource(R.drawable.sender_messeges_layout);
+            holder.senderMessageText.setText(messages.getMessage() + "\n \n" + messages.getTime() + "  -  " + messages.getDate());
+
+
+        }else{
+
+            holder.receiverMessageText.setVisibility(View.VISIBLE);
+            holder.senderMessageText.setVisibility(View.INVISIBLE);
+            holder.senderMessageText.setTextColor(Color.BLACK);
+            holder.receiverMessageText.setBackgroundResource(R.drawable.receiver_messages_layout);
+            holder.receiverMessageText.setText(messages.getMessage() + "\n \n" + messages.getTime() + "  -  " + messages.getDate());
+        }
+
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return userMessageList.size();
     }
 
 

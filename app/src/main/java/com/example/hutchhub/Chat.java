@@ -4,13 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
-
+import android.widget.LinearLayout;
 import com.example.hutchhub.Adapters.MessageAdapter;
 import com.example.hutchhub.Models.Message;
 import com.google.firebase.auth.FirebaseAuth;
@@ -20,7 +20,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -28,28 +27,30 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
+import jp.wasabeef.recyclerview.animators.SlideInUpAnimator;
 
 public class Chat extends AppCompatActivity {
 
     FirebaseAuth auth;
     FirebaseDatabase database;
     DatabaseReference messagedb, userRef;
-    MessageAdapter messageAdapter;
+
     ImageButton sendButton;
     EditText input_message;
    List<Message> message;
+   MessageAdapter messageAdapter;
    RecyclerView messageRecyclerView;
+   LinearLayoutManager linearLayoutManager;
 
-    Toolbar chatToolbar;
-
-   String currentuserId, currentusername,CurrentTime,date;
+   Toolbar chatToolbar;
+    String currentuserId, currentusername,CurrentTime,date, Displaymessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
-        chatToolbar = findViewById(R.id.main_app_bar);
+        chatToolbar = findViewById(R.id.chat_toolbar);
         setSupportActionBar(chatToolbar);
         getSupportActionBar().setTitle("Farmer's Chat");
 
@@ -63,9 +64,14 @@ public class Chat extends AppCompatActivity {
 
 
         messageRecyclerView = findViewById(R.id.private_messages_list_of_users);
+        messageRecyclerView.setItemAnimator(new SlideInUpAnimator());
         sendButton = findViewById(R.id.send_message_bnt);
         input_message = findViewById(R.id.input_message);
         message = new ArrayList<>();
+        messageAdapter = new MessageAdapter(message);
+        linearLayoutManager = new LinearLayoutManager(this);
+        messageRecyclerView.setLayoutManager(linearLayoutManager);
+        messageRecyclerView.setAdapter(messageAdapter);
 
 
         sendButton.setOnClickListener(new View.OnClickListener() {
@@ -82,56 +88,22 @@ public class Chat extends AppCompatActivity {
 
     }
 
-    private void SaveMessage() {
-
-        String message = input_message.getText().toString();
-        CurrentTime = new SimpleDateFormat("hh:mm a", Locale.getDefault()).format(new Date());
-        date =  new SimpleDateFormat("dd/LLL/yyyy", Locale.getDefault()).format(new Date());
-        HashMap<String, Object> saveMessage = new HashMap<>();
-
-        saveMessage.put("id",currentuserId);
-        saveMessage.put("name",currentusername);
-        saveMessage.put("message",message);
-        saveMessage.put("time",CurrentTime);
-        saveMessage.put("date",date);
-        messagedb.push().setValue(saveMessage);
-    }
-
-    private void getUserName() {
-        userRef.child(currentuserId).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                if(snapshot.exists()){
-                    currentusername = snapshot.child("name").getValue().toString();
-                }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-    }
 
     @Override
-    protected void onStart()
-    {
+    protected void onStart() {
         super.onStart();
-        messagedb.child("Messages")
-                .addChildEventListener(new ChildEventListener() {
+        messagedb.child("Messages").addChildEventListener(new ChildEventListener() {
                     @Override
                     public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s)
                     {
                         if(dataSnapshot.exists()){
 
-                            DisplayMessages(dataSnapshot);
-                            //Messages messages = dataSnapshot.getValue(Messages.class);
-                            //messagesList.add(messages);
-                            //messageAdapter.notifyDataSetChanged();
-                            //userMessagesList.smoothScrollToPosition(userMessagesList.getAdapter().getItemCount());
+                            Message message1 = dataSnapshot.getValue(Message.class);
+                            message.add(message1);
+                            messageAdapter.notifyDataSetChanged();
+                            messageRecyclerView.smoothScrollToPosition(messageRecyclerView.getAdapter().getItemCount());
+
+
                         }
 
 
@@ -164,6 +136,44 @@ public class Chat extends AppCompatActivity {
                     }
                 });
     }
+
+    private void SaveMessage() {
+
+        Displaymessage = input_message.getText().toString();
+        CurrentTime = new SimpleDateFormat("hh:mm a", Locale.getDefault()).format(new Date());
+        date =  new SimpleDateFormat("dd/LLL/yyyy", Locale.getDefault()).format(new Date());
+        HashMap<String, Object> saveMessage = new HashMap<>();
+
+        saveMessage.put("id",currentuserId);
+        saveMessage.put("name",currentusername);
+        saveMessage.put("message", Displaymessage);
+        saveMessage.put("time",CurrentTime);
+        saveMessage.put("date",date);
+        messagedb.push().setValue(saveMessage);
+    }
+
+    private void getUserName() {
+        userRef.child(currentuserId).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                if(snapshot.exists()){
+                    currentusername = snapshot.child("name").getValue().toString();
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+
+
+
 
     private void DisplayMessages(DataSnapshot dataSnapshot) {
 
