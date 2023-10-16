@@ -6,7 +6,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -16,6 +15,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HutchHIub"
         tools:targetApi="31">
+        <activity
+            android:name=".RaisingRabbbit2"
+            android:exported="false" />
+        <activity
+            android:name=".RaisingRabbits"
+            android:exported="false" />
+        <activity
+            android:name=".RabbitTracks"
+            android:exported="false" />
+        <activity
+            android:name=".RabbitProduction"
+            android:exported="false" />
+        <activity
+            android:name=".RabbitHusbandry"
+            android:exported="false" />
+        <activity
+            android:name=".BreedingTechs"
+            android:exported="false" />
         <activity
             android:name=".BuyRabbit"
             android:exported="false" />
