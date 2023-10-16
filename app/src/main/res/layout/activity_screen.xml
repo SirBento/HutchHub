@@ -9,18 +9,18 @@
 
     <ImageView
         android:id="@+id/girl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:src="@drawable/girl"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:layout_marginTop="3dp"
+        android:src="@drawable/r4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/cropper"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="340dp"
         android:scaleType="centerCrop"
         android:src="@drawable/bottom_white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -28,7 +28,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/welcometxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -46,20 +46,23 @@
         android:text="Streamline Your Rabbit Farming\nSuccess with Ease"
         android:textSize="20sp"
         android:textColor="#8b8b8b"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:layout_marginStart="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcometxt" />
 
     <TextView
         android:id="@+id/btn_get_started"
         android:layout_width="175dp"
         android:layout_height="65dp"
-        android:gravity="center"
-        android:textSize="25sp"
-        android:textColor="#ffffff"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
         android:background="@drawable/background_button_intro"
-        android:textStyle="bold"
+        android:clickable="true"
+        android:gravity="center"
         android:text="Get Started"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:clickable="true"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

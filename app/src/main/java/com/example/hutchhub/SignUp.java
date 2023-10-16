@@ -21,10 +21,9 @@ import com.google.firebase.database.FirebaseDatabase;
 public class SignUp extends AppCompatActivity {
 
     private EditText firstName, email, passWord1, passWord2;
-
     private Button signUp;
-
     private FirebaseAuth mAuth;
+    LoadingDialog loadingDialog = new LoadingDialog(SignUp.this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +49,7 @@ public class SignUp extends AppCompatActivity {
 
                     return;
                 }
-
+                loadingDialog.startLoadingDialog();
                 registerUser();
 
             }
@@ -98,16 +97,18 @@ public class SignUp extends AppCompatActivity {
                                             if (task.isSuccessful()) {
 
                                                 //checking if the account is verified , if not the user has to first verify the account before logging in
-
+                                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                                                 //show a notification if the account was created successfully
+                                                user.sendEmailVerification();
                                                 Toast.makeText(SignUp.this, "Account created successfully.Please check your email to verify then LogIn with your account", Toast.LENGTH_LONG).show();
+                                                loadingDialog.dismissDialog();
                                                 // Go to login page
                                                 startActivity(new Intent(SignUp.this, Login.class));
                                                 finish();
 
 
                                             } else {
-
+                                                loadingDialog.dismissDialog();
                                                 //show a notification if the account failed to create an account successfully
                                                 Toast.makeText(SignUp.this, "Account creation failed. Please check your internet connection and try again!", Toast.LENGTH_LONG).show();
 

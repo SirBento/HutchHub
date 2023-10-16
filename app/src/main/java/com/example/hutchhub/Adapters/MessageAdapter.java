@@ -62,8 +62,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             holder.receiverMessageText.setVisibility(View.INVISIBLE);
             holder.senderMessageText.setTextColor(Color.BLACK);
             holder.senderMessageText.setBackgroundResource(R.drawable.sender_messeges_layout);
-            holder.senderMessageText.setText(messages.getMessage() + "\n \n" + messages.getTime() + "  -  " + messages.getDate());
-
+            holder.senderMessageText.setText(messages.getMessage() + "\n \n" + messages.getTime() + "\n" + messages.getDate());
 
         }else{
 
@@ -71,7 +70,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             holder.senderMessageText.setVisibility(View.INVISIBLE);
             holder.senderMessageText.setTextColor(Color.BLACK);
             holder.receiverMessageText.setBackgroundResource(R.drawable.receiver_messages_layout);
-            holder.receiverMessageText.setText(messages.getMessage() + "\n \n" + messages.getTime() + "  -  " + messages.getDate());
+            holder.receiverMessageText.setText(messages.getMessage() + "\n \n" + messages.getTime() + "\n" + messages.getDate());
         }
 
     }

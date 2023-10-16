@@ -55,6 +55,7 @@ public class Chat extends AppCompatActivity {
         getSupportActionBar().setTitle("Farmer's Chat");
 
 
+
         auth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
         currentuserId =auth.getCurrentUser().getUid();
@@ -92,7 +93,7 @@ public class Chat extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        messagedb.child("Messages").addChildEventListener(new ChildEventListener() {
+        messagedb.addChildEventListener(new ChildEventListener() {
                     @Override
                     public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s)
                     {
@@ -115,7 +116,10 @@ public class Chat extends AppCompatActivity {
 
                         if(dataSnapshot.exists()){
 
-                            DisplayMessages(dataSnapshot);
+                            Message message1 = dataSnapshot.getValue(Message.class);
+                            message.add(message1);
+                            messageAdapter.notifyDataSetChanged();
+                            messageRecyclerView.smoothScrollToPosition(messageRecyclerView.getAdapter().getItemCount());
 
                         }
                     }
@@ -172,27 +176,9 @@ public class Chat extends AppCompatActivity {
     }
 
 
-
-
-
-    private void DisplayMessages(DataSnapshot dataSnapshot) {
-
-        Iterator iterator = dataSnapshot.getChildren().iterator();
-
-        while (iterator.hasNext()){
-            String date = (String)((DataSnapshot) iterator.next()).getValue();
-            String message = (String)((DataSnapshot) iterator.next()).getValue();
-            String senderName = (String)((DataSnapshot) iterator.next()).getValue();
-            String time = (String)((DataSnapshot) iterator.next()).getValue();
-
-        }
-    }
-
-
     private boolean validateMessage() {
 
         String message = input_message.getText().toString().trim();
-
 
         if (message.isEmpty()) {
             input_message.setError("This field cannot be empty");

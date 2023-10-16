@@ -23,7 +23,7 @@
         android:layout_marginTop="16dp"
         android:text="Loading..."
         android:textSize="18sp"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/green"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

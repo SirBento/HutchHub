@@ -19,36 +19,9 @@
         android:padding="10dp"
         android:text="@string/receiver_messages"
         android:textColor="@android:color/black"
-        android:textSize="14sp"
+        android:textSize="13sp"
         android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/message_sender_image_view"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp"
-        android:contentDescription="@string/todo"
-        android:scaleType="centerCrop" />
-
-
-    <ImageView
-        android:id="@+id/message_receiver_image_view"
-        android:layout_width="160dp"
-        android:layout_height="150dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="-5dp"
-        android:layout_marginLeft="-5dp"
-        android:layout_marginTop="5dp"
-        android:contentDescription="@string/todo"
-        android:scaleType="centerCrop" />
 
     <TextView
         android:id="@+id/sender_message_text"
@@ -62,7 +35,7 @@
         android:padding="10dp"
         android:text="@string/sender_messages"
         android:textColor="@android:color/holo_blue_dark"
-        android:textSize="14sp"
+        android:textSize="13sp"
         android:textStyle="bold" />
 
 </RelativeLayout>
