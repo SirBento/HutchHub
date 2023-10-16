@@ -158,7 +158,7 @@ public class Chat extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 if(snapshot.exists()){
-                    currentusername = snapshot.child("name").getValue().toString();
+                    currentusername = snapshot.child("firstname").getValue().toString();
                 }
 
             }
