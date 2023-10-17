@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BuySell"
-    android:background="@color/white">
+    android:background="#00668B">
 
     <ImageView
         android:id="@+id/imageView1"
@@ -74,6 +74,24 @@
             android:layout_marginRight="50dp"
             android:background="@drawable/button_background"
             android:text="Sell Your Rabbit"
+            android:textColor="@color/white"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_sellList"
+            style="@android:style/Widget.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20sp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/button_background"
+            android:text="My Sells List"
             android:textColor="@color/white"
             android:textSize="23sp"
             android:textStyle="bold"

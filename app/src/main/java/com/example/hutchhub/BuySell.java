@@ -10,7 +10,7 @@ import android.widget.Button;
 
 public class BuySell extends AppCompatActivity {
 
-    private Button buy, sell;
+    private Button buy, sell, sellList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,10 +18,14 @@ public class BuySell extends AppCompatActivity {
 
         buy = findViewById(R.id.btn_buy);
         sell = findViewById(R.id.btn_sell);
+        sellList = findViewById(R.id.btn_sellList);
 
         buy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                startActivity(new Intent(BuySell.this,BuyRabbit.class));
+                finish();
 
             }
         });
@@ -31,7 +35,16 @@ public class BuySell extends AppCompatActivity {
             public void onClick(View v) {
 
                 startActivity(new Intent(BuySell.this,ListRabbit.class));
+                finish();
 
+            }
+        });
+
+        sellList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(BuySell.this,MySellList.class));
+                finish();
             }
         });
 

@@ -32,8 +32,8 @@ import jp.wasabeef.recyclerview.animators.SlideInUpAnimator;
 public class Chat extends AppCompatActivity {
 
     FirebaseAuth auth;
-    FirebaseDatabase database;
     DatabaseReference messagedb, userRef;
+    FirebaseDatabase database;
 
     ImageButton sendButton;
     EditText input_message;
