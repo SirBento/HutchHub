@@ -49,6 +49,7 @@ dependencies {
     implementation "com.airbnb.android:lottie:$lottieVersion"
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
 }
 apply plugin: 'com.google.gms.google-services'

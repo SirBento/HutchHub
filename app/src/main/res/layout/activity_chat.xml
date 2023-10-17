@@ -19,8 +19,8 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/chat_linear_layout"
         android:layout_below="@+id/chat_toolbar"
-        android:layout_marginBottom="6dp"
-        android:background="@drawable/w2">
+        android:layout_marginBottom="0dp"
+        android:background="#E0F3FF">
 
     </androidx.recyclerview.widget.RecyclerView>
 

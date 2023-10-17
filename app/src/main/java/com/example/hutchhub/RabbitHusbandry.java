@@ -11,7 +11,7 @@ import com.github.barteksc.pdfviewer.util.FitPolicy;
 public class RabbitHusbandry extends AppCompatActivity {
 
     private PDFView pdfView;
-    private int pageNumber = 2;
+    private int pageNumber = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
