@@ -29,7 +29,7 @@ public class Knowledge extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(Knowledge.this, BreedingCare.class));
+                startActivity(new Intent(Knowledge.this, BreedingTechs.class));
 
             }
         });
