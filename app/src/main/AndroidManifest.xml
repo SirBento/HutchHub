@@ -16,6 +16,9 @@
         android:theme="@style/Theme.HutchHIub"
         tools:targetApi="31">
         <activity
+            android:name=".DetailForRabbit"
+            android:exported="false" />
+        <activity
             android:name=".MySellList"
             android:exported="false" />
         <activity
