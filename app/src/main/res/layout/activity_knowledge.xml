@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/r2"
+    android:background="@drawable/rpic6"
     tools:context=".Knowledge">
 
     <LinearLayout
@@ -28,8 +28,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
                 android:text="Make Your Choice"
-                android:textColor="@color/deeppurple"
-                android:textSize="25dp"
+                android:textColor="@color/green"
+                android:textSize="30dp"
                 android:textStyle="italic">
 
             </TextView>

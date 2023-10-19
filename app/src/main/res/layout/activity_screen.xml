@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="550dp"
         android:layout_marginTop="3dp"
-        android:src="@drawable/r4"
+        android:src="@drawable/rpic3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,13 +29,15 @@
 
     <TextView
         android:id="@+id/welcometxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_width="265dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="12dp"
+        android:text="Welcome to\n Hutch Hub"
         android:textColor="#000000"
-        android:text="Welcome\nto Hutch Hub"
         android:textSize="35sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.139"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/girl" />
 
@@ -44,11 +46,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Streamline Your Rabbit Farming\nSuccess with Ease"
-        android:textSize="20sp"
         android:textColor="#8b8b8b"
-        android:layout_marginStart="32dp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_get_started"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcometxt" />
+        app:layout_constraintTop_toBottomOf="@+id/welcometxt"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/btn_get_started"
