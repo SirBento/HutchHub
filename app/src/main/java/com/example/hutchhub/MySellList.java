@@ -77,8 +77,16 @@ public class MySellList extends AppCompatActivity {
                 if(snapshot.exists()) {
                     RabbitForSale rabbitForSale =snapshot.getValue(RabbitForSale.class);
                     rabbitForSaleList.add(rabbitForSale);
-                    rabbitForSaleAdapter.notifyDataSetChanged();
-                    mySellRecyclerList.smoothScrollToPosition(mySellRecyclerList.getAdapter().getItemCount());
+
+                    if(!auth.getCurrentUser().getUid().equals(rabbitForSale.getSellerId())){
+                        noSellText.setVisibility(View.VISIBLE);
+
+                    }else{
+
+                        rabbitForSaleAdapter.notifyDataSetChanged();
+                        mySellRecyclerList.smoothScrollToPosition(mySellRecyclerList.getAdapter().getItemCount());
+
+                    }
                 }
                 else{
                     noSellText.setVisibility(View.VISIBLE);
@@ -94,6 +102,10 @@ public class MySellList extends AppCompatActivity {
                     rabbitForSaleList.add(rabbitForSale);
                     rabbitForSaleAdapter.notifyDataSetChanged();
                     mySellRecyclerList.smoothScrollToPosition(mySellRecyclerList.getAdapter().getItemCount());
+                    if(!auth.getCurrentUser().getUid().equals(rabbitForSale.getSellerId())){
+                        noSellText.setVisibility(View.VISIBLE);
+
+                    }
                 }
                 else{
                     noSellText.setVisibility(View.VISIBLE);
