@@ -65,4 +65,22 @@
         <item>Vienna</item>
         <item>Wheaten</item>
     </string-array>
+
+    <string-array name="rabbitSex">
+        <item>Buck(Male)</item>
+        <item>Doe(Female)</item>
+    </string-array>
+
+    <string-array name="rabbitPurpose">
+        <item>Meat</item>
+        <item>Pet</item>
+        <item>Breeder</item>
+    </string-array>
+
+    <string-array name="rabbitSource">
+        <item>My Farm</item>
+        <item>Bought</item>
+    </string-array>
+
+
 </resources>

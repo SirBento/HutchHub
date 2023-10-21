@@ -16,6 +16,9 @@
         android:theme="@style/Theme.HutchHIub"
         tools:targetApi="31">
         <activity
+            android:name=".AddRabbitRecord"
+            android:exported="false" />
+        <activity
             android:name=".DetailForRabbit"
             android:exported="false" />
         <activity
@@ -71,9 +74,6 @@
             android:exported="false" />
         <activity
             android:name=".Records"
-            android:exported="false" />
-        <activity
-            android:name=".Logout"
             android:exported="false" />
         <activity
             android:name=".GrowthWeight"

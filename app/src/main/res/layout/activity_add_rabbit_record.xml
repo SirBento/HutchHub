@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddRabbitRecord"
+    android:background="@color/skyBlue">
+
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="393dp"
+        android:layout_height="182dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/top_background"
+        tools:srcCompat="@drawable/top_background" />
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:text="Add Rabbit\nRecords"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="1.0">
+
+
+        <LinearLayout
+            android:layout_width="390dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5"
+            app:layout_constraintVertical_bias="0.267">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/rabbit_Record__image"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:src="@drawable/rpic1"
+                app:civ_border_color="@color/colorPrimaryDark"
+                app:civ_border_width="5dp" />
+
+            <EditText
+                android:id="@+id/rabbit_Record_name"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/edittext_background"
+                android:ems="10"
+                android:hint="Rabbit 0r Cage Number"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textColor="#070707"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+            <EditText
+                android:id="@+id/rabbit_Record_FatherName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/edittext_background"
+                android:ems="10"
+                android:hint="Father's Name 0r Cage Number"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textColor="#070707"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+            <EditText
+                android:id="@+id/rabbit_Record_MotherName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/edittext_background"
+                android:ems="10"
+                android:hint="Mother's Name 0r Cage Number"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textColor="#070707"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+
+            <EditText
+                android:id="@+id/rabbit_Record_Color"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/edittext_background"
+                android:ems="10"
+                android:hint="Color"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textColor="#070707"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/edittext_background"
+                    android:fontFamily="serif"
+                    android:padding="6dp"
+                    android:text="Sex:"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+                <Spinner
+                    android:id="@+id/rabbit_Record_Sex"
+                    android:layout_width="200dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/rounded_corners2"
+                    android:fontFamily="serif"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/edittext_background"
+                    android:fontFamily="serif"
+                    android:padding="6dp"
+                    android:text="Rabbit Breed:"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+                <Spinner
+                    android:id="@+id/rabbit_Record_Breeds"
+                    android:layout_width="200dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/rounded_corners2"
+                    android:fontFamily="serif"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/edittext_background"
+                    android:fontFamily="serif"
+                    android:padding="6dp"
+                    android:text="Purpose:"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+                <Spinner
+                    android:id="@+id/rabbit_Record_Purpose"
+                    android:layout_width="200dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/rounded_corners2"
+                    android:fontFamily="serif"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/edittext_background"
+                    android:fontFamily="serif"
+                    android:padding="6dp"
+                    android:text="Origin:"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+                <Spinner
+                    android:id="@+id/rabbit_Record_Origin"
+                    android:layout_width="200dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/rounded_corners2"
+                    android:fontFamily="serif"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/edittext_background"
+                    android:fontFamily="serif"
+                    android:padding="6dp"
+                    android:text="Date of Birth:"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/rabbit_Record_DOB"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/edittext_background"
+                    android:ems="10"
+                    android:hint="Select date"
+                    android:inputType="text"
+                    android:padding="3dp"
+                    android:textColor="#070707"
+                    android:textSize="18sp"
+                    android:textStyle="italic" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/edittext_background"
+                    android:fontFamily="serif"
+                    android:padding="6dp"
+                    android:text="Date Weaned:"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/rabbit_Record_Weaned"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/edittext_background"
+                    android:ems="10"
+                    android:hint="Select date"
+                    android:inputType="text"
+                    android:padding="3dp"
+                    android:textColor="#070707"
+                    android:textSize="18sp"
+                    android:textStyle="italic" />
+
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/rabbit_Record_Notes"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/edittext_background"
+                android:ems="10"
+                android:gravity="top"
+                android:hint="General Notes About The Rabbit(Optional)"
+                android:inputType="text|textMultiLine" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_rabbit_Record_Save"
+                style="@android:style/Widget.Button"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20sp"
+                android:background="@drawable/button_background"
+                android:text="Save"
+                android:textColor="@color/white"
+                android:textSize="23sp"
+                android:textStyle="bold">
+
+            </androidx.appcompat.widget.AppCompatButton>
+
+        </LinearLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

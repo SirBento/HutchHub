@@ -8,8 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="green">#068251</color>
-
-
     <color name="colorPrimary">#FFC107</color>
     <color name="colorPrimaryDark">#FFA000</color>
     <color name="backgroundcolor">#FCFCFC</color>
@@ -22,5 +20,18 @@
     <color name ="material">#C6FF00</color>
     <color name ="greenish">#40514e</color>
     <color name ="pearlGreen">#071a52</color>
+    <color name ="wGreen">#E0FFC7</color>
+    <color name ="skyBlue">#E0F3FF</color>
     <color name ="purpleLike">#0b8457</color>
+    <color name ="brown">#ff9f68</color>
+    <color name ="blue">#107a8b</color>
+    <color name ="darkPurple">#581b98</color>
+    <color name ="pearlPurple">#574b90</color>
+    <color name ="faddingGreen">#21e6c1</color>
+    <color name ="deepBrown">#430d27</color>
+    <color name ="lightBrown">#ff9f68</color>
+
+
+
+
 </resources>

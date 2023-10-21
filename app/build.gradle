@@ -35,6 +35,7 @@ android {
 
 dependencies {
 
+    implementation 'com.google.firebase:firebase-firestore:24.9.0'
     final lottieVersion = '3.4.0'
     implementation 'com.google.firebase:firebase-inappmessaging-display:20.3.5'
     implementation 'jp.wasabeef:recyclerview-animators:4.0.2'
