@@ -1,4 +1,4 @@
-package com.example.hutchhub;
+package com.example.hutchhub.Sevices;
 
 import android.annotation.SuppressLint;
 import android.app.Notification;
@@ -16,10 +16,13 @@ import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.RemoteInput;
 import com.bumptech.glide.Glide;
+import com.example.hutchhub.MainActivity;
+import com.example.hutchhub.NotificationReceiver;
+import com.example.hutchhub.R;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import org.json.JSONArray;
-import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 

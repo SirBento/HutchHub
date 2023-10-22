@@ -46,6 +46,7 @@ public class MySellList extends AppCompatActivity {
         noSellText = findViewById(R.id.noSellText);
         searchView = findViewById(R.id.SearchView);
         mySellRecyclerList = findViewById(R.id.mySellRecyclerList);
+
         auth = FirebaseAuth.getInstance();
         sellsDB = FirebaseDatabase.getInstance().getReference().child("Sells");
         rabbitForSaleList = new ArrayList<>();
