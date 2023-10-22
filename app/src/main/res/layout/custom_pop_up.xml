@@ -114,6 +114,7 @@
                 android:textColor="@color/brown"/>
 
             <TextView
+                android:id="@+id/moreInfoMother"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Bunny"
@@ -189,6 +190,7 @@
                 android:textSize="18sp"
                 android:textColor="@color/brown"/>
             <TextView
+                android:id="@+id/moreInfoWeaning"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="22/04/23"
