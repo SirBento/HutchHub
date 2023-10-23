@@ -80,6 +80,8 @@ public class AddRabbitRecord extends AppCompatActivity {
                     }
                 },year,month,day);
 
+                datePickerDialog.show();
+
             }
         });
 
@@ -95,6 +97,8 @@ public class AddRabbitRecord extends AppCompatActivity {
                         rabbit_Record_Weaned.setText(SimpleDateFormat.getDateInstance().format(calendar.getTime()));
                     }
                 },year,month,day);
+
+                datePickerDialog.show();
 
             }
         });

@@ -35,8 +35,8 @@ android {
 
 dependencies {
 
-    implementation 'com.google.firebase:firebase-firestore:24.9.0'
     final lottieVersion = '3.4.0'
+    implementation 'com.google.firebase:firebase-firestore:24.9.0'
     implementation 'com.google.firebase:firebase-inappmessaging-display:20.3.5'
     implementation 'jp.wasabeef:recyclerview-animators:4.0.2'
    // implementation 'androidx.multidex:multidex:2.0.1'
@@ -60,6 +60,12 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.android.volley:volley:1.2.1'
     implementation "com.squareup.okhttp3:okhttp:4.10.0"
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.4.4'
+    implementation 'com.google.firebase:firebase-storage-ktx:20.1.0'
+    implementation 'com.google.firebase:firebase-messaging-ktx:23.1.2'
+    implementation 'com.firebaseui:firebase-ui-firestore:8.0.2'
+    implementation 'com.github.dhaval2404:imagepicker:2.1'
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
 
 }
 apply plugin: 'com.google.gms.google-services'
