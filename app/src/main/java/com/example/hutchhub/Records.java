@@ -45,7 +45,7 @@ public class Records extends AppCompatActivity {
         rabbit_Record_RC_List = findViewById(R.id.rabbit_Record_List);
         rabbit_Record_RC_List.setItemAnimator(new SlideInUpAnimator());
         auth = FirebaseAuth.getInstance();
-        rabbitRecord = FirebaseDatabase.getInstance().getReference().child("RabbitRecords");
+        rabbitRecord = FirebaseDatabase.getInstance().getReference().child("Rabbit_Records");
         rabbitRecordArrayList = new ArrayList<>();
         RabbitRecordAdapter = new RabbitRecordAdapter(rabbitRecordArrayList);
         rabbit_Record_RC_List.setHasFixedSize(true);
