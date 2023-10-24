@@ -35,7 +35,9 @@ import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import kotlin.Unit;
@@ -51,16 +53,14 @@ public class AddRabbitRecord extends AppCompatActivity {
     private Button btn_rabbit_Record_Save;
 
     private CircleImageView rabbit_Record_image;
-
+    final Calendar calendar = Calendar.getInstance();
     private FirebaseAuth mAuth;
     private String currentUserID;
     private StorageReference RabbitPicRef;
     private DatabaseReference RootRef;
 
-    private final Calendar calendar = Calendar.getInstance();
-    private int year, month, day;
 
-    private static final  int GalleryPick = 1 ;
+    private int year, month, day;
 
     String downloadUrl;
 
@@ -74,6 +74,8 @@ public class AddRabbitRecord extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_rabbit_record);
+
+
 
         //Assigning all values
         InitializeValues();
@@ -100,7 +102,9 @@ public class AddRabbitRecord extends AppCompatActivity {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(AddRabbitRecord.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                        rabbit_Record_DOB.setText(SimpleDateFormat.getDateInstance().format(calendar.getTime()));
+
+                        rabbit_Record_DOB.setText(i1+"/"+(i1+1)+"/"+i);
+                        //rabbit_Record_DOB.setText(SimpleDateFormat.getDateInstance().format(calendar.getTime()));
                     }
                 },year,month,day);
 
@@ -118,7 +122,8 @@ public class AddRabbitRecord extends AppCompatActivity {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(AddRabbitRecord.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                        rabbit_Record_Weaned.setText(SimpleDateFormat.getDateInstance().format(calendar.getTime()));
+                        rabbit_Record_Weaned.setText(i1+"/"+(i1+1)+"/"+i);
+                        //rabbit_Record_Weaned.setText(SimpleDateFormat.getDateInstance().format(calendar.getTime()));
                     }
                 },year,month,day);
 
