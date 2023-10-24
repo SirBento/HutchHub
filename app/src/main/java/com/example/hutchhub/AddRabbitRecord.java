@@ -1,8 +1,12 @@
 package com.example.hutchhub;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.net.Uri;
@@ -14,6 +18,10 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -30,6 +38,8 @@ import java.util.Calendar;
 import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
 
 public class AddRabbitRecord extends AppCompatActivity {
 
@@ -45,7 +55,6 @@ public class AddRabbitRecord extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private String currentUserID;
     private StorageReference RabbitPicRef;
-
     private DatabaseReference RootRef;
 
     private final Calendar calendar = Calendar.getInstance();
@@ -55,10 +64,12 @@ public class AddRabbitRecord extends AppCompatActivity {
 
     String downloadUrl;
 
+    ActivityResultLauncher<Intent> imagePickLauncher;
+
     LoadingDialog loadingDialog = new LoadingDialog(AddRabbitRecord.this);
     Uri resultUri;
 
-    private DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference("RabbitRecords");
+    private DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +77,19 @@ public class AddRabbitRecord extends AppCompatActivity {
 
         //Assigning all values
         InitializeValues();
+
+
+        imagePickLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if(result.getResultCode() == Activity.RESULT_OK){
+                        Intent data = result.getData();
+                        if(data!=null && data.getData()!=null){
+                            resultUri= data.getData();
+                            Glide.with(AddRabbitRecord.this).load(resultUri).apply(RequestOptions.circleCropTransform()).into(rabbit_Record_image);
+                        }
+                    }
+                }
+        );
 
 
 
@@ -109,11 +133,14 @@ public class AddRabbitRecord extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                Intent GalleryIntent = new Intent();
-                GalleryIntent.setAction(Intent.ACTION_GET_CONTENT);
-                GalleryIntent.setType("image/*");
-                startActivityForResult(GalleryIntent,GalleryPick);
-
+                ImagePicker.with(AddRabbitRecord.this).cropSquare().compress(512).maxResultSize(512,512)
+                        .createIntent(new Function1<Intent, Unit>() {
+                            @Override
+                            public Unit invoke(Intent intent) {
+                                imagePickLauncher.launch(intent);
+                                return null;
+                            }
+                        });
             }
         });
 
@@ -138,78 +165,43 @@ public class AddRabbitRecord extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode ==GalleryPick  && resultCode == RESULT_OK && data != null )
-        {
-            //Allow user to crop their profile picture
-            CropImage.activity()
-                    .setGuidelines(CropImageView.Guidelines.ON)
-                    .setAspectRatio(1,1)
-                    .start(AddRabbitRecord.this);
-        }
-
-        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE)
-        {
-            // uploading user profile
-            CropImage.ActivityResult result = CropImage.getActivityResult(data);
-
-            if (resultCode == RESULT_OK)
-            {
-                resultUri = result.getUri();
-                rabbit_Record_image.setImageURI(resultUri);
-            }
-
-        }
-    }
 
 
     private void SaveImage(){
 
         loadingDialog.startLoadingDialog();
 
-        StorageReference filePath = RabbitPicRef.child(currentUserID ).child(rabbit_Record_name +".jpg");
-        filePath.putFile(resultUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>(){
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot)
-            {
+        StorageReference filePath = RabbitPicRef.child("Add_Rabbit_Pics").child(currentUserID).child(rabbit_Record_name.getText().toString());
+
+        if(resultUri!=null){
+            filePath.putFile(resultUri).addOnSuccessListener(taskSnapshot -> {
                 final Task<Uri> firebaseUri = taskSnapshot.getStorage().getDownloadUrl();
 
-                firebaseUri.addOnSuccessListener(new OnSuccessListener<Uri>()
-                {
-                    @Override
-                    public void onSuccess(Uri uri)
-                    {
+                firebaseUri.addOnSuccessListener(uri -> {
 
-                        Toast.makeText(AddRabbitRecord.this, "Rabbit Picture Uploaded Successfully", Toast.LENGTH_SHORT).show();
-                          downloadUrl = uri.toString();
-                        // complete the rest of your code
+                    Toast.makeText(AddRabbitRecord.this, "Rabbit Picture Uploaded Successfully", Toast.LENGTH_SHORT).show();
+                    downloadUrl = uri.toString();
+                    // complete the rest of your code
 
-                        RootRef.child("Rabbit Records").child(currentUserID).child("image").setValue(downloadUrl)
-                                .addOnCompleteListener(new OnCompleteListener<Void>()
-                                {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task)
-                                    {
-                                        if (task.isSuccessful()){
+                    RootRef.child("Rabbit_Records").child(currentUserID).child("image").setValue(downloadUrl)
+                            .addOnCompleteListener(task -> {
+                                if (task.isSuccessful()){
 
-                                            loadingDialog.dismissDialog();
+                                    loadingDialog.dismissDialog();
 
-                                        }else{
+                                }else{
 
-                                            Toast.makeText(AddRabbitRecord.this, "Error: Please check your internet connection", Toast.LENGTH_SHORT).show();
-                                            loadingDialog.dismissDialog();
-                                        }
+                                    Toast.makeText(AddRabbitRecord.this, "Error: Please check your internet connection", Toast.LENGTH_SHORT).show();
+                                    loadingDialog.dismissDialog();
+                                }
 
-                                    }
-                                });
-                    }
-
+                            });
                 });
-            }
+            });
+        }else{
+            Toast.makeText(AddRabbitRecord.this, "Error: Please add the rabbit picture", Toast.LENGTH_LONG).show();
+        }
 
-        });
     }
 
  private void InitializeValues(){
@@ -237,7 +229,7 @@ public class AddRabbitRecord extends AppCompatActivity {
      rabbit_Record_image = findViewById(R.id.rabbit_Record_image);
 
      mAuth = FirebaseAuth.getInstance();
-     RabbitPicRef = FirebaseStorage.getInstance().getReference().child("Rabbit Record");
+     RabbitPicRef = FirebaseStorage.getInstance().getReference().child("Rabbit_Record");
      currentUserID = mAuth.getCurrentUser().getUid();
 
      RootRef = FirebaseDatabase.getInstance().getReference();
