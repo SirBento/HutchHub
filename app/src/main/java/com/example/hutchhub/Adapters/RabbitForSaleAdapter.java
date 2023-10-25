@@ -75,7 +75,7 @@ public class RabbitForSaleAdapter extends RecyclerView.Adapter<RabbitForSaleAdap
             holder.btnDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    // Todo: delete the specific node
                     /// delete the node
                 }
             });

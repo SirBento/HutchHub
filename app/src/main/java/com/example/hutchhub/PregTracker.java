@@ -10,5 +10,7 @@ public class PregTracker extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preg_tracker);
+
+        // Todo: add recycler to view preg dates, weaning and breedin box dates
     }
 }
