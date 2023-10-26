@@ -22,7 +22,6 @@ public class RabbitRecordAdapter extends RecyclerView.Adapter<RabbitRecordAdapte
 
     ArrayList<RabbitRecord> arrayList;
     FirebaseAuth Auth;
-    Context ctx;
 
     Dialog dialog;
     TextView moreInfoRabbitName,moreInfoRabbitSex ,moreInfoDOB,moreInfoFather
@@ -36,7 +35,7 @@ public class RabbitRecordAdapter extends RecyclerView.Adapter<RabbitRecordAdapte
     public RabbitRecordAdapter(ArrayList<RabbitRecord> arrayList){
 
         this.arrayList = arrayList;
-        this.ctx = ctx;
+
 
     }
 
@@ -76,7 +75,7 @@ public class RabbitRecordAdapter extends RecyclerView.Adapter<RabbitRecordAdapte
 
         //Dialog Initialization
 
-        dialog = new Dialog(ctx);
+        dialog = new Dialog(dialog.getContext());
         dialog.setContentView(R.layout.custom_dialog);
         //closing textview and button on the custom dialog
         txtclose= dialog.findViewById(R.id.txtclose);

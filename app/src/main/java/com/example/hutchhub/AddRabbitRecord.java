@@ -188,7 +188,7 @@ public class AddRabbitRecord extends AppCompatActivity {
                     downloadUrl = uri.toString();
                     // complete the rest of your code
 
-                    RootRef.child("Rabbit_Records").child(currentUserID).child("image").setValue(downloadUrl)
+                    RootRef.child("RabbitRecords").child(currentUserID).child("image").setValue(downloadUrl)
                             .addOnCompleteListener(task -> {
                                 if (task.isSuccessful()){
 
@@ -234,7 +234,7 @@ public class AddRabbitRecord extends AppCompatActivity {
      rabbit_Record_image = findViewById(R.id.rabbit_Record_image);
 
      mAuth = FirebaseAuth.getInstance();
-     RabbitPicRef = FirebaseStorage.getInstance().getReference().child("Rabbit_Record");
+     RabbitPicRef = FirebaseStorage.getInstance().getReference().child("RabbitRecord");
      currentUserID = mAuth.getCurrentUser().getUid();
 
      RootRef = FirebaseDatabase.getInstance().getReference();
