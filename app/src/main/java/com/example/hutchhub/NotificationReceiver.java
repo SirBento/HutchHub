@@ -25,9 +25,7 @@ public class NotificationReceiver extends BroadcastReceiver {
             Bundle remoteInput = RemoteInput.getResultsFromIntent(intent);
             if (remoteInput != null) {
                 CharSequence feedback = remoteInput.getCharSequence("DirectReplyNotification");
-                NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context)
-                        .setSmallIcon(R.drawable.notification_logo)
-                        .setContentTitle("Thank you for your feedback!!!");
+                NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context);
 
                 notificationManager.notify(0, mBuilder.build());
             }

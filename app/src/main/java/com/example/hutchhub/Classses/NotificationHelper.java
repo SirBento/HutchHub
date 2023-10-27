@@ -6,7 +6,9 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.os.Build;
-import android.support.v4.app.NotificationCompat;
+import androidx.core.app.NotificationCompat;
+
+import com.example.hutchhub.R;
 
 
 public class NotificationHelper extends ContextWrapper {
@@ -41,6 +43,6 @@ public class NotificationHelper extends ContextWrapper {
         return new NotificationCompat.Builder(getApplicationContext(), channelID)
                 .setContentTitle("Alarm!")
                 .setContentText("Your AlarmManager is working.")
-                .setSmallIcon(R.drawable.ic_android);
+                .setSmallIcon(R.drawable.notification_logo);
     }
 }
