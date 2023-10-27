@@ -2,10 +2,7 @@ package com.example.hutchhub;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -18,30 +15,22 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.github.dhaval2404.imagepicker.ImagePicker;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
-import com.theartofdev.edmodo.cropper.CropImage;
-import com.theartofdev.edmodo.cropper.CropImageView;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.Locale;
-
 import de.hdodenhof.circleimageview.CircleImageView;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
+
+
 
 public class AddRabbitRecord extends AppCompatActivity {
 
@@ -103,7 +92,7 @@ public class AddRabbitRecord extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
 
-                        rabbit_Record_DOB.setText(i1+"/"+(i1+1)+"/"+i);
+                        rabbit_Record_DOB.setText(i2+"/"+(i1+1)+"/"+i);
                         //rabbit_Record_DOB.setText(SimpleDateFormat.getDateInstance().format(calendar.getTime()));
                     }
                 },year,month,day);
@@ -122,7 +111,7 @@ public class AddRabbitRecord extends AppCompatActivity {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(AddRabbitRecord.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                        rabbit_Record_Weaned.setText(i1+"/"+(i1+1)+"/"+i);
+                        rabbit_Record_Weaned.setText(i2+"/"+(i1+1)+"/"+i);
                         //rabbit_Record_Weaned.setText(SimpleDateFormat.getDateInstance().format(calendar.getTime()));
                     }
                 },year,month,day);
@@ -292,7 +281,7 @@ public class AddRabbitRecord extends AppCompatActivity {
 
 
      if (Value.isEmpty()) {
-         editText.setError("The field is required");
+         editText.setError("This field is required");
          editText.requestFocus();
          return false;
      } else {

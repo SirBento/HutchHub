@@ -9,6 +9,7 @@ import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -61,6 +62,38 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
 
         // todo: also save user information to the database aswell as validate user entered information
 
+        FeedingSchedule_Next.setOnClickListener(view -> {
+
+            if(!ValidateEditTextValues(FeedingSchedule_NumberOfRabbits)| !ValidateEditTextValues(FeedingSchedule_TypeOfFeed)
+                    |!ValidateEditTextValues(FeedingSchedule_FeedingTimes)){
+
+                return;
+            }
+            if(!FeedingSchedule_FeedingTimes.getText().toString().equals("1")
+                    ||!FeedingSchedule_FeedingTimes.getText().toString().equals("2")
+                    ||!FeedingSchedule_FeedingTimes.getText().toString().equals("3")){
+
+                FeedingSchedule_FeedingTimes.setError("Invalid:Use the range of 1 to 3 ");
+                FeedingSchedule_FeedingTimes.requestFocus();
+
+            }else if(FeedingSchedule_FeedingTimes.getText().toString().equals("1")){
+
+                time1_Layout.setVisibility(View.VISIBLE);
+
+            }else if(FeedingSchedule_FeedingTimes.getText().toString().equals("2")){
+
+                time1_Layout.setVisibility(View.VISIBLE);
+                time2_Layout.setVisibility(View.VISIBLE);
+
+            }else if(FeedingSchedule_FeedingTimes.getText().toString().equals("3")){
+
+                time1_Layout.setVisibility(View.VISIBLE);
+                time2_Layout.setVisibility(View.VISIBLE);
+                time3_Layout.setVisibility(View.VISIBLE);
+
+            }
+
+        });
 
         btn_FeedingSchedule_Time1.setOnClickListener(view -> {
 
@@ -80,6 +113,59 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
                 timePicker.show(getSupportFragmentManager(), "time picker");
 
         });
+
+
+        FeedingSchedule_Done.setOnClickListener(view -> {
+
+            if(View.VISIBLE==time1_Layout.getVisibility()
+                    || View.VISIBLE==time2_Layout.getVisibility()
+                    ||View.VISIBLE==time3_Layout.getVisibility()){
+
+                if(!ValidateEditTextValues(FeedingSchedule_Time1 )| !ValidateEditTextValues(FeedingSchedule_Time2)
+                        |!ValidateEditTextValues(FeedingSchedule_Time3)){
+
+                    return;
+                }
+
+                // TODO: SAVE DATA AND TURN ON THE ALARMS
+
+            }else if (View.VISIBLE==time1_Layout.getVisibility()
+                    || View.VISIBLE==time2_Layout.getVisibility()){
+
+                if(!ValidateEditTextValues(FeedingSchedule_Time1 )| !ValidateEditTextValues(FeedingSchedule_Time2)){
+
+                    return;
+                }
+
+                // TODO: SAVE DATA AND TURN ON THE ALARMS
+
+            } else if (View.VISIBLE==time1_Layout.getVisibility()
+                    || View.VISIBLE==time3_Layout.getVisibility()){
+
+                if(!ValidateEditTextValues(FeedingSchedule_Time1 )| !ValidateEditTextValues(FeedingSchedule_Time3)){
+
+                    return;
+                }
+
+                // TODO: SAVE DATA AND TURN ON THE ALARMS
+
+            }
+
+            else if (View.VISIBLE==time2_Layout.getVisibility()
+                    || View.VISIBLE==time3_Layout.getVisibility()){
+
+                if(!ValidateEditTextValues(FeedingSchedule_Time2 )| !ValidateEditTextValues(FeedingSchedule_Time3)){
+
+                    return;
+                }
+
+                // TODO: SAVE DATA AND TURN ON THE ALARMS
+
+            }
+
+
+        });
+
 
 
 
@@ -127,5 +213,22 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
 
         alarmManager.cancel(pendingIntent);
         // alarm cancelled
+    }
+
+    private boolean ValidateEditTextValues(EditText editText){
+
+        String Value = editText.getText().toString().trim();
+
+
+        if (Value.isEmpty()) {
+            editText.setError("This field is required");
+            editText.requestFocus();
+            return false;
+        } else {
+            editText.setError(null);
+            return true;
+        }
+
+
     }
 }

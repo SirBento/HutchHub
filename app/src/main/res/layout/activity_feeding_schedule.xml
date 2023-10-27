@@ -85,7 +85,7 @@
                     android:layout_marginTop="12dp"
                     android:background="@drawable/edittext_background"
                     android:ems="10"
-                    android:hint="Fed How Many Times per day?"
+                    android:hint="Feeds per day? e.g 1,2 or 3"
                     android:inputType="text"
                     android:padding="12dp"
                     android:textColor="#070707"
