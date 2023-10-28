@@ -9,6 +9,7 @@ import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,9 +26,15 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
     private EditText FeedingSchedule_NumberOfRabbits, FeedingSchedule_TypeOfFeed,FeedingSchedule_FeedingTimes,
                      FeedingSchedule_Time1,FeedingSchedule_Time2,FeedingSchedule_Time3;
     private Button FeedingSchedule_Next, FeedingSchedule_Done, btn_FeedingSchedule_Time1,
-            btn_FeedingSchedule_Time2,btn_FeedingSchedule_Time3 ;
+            btn_FeedingSchedule_Time2,btn_FeedingSchedule_Time3;
 
     private LinearLayout time1_Layout,time2_Layout,time3_Layout;
+
+    private int whichTime = 0;
+
+    private boolean morning = false,
+            afternoon= false,
+            evening= false;
 
 
 
@@ -69,27 +76,35 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
 
                 return;
             }
-            if(!FeedingSchedule_FeedingTimes.getText().toString().equals("1")
+            Log.e("FEEDING",FeedingSchedule_FeedingTimes.getText().toString());
+
+           /*** if(!FeedingSchedule_FeedingTimes.getText().toString().equals("1")
                     ||!FeedingSchedule_FeedingTimes.getText().toString().equals("2")
                     ||!FeedingSchedule_FeedingTimes.getText().toString().equals("3")){
 
                 FeedingSchedule_FeedingTimes.setError("Invalid:Use the range of 1 to 3 ");
                 FeedingSchedule_FeedingTimes.requestFocus();
 
-            }else if(FeedingSchedule_FeedingTimes.getText().toString().equals("1")){
+            }else **/
+                if(FeedingSchedule_FeedingTimes.getText().toString().equals("1")){
 
                 time1_Layout.setVisibility(View.VISIBLE);
+                FeedingSchedule_Done.setVisibility(View.VISIBLE);
+
 
             }else if(FeedingSchedule_FeedingTimes.getText().toString().equals("2")){
 
                 time1_Layout.setVisibility(View.VISIBLE);
-                time2_Layout.setVisibility(View.VISIBLE);
+                time3_Layout.setVisibility(View.VISIBLE);
+                FeedingSchedule_Done.setVisibility(View.VISIBLE);
+
 
             }else if(FeedingSchedule_FeedingTimes.getText().toString().equals("3")){
 
                 time1_Layout.setVisibility(View.VISIBLE);
                 time2_Layout.setVisibility(View.VISIBLE);
                 time3_Layout.setVisibility(View.VISIBLE);
+                FeedingSchedule_Done.setVisibility(View.VISIBLE);
 
             }
 
@@ -99,18 +114,24 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
 
             DialogFragment timePicker = new TimePickerFragment();
             timePicker.show(getSupportFragmentManager(), "time picker");
+            whichTime=1;
+
         });
 
         btn_FeedingSchedule_Time2.setOnClickListener(view -> {
 
             DialogFragment timePicker = new TimePickerFragment();
             timePicker.show(getSupportFragmentManager(), "time picker");
+            whichTime = 2;
+
         });
 
         btn_FeedingSchedule_Time3.setOnClickListener(view -> {
 
                 DialogFragment timePicker = new TimePickerFragment();
                 timePicker.show(getSupportFragmentManager(), "time picker");
+                whichTime =3;
+
 
         });
 
@@ -181,17 +202,40 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
         c.set(Calendar.SECOND, 0);
 
         updateTimeText(c);
-        startAlarm(c);
+
+        if(morning){
+            startAlarm(c);
+        }
+        if(afternoon){
+            startAlarm_two(c);
+        }
+        if(evening){
+            startAlarm_three(c);
+        }
+
 
 
     }
 
 
     private void updateTimeText(Calendar c) {
-        String timeText = "Alarm set for: ";
+        String timeText = "";
         timeText += DateFormat.getTimeInstance(DateFormat.SHORT).format(c.getTime());
 
-       /// mTextView.setText(timeText);   Todo: do something here
+        if (whichTime==1){
+
+            FeedingSchedule_Time1.setText(timeText);
+            morning = true;
+
+        }else if(whichTime==2){
+            FeedingSchedule_Time2.setText(timeText);
+            afternoon = true;
+
+        }else if(whichTime==3){
+            FeedingSchedule_Time3.setText(timeText);
+            evening = true;
+        }
+
     }
 
     private void startAlarm(Calendar c) {
@@ -205,6 +249,30 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
 
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
     }
+    private void startAlarm_two(Calendar c) {
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(this, AlertReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 2, intent, PendingIntent.FLAG_IMMUTABLE);
+
+        if (c.before(Calendar.getInstance())) {
+            c.add(Calendar.DATE, 1);
+        }
+
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
+    }
+
+    private void startAlarm_three(Calendar c) {
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(this, AlertReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 3, intent, PendingIntent.FLAG_IMMUTABLE);
+
+        if (c.before(Calendar.getInstance())) {
+            c.add(Calendar.DATE, 1);
+        }
+
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
+    }
+
 
     private void cancelAlarm() {
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
