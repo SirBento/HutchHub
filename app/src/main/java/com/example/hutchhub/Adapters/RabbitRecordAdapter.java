@@ -31,10 +31,12 @@ public class RabbitRecordAdapter extends RecyclerView.Adapter<RabbitRecordAdapte
     Button btn_moreInfoDone;
 
     CircleImageView moreInfoRabbitPic;
+   Activity activity;
 
-    public RabbitRecordAdapter(ArrayList<RabbitRecord> arrayList){
+    public RabbitRecordAdapter(ArrayList<RabbitRecord> arrayList,Activity Activity){
 
         this.arrayList = arrayList;
+        this.activity = Activity;
 
 
     }
@@ -75,7 +77,7 @@ public class RabbitRecordAdapter extends RecyclerView.Adapter<RabbitRecordAdapte
 
         //Dialog Initialization
 
-        dialog = new Dialog(dialog.getContext());
+        dialog = new Dialog(activity);
         dialog.setContentView(R.layout.custom_dialog);
         //closing textview and button on the custom dialog
         txtclose= dialog.findViewById(R.id.txtclose);
@@ -127,7 +129,7 @@ public class RabbitRecordAdapter extends RecyclerView.Adapter<RabbitRecordAdapte
 
 
 
-        txtclose.setOnClickListener(new View.OnClickListener() {
+       txtclose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();

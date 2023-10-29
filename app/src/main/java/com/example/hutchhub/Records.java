@@ -45,9 +45,9 @@ public class Records extends AppCompatActivity {
         rabbit_Record_RC_List = findViewById(R.id.rabbit_Record_List);
         rabbit_Record_RC_List.setItemAnimator(new SlideInUpAnimator());
         auth = FirebaseAuth.getInstance();
-        rabbitRecord = FirebaseDatabase.getInstance().getReference().child("Rabbit_Records");
+        rabbitRecord = FirebaseDatabase.getInstance().getReference().child("RabbitRecords");
         rabbitRecordArrayList = new ArrayList<>();
-        RabbitRecordAdapter = new RabbitRecordAdapter(rabbitRecordArrayList);
+        RabbitRecordAdapter = new RabbitRecordAdapter(rabbitRecordArrayList,Records.this);
         rabbit_Record_RC_List.setHasFixedSize(true);
         rabbit_Record_RC_List.setLayoutManager(new LinearLayoutManager(this));
         rabbit_Record_RC_List.setAdapter(RabbitRecordAdapter);
@@ -87,7 +87,7 @@ public class Records extends AppCompatActivity {
                     if(snapshot.getKey().equals(auth.getCurrentUser().getUid())){
 
                         RabbitRecordAdapter.notifyDataSetChanged();
-                        rabbit_Record_RC_List .smoothScrollToPosition(rabbit_Record_RC_List.getAdapter().getItemCount());
+                        rabbit_Record_RC_List.smoothScrollToPosition(rabbit_Record_RC_List.getAdapter().getItemCount());
 
                     }else{
                         Toast.makeText(Records.this, "No Record Yet", Toast.LENGTH_LONG).show();
