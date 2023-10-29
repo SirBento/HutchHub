@@ -1,5 +1,6 @@
 package com.example.hutchhub;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
@@ -15,11 +16,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.example.hutchhub.Classses.AlertReceiver;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.DateFormat;
 import java.util.Calendar;
+import java.util.HashMap;
 
 
 public class FeedingSchedule extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener{
@@ -28,20 +36,25 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
     private Button FeedingSchedule_Next, FeedingSchedule_Done, btn_FeedingSchedule_Time1,
             btn_FeedingSchedule_Time2,btn_FeedingSchedule_Time3;
 
+    private DatabaseReference feedsDB;
+
     private LinearLayout time1_Layout,time2_Layout,time3_Layout;
 
     private int whichTime = 0;
 
-    private boolean morning = false,
-            afternoon= false,
-            evening= false;
-
-
+    LoadingDialog loadingDialog = new LoadingDialog(FeedingSchedule.this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feeding_schedule);
+
+        // Database instance
+        feedsDB = FirebaseDatabase
+                .getInstance()
+                .getReference()
+                .child("FeedingSchedule")
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
         //Initialising Layouts
         time1_Layout = findViewById(R.id.time1_Layout);
@@ -148,7 +161,6 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
                     return;
                 }
 
-                // TODO: SAVE DATA AND TURN ON THE ALARMS
 
             }else if (View.VISIBLE==time1_Layout.getVisibility()
                     || View.VISIBLE==time2_Layout.getVisibility()){
@@ -158,7 +170,6 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
                     return;
                 }
 
-                // TODO: SAVE DATA AND TURN ON THE ALARMS
 
             } else if (View.VISIBLE==time1_Layout.getVisibility()
                     || View.VISIBLE==time3_Layout.getVisibility()){
@@ -168,10 +179,8 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
                     return;
                 }
 
-                // TODO: SAVE DATA AND TURN ON THE ALARMS
 
             }
-
             else if (View.VISIBLE==time2_Layout.getVisibility()
                     || View.VISIBLE==time3_Layout.getVisibility()){
 
@@ -180,9 +189,40 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
                     return;
                 }
 
-                // TODO: SAVE DATA AND TURN ON THE ALARMS
 
             }
+
+
+            HashMap<String, Object> saveFeedingInfo = new HashMap<>();
+            saveFeedingInfo.put("RabbitCount",FeedingSchedule_NumberOfRabbits.getText().toString());
+            saveFeedingInfo.put("FeedType",FeedingSchedule_TypeOfFeed.getText().toString());
+            saveFeedingInfo.put("FeedingCount", FeedingSchedule_FeedingTimes.getText().toString());
+            if(!FeedingSchedule_Time1.getText().toString().equals(null)){
+                saveFeedingInfo.put("Morning",FeedingSchedule_Time1.getText().toString());
+
+            }
+
+            if(!FeedingSchedule_Time2.getText().toString().equals(null)){
+                saveFeedingInfo.put("Afternoon",FeedingSchedule_Time2.getText().toString());
+
+            }
+
+            if(!FeedingSchedule_Time3.getText().toString().equals(null)){
+
+                saveFeedingInfo.put("Evening",FeedingSchedule_Time3.getText().toString());
+            }
+
+
+
+
+            feedsDB.setValue(saveFeedingInfo).addOnCompleteListener(task -> {
+                if(task.isSuccessful()){
+
+                    Toast.makeText(FeedingSchedule.this, "Reminders have been set for you", Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(FeedingSchedule.this, "ERROR: Please check you internet connection", Toast.LENGTH_LONG).show();
+                }
+            });
 
 
         });
@@ -202,19 +242,8 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
         c.set(Calendar.SECOND, 0);
 
         updateTimeText(c);
-/**
-        if(morning){
-            startAlarm(c);
-        }
-        if(afternoon){
-            startAlarm_two(c);
-        }
-        if(evening){
-            startAlarm_three(c);
-        }
- **/
-
-
+        startAlarm(c);
+        // Todo: reset alarm once the original goes off
 
     }
 
@@ -226,15 +255,14 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
         if (whichTime==1){
 
             FeedingSchedule_Time1.setText(timeText);
-            morning = true;
 
         }else if(whichTime==2){
             FeedingSchedule_Time2.setText(timeText);
-            afternoon = true;
+
 
         }else if(whichTime==3){
             FeedingSchedule_Time3.setText(timeText);
-            evening = true;
+
         }
 
     }
@@ -242,19 +270,7 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
     private void startAlarm(Calendar c) {
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this, AlertReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, PendingIntent.FLAG_IMMUTABLE);
-
-        if (c.before(Calendar.getInstance())) {
-            c.add(Calendar.DATE, 1);
-        }
-
-        alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
-    }
-    private void startAlarm_two(Calendar c) {
-        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(this, AlertReceiver.class);
         final int id = (int) System.currentTimeMillis();
-
 
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, id, intent, PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_MUTABLE);
 
@@ -265,17 +281,6 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
     }
 
-    private void startAlarm_three(Calendar c) {
-        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(this, AlertReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 3, intent, PendingIntent.FLAG_IMMUTABLE);
-
-        if (c.before(Calendar.getInstance())) {
-            c.add(Calendar.DATE, 1);
-        }
-
-        alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
-    }
 
 
     private void cancelAlarm() {
