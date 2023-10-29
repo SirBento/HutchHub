@@ -202,7 +202,7 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
         c.set(Calendar.SECOND, 0);
 
         updateTimeText(c);
-
+/**
         if(morning){
             startAlarm(c);
         }
@@ -212,6 +212,7 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
         if(evening){
             startAlarm_three(c);
         }
+ **/
 
 
 
@@ -252,7 +253,10 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
     private void startAlarm_two(Calendar c) {
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this, AlertReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 2, intent, PendingIntent.FLAG_IMMUTABLE);
+        final int id = (int) System.currentTimeMillis();
+
+
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, id, intent, PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_MUTABLE);
 
         if (c.before(Calendar.getInstance())) {
             c.add(Calendar.DATE, 1);
