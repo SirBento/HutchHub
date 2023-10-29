@@ -78,7 +78,7 @@ public class RabbitRecordAdapter extends RecyclerView.Adapter<RabbitRecordAdapte
         //Dialog Initialization
 
         dialog = new Dialog(activity);
-        dialog.setContentView(R.layout.custom_dialog);
+        dialog.setContentView(R.layout.custom_pop_up);
         //closing textview and button on the custom dialog
         txtclose= dialog.findViewById(R.id.txtclose);
         btn_moreInfoDone= dialog.findViewById(R.id.btn_moreInfoDone);
@@ -157,7 +157,7 @@ public class RabbitRecordAdapter extends RecyclerView.Adapter<RabbitRecordAdapte
         holder.rabbitName.setText("Name: "+ rabbitRecord.getName());
         holder.rabbit_Breed.setText("Breed: "+ rabbitRecord.getBreed());
         holder.rabbitDOB.setText("DOB: "+ rabbitRecord.getDOB());
-        holder.rabbitSex.setText("Sex:"+ rabbitRecord.getSex());
+        holder.rabbitSex.setText("Sex: "+ rabbitRecord.getSex());
 
 
 
