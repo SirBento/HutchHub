@@ -70,10 +70,10 @@
                 android:id="@+id/moreInfoDOB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="22/45/25"
+                android:text="22/05/25"
                 android:textStyle="bold"
                 android:textSize="18sp"
-                android:textColor="@color/skyBlue"/>
+                android:textColor="@color/wGreen"/>
         </LinearLayout>
         <LinearLayout
             android:background="@color/greenish"
@@ -96,7 +96,7 @@
                 android:text="Vick"
                 android:textStyle="bold"
                 android:textSize="18sp"
-                android:textColor="@color/skyBlue"/>
+                android:textColor="@color/wGreen"/>
         </LinearLayout>
         <LinearLayout
             android:background="@color/greenish"
@@ -120,7 +120,7 @@
                 android:text="Bunny"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="@color/skyBlue"/>
+                android:textColor="@color/wGreen"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -150,7 +150,7 @@
                 android:text="My Farm"
                 android:textStyle="bold"
                 android:textSize="18sp"
-                android:textColor="@color/skyBlue"/>
+                android:textColor="@color/wGreen"/>
         </LinearLayout>
         <LinearLayout
             android:background="@color/greenish"
@@ -173,7 +173,7 @@
                 android:text="White"
                 android:textStyle="bold"
                 android:textSize="18sp"
-                android:textColor="@color/skyBlue"/>
+                android:textColor="@color/wGreen"/>
         </LinearLayout>
         <LinearLayout
             android:background="@color/greenish"
@@ -196,7 +196,7 @@
                 android:text="22/04/23"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="@color/skyBlue"/>
+                android:textColor="@color/wGreen"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -226,7 +226,7 @@
                 android:text="Califonia"
                 android:textStyle="bold"
                 android:textSize="18sp"
-                android:textColor="@color/skyBlue"/>
+                android:textColor="@color/wGreen"/>
         </LinearLayout>
         <LinearLayout
             android:background="@color/greenish"
@@ -249,7 +249,7 @@
                 android:text="Breeder"
                 android:textStyle="bold"
                 android:textSize="18sp"
-                android:textColor="@color/skyBlue"/>
+                android:textColor="@color/wGreen"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -279,7 +279,7 @@
                 android:text="Best in the farm"
                 android:textStyle="bold"
                 android:textSize="18sp"
-                android:textColor="@color/skyBlue"/>
+                android:textColor="@color/wGreen"/>
         </LinearLayout>
 
 

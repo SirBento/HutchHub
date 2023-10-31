@@ -6,4 +6,236 @@
     android:layout_height="match_parent"
     tools:context=".GrowthWeight">
 
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/top_background"
+        tools:srcCompat="@drawable/top_background" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:text="Rabbit\nGrowth\nAnd\nWeight"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.0"
+        android:fillViewport="true"
+        tools:layout_editor_absoluteX="-1dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5"
+            app:layout_constraintVertical_bias="0.267">
+
+            <EditText
+                android:id="@+id/GnW_RabbitName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/edittext_background"
+                android:ems="10"
+                android:hint="Enter the rabbit name"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textColor="#070707"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/blue"
+                android:layout_marginTop="10dp" />
+
+            <EditText
+                android:id="@+id/GnW_FirstWeight"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/edittext_background"
+                android:ems="10"
+                android:hint="First Weight(2kg)"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textColor="#070707"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+            <EditText
+                android:id="@+id/GnW_FirstHeight"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/edittext_background"
+                android:ems="10"
+                android:hint="First Height(5cm)"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textColor="#070707"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+
+            <EditText
+                android:id="@+id/GnW_FirstWeighingDate"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/edittext_background"
+                android:ems="10"
+                android:hint="First Weighting Date"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textColor="#070707"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/blue"
+                android:layout_marginTop="10dp" />
+
+
+            <EditText
+                android:id="@+id/GnW_SecondWeight"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/edittext_background"
+                android:ems="10"
+                android:hint="Second Weight(3kg)"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textColor="#070707"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+            <EditText
+                android:id="@+id/GnW_SecondHeight"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/edittext_background"
+                android:ems="10"
+                android:hint="Second Height(7cm)"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textColor="#070707"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+            <EditText
+                android:id="@+id/GnW_SecondWeighingDate"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/edittext_background"
+                android:ems="10"
+                android:hint="Second Weighting Date"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textColor="#070707"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/blue"
+                android:layout_marginTop="10dp" />
+
+            <EditText
+                android:id="@+id/GnW_ThirdWeight"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/edittext_background"
+                android:ems="10"
+                android:hint="Third Weight(4kg)"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textColor="#070707"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+            <EditText
+                android:id="@+id/GnW_ThirdHeight"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/edittext_background"
+                android:ems="10"
+                android:hint="Third Height(8cm)"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textColor="#070707"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+            <EditText
+                android:id="@+id/GnW_ThirdWeighingDate"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/edittext_background"
+                android:ems="10"
+                android:hint="Third Weighting Date"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textColor="#070707"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/blue"
+                android:layout_marginTop="10dp" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/GnW_Save"
+                style="@android:style/Widget.Button"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20sp"
+                android:background="@drawable/button_background"
+                android:text="Save"
+                android:textColor="@color/white"
+                android:textSize="23sp"
+                android:textStyle="bold">
+
+            </androidx.appcompat.widget.AppCompatButton>
+
+
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

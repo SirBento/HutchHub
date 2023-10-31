@@ -1,12 +1,12 @@
 package com.example.hutchhub.Models;
 
 public class RabbitForSale {
-    String address,breed,description,phone,price,quantity,sellerId;
+    String address,breed,description,phone,price,quantity,sellerId,key;
 
     public RabbitForSale() {
     }
 
-    public RabbitForSale(String address, String breed, String description, String phone, String price, String quantity, String sellerId) {
+    public RabbitForSale(String address, String breed, String description, String phone, String price, String quantity, String sellerId, String key) {
         this.address = address;
         this.breed = breed;
         this.description = description;
@@ -14,6 +14,7 @@ public class RabbitForSale {
         this.price = price;
         this.quantity = quantity;
         this.sellerId = sellerId;
+        this.key =key;
     }
 
     public String getAddress() {
@@ -72,5 +73,11 @@ public class RabbitForSale {
         this.sellerId = sellerId;
     }
 
+    public String getKey() {
+        return key;
+    }
 
+    public void setKey(String key) {
+        this.key = key;
+    }
 }

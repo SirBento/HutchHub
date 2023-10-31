@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 startActivity(new Intent( MainActivity.this, BreedingCare.class));
-                finish();
             }
         });
 
@@ -56,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent( MainActivity.this, PregTracker.class));
-                finish();
             }
         });
 
@@ -64,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent( MainActivity.this, Chat.class));
-                finish();
             }
         });
 
@@ -72,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent( MainActivity.this, FeedingSchedule.class));
-                finish();
             }
         });
 
@@ -80,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent( MainActivity.this, BuySell.class));
-                finish();
+
             }
         });
 
@@ -88,15 +84,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent( MainActivity.this, Records.class));
-                finish();
+
             }
         });
 
         growthAndWeight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent( MainActivity.this, GrowthWeight.class));
-                finish();
+                startActivity(new Intent( MainActivity.this, GrowthWeightList.class));
+
             }
         });
 
@@ -104,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent( MainActivity.this,Knowledge.class));
-                finish();
+
             }
         });
 

@@ -100,6 +100,7 @@ public class MySellList extends AppCompatActivity {
 
                 if(snapshot.exists()) {
                     RabbitForSale rabbitForSale =snapshot.getValue(RabbitForSale.class);
+                    rabbitForSale.setKey(snapshot.getKey());
                     rabbitForSaleList.add(rabbitForSale);
                     rabbitForSaleAdapter.notifyDataSetChanged();
                     mySellRecyclerList.smoothScrollToPosition(mySellRecyclerList.getAdapter().getItemCount());

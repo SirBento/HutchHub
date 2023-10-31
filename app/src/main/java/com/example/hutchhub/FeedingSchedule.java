@@ -80,8 +80,6 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
 
         // todo: check the data enter ond make edittext visible based on that
 
-        // todo: also save user information to the database aswell as validate user entered information
-
         FeedingSchedule_Next.setOnClickListener(view -> {
 
             if(!ValidateEditTextValues(FeedingSchedule_NumberOfRabbits)| !ValidateEditTextValues(FeedingSchedule_TypeOfFeed)

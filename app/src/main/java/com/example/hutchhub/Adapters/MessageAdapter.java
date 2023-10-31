@@ -27,7 +27,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
     public class MessageViewHolder extends RecyclerView.ViewHolder
     {
-        public TextView senderMessageText, receiverMessageText;
+        public TextView senderMessageText, receiverMessageText,receiver_username;
 
 
         public MessageViewHolder(@NonNull View itemView) {
@@ -35,6 +35,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
             senderMessageText = itemView.findViewById(R.id.sender_message_text);
             receiverMessageText = itemView.findViewById(R.id.receiver_message_text);
+            receiver_username = itemView.findViewById(R.id.receiver_username);
         }
     }
 
@@ -59,6 +60,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
             holder.senderMessageText.setVisibility(View.VISIBLE);
             holder.receiverMessageText.setVisibility(View.INVISIBLE);
+            holder.receiver_username.setVisibility(View.INVISIBLE);
             holder.senderMessageText.setTextColor(Color.BLACK);
             holder.senderMessageText.setBackgroundResource(R.drawable.sender_messeges_layout);
             holder.senderMessageText.setText(messages.getMessage() + "\n \n" + messages.getTime() + "\n" + messages.getDate());
@@ -66,9 +68,11 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
         }else{
 
             holder.receiverMessageText.setVisibility(View.VISIBLE);
+            holder.receiver_username.setVisibility(View.VISIBLE);
             holder.senderMessageText.setVisibility(View.INVISIBLE);
             holder.senderMessageText.setTextColor(Color.BLACK);
             holder.receiverMessageText.setBackgroundResource(R.drawable.receiver_messages_layout);
+            holder.receiver_username.setText(messages.getName());
             holder.receiverMessageText.setText(messages.getMessage() + "\n \n" + messages.getTime() + "\n" + messages.getDate());
         }
 

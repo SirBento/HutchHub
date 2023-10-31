@@ -5,11 +5,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.hutchhub.FeedingSchedule;
 import com.example.hutchhub.Models.RabbitForSale;
 import com.example.hutchhub.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -17,6 +25,10 @@ public class RabbitForSaleAdapter extends RecyclerView.Adapter<RabbitForSaleAdap
 
     ArrayList<RabbitForSale> arrayList;
     FirebaseAuth Auth;
+    DatabaseReference sellsDB = FirebaseDatabase.getInstance()
+                                .getReference()
+                                .child("Sells")
+                                .child(Auth.getCurrentUser().getUid());
 
     public RabbitForSaleAdapter(ArrayList<RabbitForSale> arrayList){
 
@@ -75,8 +87,17 @@ public class RabbitForSaleAdapter extends RecyclerView.Adapter<RabbitForSaleAdap
             holder.btnDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    // Todo: delete the specific node
-                    /// delete the node
+                    // Todo: Test this new code
+                    sellsDB.child(rabbitForSale.getKey()).removeValue().addOnCompleteListener(task -> {
+
+                        if(task.isSuccessful()){
+
+                            Toast.makeText(view.getContext(), "Record Deleted Successfully", Toast.LENGTH_LONG).show();
+                        }else{
+                            Toast.makeText(view.getContext(), "Error: Please Check Your Internet Connection", Toast.LENGTH_LONG).show();
+                        }
+
+                    });
                 }
             });
 

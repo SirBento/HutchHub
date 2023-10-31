@@ -4,26 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Records"
-    >
+    tools:context=".GrowthWeightList">
 
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/SearchView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/search_view_bg"
+        app:iconifiedByDefault="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:queryHint="Find Specific Rabbit" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rabbit_Record_List"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/RabbitGrowthWeight_R_List"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_weight="1"
+        android:clipToPadding="true"
+        android:fillViewport="false"
+        android:paddingTop="15dp"
         android:background="@drawable/rpic6"
         android:padding="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/SearchView"/>
 
-
-    </androidx.recyclerview.widget.RecyclerView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/btn_addRabbitGrowthWeight"
         android:layout_width="80dp"
         android:layout_height="55dp"
         android:layout_gravity="end|bottom"
