@@ -78,8 +78,6 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
         FeedingSchedule_Time3  =findViewById(R.id.FeedingSchedule_Time3);
 
 
-        // todo: check the data enter ond make edittext visible based on that
-
         FeedingSchedule_Next.setOnClickListener(view -> {
 
             if(!ValidateEditTextValues(FeedingSchedule_NumberOfRabbits)| !ValidateEditTextValues(FeedingSchedule_TypeOfFeed)

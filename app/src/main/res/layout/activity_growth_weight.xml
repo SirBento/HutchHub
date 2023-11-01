@@ -59,7 +59,7 @@
                 android:layout_marginTop="1dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
-                android:hint="Enter the rabbit name"
+                android:hint="Rabbit name or Cage number "
                 android:inputType="text"
                 android:padding="12dp"
                 android:textColor="#070707"
