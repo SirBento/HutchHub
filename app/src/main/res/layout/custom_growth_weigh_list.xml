@@ -85,7 +85,7 @@
 
     </LinearLayout>
     <LinearLayout
-        android:id="@+id/firstInfoLayout"
+        android:id="@+id/secondtInfoLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -130,7 +130,7 @@
 
     </LinearLayout>
     <LinearLayout
-        android:id="@+id/firstInfoLayout"
+        android:id="@+id/thirdInfoLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
