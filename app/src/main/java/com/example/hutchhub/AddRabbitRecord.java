@@ -104,21 +104,18 @@ public class AddRabbitRecord extends AppCompatActivity {
 
 
 
-        rabbit_Record_Weaned.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        rabbit_Record_Weaned.setOnClickListener(view -> {
 
-                DatePickerDialog datePickerDialog = new DatePickerDialog(AddRabbitRecord.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                        rabbit_Record_Weaned.setText(i2+"/"+(i1+1)+"/"+i);
-                        //rabbit_Record_Weaned.setText(SimpleDateFormat.getDateInstance().format(calendar.getTime()));
-                    }
-                },year,month,day);
+            DatePickerDialog datePickerDialog = new DatePickerDialog(AddRabbitRecord.this, new DatePickerDialog.OnDateSetListener() {
+                @Override
+                public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+                    rabbit_Record_Weaned.setText(i2+"/"+(i1+1)+"/"+i);
+                    //rabbit_Record_Weaned.setText(SimpleDateFormat.getDateInstance().format(calendar.getTime()));
+                }
+            },year,month,day);
 
-                datePickerDialog.show();
+            datePickerDialog.show();
 
-            }
         });
 
 

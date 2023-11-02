@@ -34,14 +34,15 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fillViewport="true"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        app:layout_constraintVertical_bias="0.0"
-        android:fillViewport="true"
-        tools:layout_editor_absoluteX="-1dp">
+        app:layout_constraintVertical_bias="1.0">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -65,11 +66,26 @@
                 android:textColor="#070707"
                 android:textSize="18sp"
                 android:textStyle="italic" />
+
+            <EditText
+                android:id="@+id/GnW_RabbitDOB"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/edittext_background"
+                android:ems="10"
+                android:hint="Rabbit DOB"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textColor="#070707"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
-                android:background="@color/blue"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="10dp"
+                android:background="@color/blue" />
 
             <EditText
                 android:id="@+id/GnW_FirstWeight"
@@ -117,8 +133,8 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
-                android:background="@color/blue"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="10dp"
+                android:background="@color/blue" />
 
 
             <EditText
@@ -148,6 +164,7 @@
                 android:textColor="#070707"
                 android:textSize="18sp"
                 android:textStyle="italic" />
+
             <EditText
                 android:id="@+id/GnW_SecondWeighingDate"
                 android:layout_width="match_parent"
@@ -165,8 +182,8 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
-                android:background="@color/blue"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="10dp"
+                android:background="@color/blue" />
 
             <EditText
                 android:id="@+id/GnW_ThirdWeight"
@@ -195,6 +212,7 @@
                 android:textColor="#070707"
                 android:textSize="18sp"
                 android:textStyle="italic" />
+
             <EditText
                 android:id="@+id/GnW_ThirdWeighingDate"
                 android:layout_width="match_parent"
@@ -208,11 +226,12 @@
                 android:textColor="#070707"
                 android:textSize="18sp"
                 android:textStyle="italic" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
-                android:background="@color/blue"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="10dp"
+                android:background="@color/blue" />
 
 
             <androidx.appcompat.widget.AppCompatButton
@@ -230,9 +249,7 @@
             </androidx.appcompat.widget.AppCompatButton>
 
 
-
         </LinearLayout>
-
 
 
     </ScrollView>
