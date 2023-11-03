@@ -109,6 +109,24 @@ public class GrowthWeightList extends AppCompatActivity {
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                if(!snapshot.exists()){
+                    Gnw_NoRecord.setVisibility(View.VISIBLE);
+                }else{
+
+                    if(snapshot.getKey().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())){
+
+                        com.example.hutchhub.Models.GrowthWeight growthWeight
+                                = snapshot.getValue(com.example.hutchhub.Models.GrowthWeight.class);
+
+                        growthWeightAdapter.notifyDataSetChanged();
+                        RabbitGrowthWeight_R_List.smoothScrollToPosition( RabbitGrowthWeight_R_List.getAdapter().getItemCount());
+
+                    }else{
+                        Gnw_NoRecord.setVisibility(View.VISIBLE);
+
+                    }
+
+                }
 
             }
 
