@@ -40,6 +40,11 @@ public class GrowthWeight extends AppCompatActivity {
                 .getInstance().getReference("GrowthWeight")
                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
+   private String name,DOB,
+            FirstWeight,FirstHeight,FirstDate,
+            SecondWeight,SecondHeight,SecondDate,
+            ThirdWeight,ThirdHeight,ThirdDate;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +52,38 @@ public class GrowthWeight extends AppCompatActivity {
 
 
         InitializeViews();
+        // checking if the intent has extra  data or not
+        if(this.getIntent().getExtras() != null){
+
+
+            name = getIntent().getStringExtra("Name");
+            DOB = getIntent().getStringExtra("DOB");
+            FirstDate = getIntent().getStringExtra("Fdate");
+            FirstWeight=getIntent().getStringExtra("Fweight");
+            FirstHeight=getIntent().getStringExtra("Fheight");
+            SecondDate= getIntent().getStringExtra("Sdate");;
+            SecondWeight=getIntent().getStringExtra("Sweight");
+            SecondHeight=getIntent().getStringExtra("Sheight");
+            ThirdDate= getIntent().getStringExtra("Tdate");
+            ThirdWeight=getIntent().getStringExtra("Tweight");
+            ThirdHeight=getIntent().getStringExtra("Theight");
+
+
+
+            GnW_RabbitName.setText(name);
+            GnW_RabbitDOB.setText(DOB);
+            GnW_FirstWeight.setText(FirstWeight);
+            GnW_FirstHeight.setText(FirstHeight);
+            GnW_FirstWeighingDate.setText(FirstDate);
+            GnW_SecondWeight.setText(SecondWeight);
+            GnW_SecondHeight.setText(SecondHeight);
+            GnW_SecondWeighingDate.setText(SecondDate);
+            GnW_ThirdWeight.setText(ThirdWeight);
+            GnW_ThirdHeight.setText(ThirdHeight);
+            GnW_ThirdWeighingDate.setText(ThirdDate);
+
+        }
+        /*** ELSE NEEDED**/
 
 
         GnW_Save.setOnClickListener(view -> {

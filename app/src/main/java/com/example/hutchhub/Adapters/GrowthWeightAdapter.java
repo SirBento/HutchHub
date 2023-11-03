@@ -93,22 +93,26 @@ public class GrowthWeightAdapter extends RecyclerView.Adapter<GrowthWeightAdapte
 
           Intent intent = new Intent(holder.itemView.getContext(), GrowthWeight.class);
 
-
           intent.putExtra("Name", arrayList.get(position).getName());
           intent.putExtra("DOB", arrayList.get(position).getDOB());
           intent.putExtra("Fdate", arrayList.get(position).getFirstDate());
           intent.putExtra("Fweight", arrayList.get(position).getFirstWeight());
           intent.putExtra("Fheight", arrayList.get(position).getFirstHeight());
 
-          intent.putExtra("Sdate", arrayList.get(position).getSecondDate());
-          intent.putExtra("Sweight", arrayList.get(position).getSecondWeight());
-          intent.putExtra("Sheight", arrayList.get(position).getSecondHeight());
+          if(!arrayList.get(position).getSecondDate().isEmpty()){
+              intent.putExtra("Sdate", arrayList.get(position).getSecondDate());
+              intent.putExtra("Sweight", arrayList.get(position).getSecondWeight());
+              intent.putExtra("Sheight", arrayList.get(position).getSecondHeight());
+          }
 
-          intent.putExtra("Tdate", arrayList.get(position).getThirdDate());
-          intent.putExtra("Tweight", arrayList.get(position).getThirdWeight());
-          intent.putExtra("Theight", arrayList.get(position).getThirdHeight());
+          if(!arrayList.get(position).getThirdDate().isEmpty()) {
+              intent.putExtra("Tdate", arrayList.get(position).getThirdDate());
+              intent.putExtra("Tweight", arrayList.get(position).getThirdWeight());
+              intent.putExtra("Theight", arrayList.get(position).getThirdHeight());
+          }
+
           holder.itemView.getContext().startActivity(intent);
-          //TODO:open data cupturing activity but put extra data to diplay for the user to edit
+
 
       });
 
