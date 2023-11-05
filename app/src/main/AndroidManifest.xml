@@ -19,6 +19,9 @@
         android:theme="@style/Theme.HutchHIub"
         tools:targetApi="31">
         <activity
+            android:name=".SavedFeedingSchedule"
+            android:exported="false" />
+        <activity
             android:name=".GrowthWeightList"
             android:exported="false" />
         <activity

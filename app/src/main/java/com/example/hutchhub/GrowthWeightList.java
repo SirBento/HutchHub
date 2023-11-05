@@ -77,8 +77,6 @@ public class GrowthWeightList extends AppCompatActivity {
 
             startActivity(new Intent( GrowthWeightList.this, GrowthWeight.class));
 
-            //Todo: open the activity with already available data. make edit texts visible or unvisible
-
         });
 
 

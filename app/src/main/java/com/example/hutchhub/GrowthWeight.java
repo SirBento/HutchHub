@@ -34,6 +34,8 @@ public class GrowthWeight extends AppCompatActivity {
 
     private int year, month, day;
 
+    View Gnw_View1,Gnw_View2,Gnw_View3;
+
     final Calendar calendar = Calendar.getInstance();
 
     DatabaseReference SavingInInfoDB  = FirebaseDatabase
@@ -69,41 +71,54 @@ public class GrowthWeight extends AppCompatActivity {
             ThirdHeight=getIntent().getStringExtra("Theight");
 
 
-
             GnW_RabbitName.setText(name);
             GnW_RabbitDOB.setText(DOB);
             GnW_FirstWeight.setText(FirstWeight);
             GnW_FirstHeight.setText(FirstHeight);
             GnW_FirstWeighingDate.setText(FirstDate);
-            GnW_SecondWeight.setText(SecondWeight);
-            GnW_SecondHeight.setText(SecondHeight);
-            GnW_SecondWeighingDate.setText(SecondDate);
-            GnW_ThirdWeight.setText(ThirdWeight);
-            GnW_ThirdHeight.setText(ThirdHeight);
-            GnW_ThirdWeighingDate.setText(ThirdDate);
 
-        }
-        /*** ELSE NEEDED**/
+            // If the second weighing details is not set
+            if (!SecondDate.equals(null)){
+
+                GnW_SecondWeight.setText(SecondWeight);
+                GnW_SecondHeight.setText(SecondHeight);
+                GnW_SecondWeighingDate.setText(SecondDate);
+                GnW_SecondWeighingDate.setClickable(false);
+
+            }else {
+                Gnw_View2.setVisibility(View.GONE);
+                GnW_SecondWeight.setVisibility(View.GONE);
+                GnW_SecondHeight.setVisibility(View.GONE);
+                GnW_SecondWeighingDate.setVisibility(View.GONE);
+            }
+
+            // If the third weighing details is not set
+            if(!ThirdDate.equals(null)){
+
+                GnW_ThirdWeight.setText(ThirdWeight);
+                GnW_ThirdHeight.setText(ThirdHeight);
+                GnW_ThirdWeighingDate.setText(ThirdDate);
+                GnW_ThirdWeighingDate.setClickable(false);
+
+            }else{
+                Gnw_View3.setVisibility(View.GONE);
+                GnW_ThirdWeight.setVisibility(View.GONE);
+                GnW_ThirdHeight.setVisibility(View.GONE);
+                GnW_ThirdWeighingDate.setVisibility(View.GONE);
+            }
 
 
-        GnW_Save.setOnClickListener(view -> {
+        }else{
 
-            HashMap<String,String> growthNweightMap = new HashMap<>();
-            growthNweightMap.put("name",GnW_RabbitName.getText().toString());
-            growthNweightMap.put("DOB",GnW_RabbitDOB.getText().toString());
+            Gnw_View2.setVisibility(View.GONE);
+            GnW_SecondWeight.setVisibility(View.GONE);
+            GnW_SecondHeight.setVisibility(View.GONE);
+            GnW_SecondWeighingDate.setVisibility(View.GONE);
 
-            growthNweightMap.put("FirstWeight",GnW_FirstWeight.getText().toString());
-            growthNweightMap.put("FirstHeight",GnW_FirstHeight.getText().toString());
-            growthNweightMap.put("FirstDate",GnW_FirstWeighingDate.getText().toString());
-
-            growthNweightMap.put("SecondWeight",GnW_SecondWeight.getText().toString());
-            growthNweightMap.put("SecondHeight",GnW_SecondHeight.getText().toString());
-            growthNweightMap.put("SecondDate",GnW_SecondWeighingDate.getText().toString());
-
-            growthNweightMap.put("ThirdWeight",GnW_ThirdWeight.getText().toString());
-            growthNweightMap.put("ThirdHeight",GnW_ThirdHeight.getText().toString());
-            growthNweightMap.put("ThirdDate",GnW_ThirdWeighingDate.getText().toString());
-
+            Gnw_View3.setVisibility(View.GONE);
+            GnW_ThirdWeight.setVisibility(View.GONE);
+            GnW_ThirdHeight.setVisibility(View.GONE);
+            GnW_ThirdWeighingDate.setVisibility(View.GONE);
 
             GnW_FirstWeighingDate.setOnClickListener(view1 -> {
 
@@ -144,6 +159,32 @@ public class GrowthWeight extends AppCompatActivity {
                 }
             });
 
+        }
+
+
+        GnW_Save.setOnClickListener(view -> {
+
+            if(!ValidateEditTextValues(GnW_RabbitName)|!ValidateEditTextValues(GnW_RabbitDOB)){
+                return;
+            }
+
+            HashMap<String,String> growthNweightMap = new HashMap<>();
+            growthNweightMap.put("name",GnW_RabbitName.getText().toString());
+            growthNweightMap.put("DOB",GnW_RabbitDOB.getText().toString());
+
+            growthNweightMap.put("FirstWeight",GnW_FirstWeight.getText().toString());
+            growthNweightMap.put("FirstHeight",GnW_FirstHeight.getText().toString());
+            growthNweightMap.put("FirstDate",GnW_FirstWeighingDate.getText().toString());
+
+            growthNweightMap.put("SecondWeight",GnW_SecondWeight.getText().toString());
+            growthNweightMap.put("SecondHeight",GnW_SecondHeight.getText().toString());
+            growthNweightMap.put("SecondDate",GnW_SecondWeighingDate.getText().toString());
+
+            growthNweightMap.put("ThirdWeight",GnW_ThirdWeight.getText().toString());
+            growthNweightMap.put("ThirdHeight",GnW_ThirdHeight.getText().toString());
+            growthNweightMap.put("ThirdDate",GnW_ThirdWeighingDate.getText().toString());
+
+
             SavingInInfoDB.setValue(growthNweightMap).addOnCompleteListener(task -> {
 
                 if(task.isSuccessful()) {
@@ -157,12 +198,6 @@ public class GrowthWeight extends AppCompatActivity {
                     Toast.makeText(this, "ERROR: Please check your internet connection", Toast.LENGTH_SHORT).show();
                 }
             });
-
-
-
-
-
-
 
         });
 
@@ -183,6 +218,10 @@ public class GrowthWeight extends AppCompatActivity {
         GnW_ThirdHeight = findViewById(R.id.GnW_ThirdHeight);
         GnW_ThirdWeighingDate = findViewById(R.id.GnW_ThirdWeighingDate);
         GnW_Save = findViewById(R.id.GnW_Save);
+
+        Gnw_View1 = findViewById(R.id.Gnw_View1);
+        Gnw_View2= findViewById(R.id.Gnw_View2);
+        Gnw_View3= findViewById(R.id.Gnw_View3);
 
 
         year = calendar.get(Calendar.YEAR);

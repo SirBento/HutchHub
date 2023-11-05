@@ -82,6 +82,7 @@
                 android:textStyle="italic" />
 
             <View
+                android:id="@+id/Gnw_View1"
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
                 android:layout_marginTop="10dp"
@@ -131,6 +132,7 @@
                 android:textStyle="italic" />
 
             <View
+                android:id="@+id/Gnw_View2"
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
                 android:layout_marginTop="10dp"
@@ -180,6 +182,7 @@
                 android:textStyle="italic" />
 
             <View
+                android:id="@+id/Gnw_View3"
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
                 android:layout_marginTop="10dp"
@@ -227,11 +230,7 @@
                 android:textSize="18sp"
                 android:textStyle="italic" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/blue" />
+
 
 
             <androidx.appcompat.widget.AppCompatButton

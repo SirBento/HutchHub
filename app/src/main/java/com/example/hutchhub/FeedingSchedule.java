@@ -215,7 +215,7 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
                 if(task.isSuccessful()){
 
                     Toast.makeText(FeedingSchedule.this, "Reminders have been set for you", Toast.LENGTH_LONG).show();
-                    //Todo:Open new activity
+                    startActivity(new Intent(this,SavedFeedingSchedule.class));
                 }else{
                     Toast.makeText(FeedingSchedule.this, "ERROR: Please check you internet connection", Toast.LENGTH_LONG).show();
                 }
