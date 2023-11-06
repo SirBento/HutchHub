@@ -52,8 +52,7 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
         // Database instance
         feedsDB = FirebaseDatabase
                 .getInstance()
-                .getReference()
-                .child("FeedingSchedule")
+                .getReference("FeedingSchedule")
                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
         //Initialising Layouts
