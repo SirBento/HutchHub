@@ -10,5 +10,7 @@ public class BreedingCare extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_breeding_care);
+
+        // Todo: Get user entered data and calculate preg due date and palpatin dates
     }
 }
