@@ -183,6 +183,38 @@
         app:layout_constraintTop_toBottomOf="@+id/CustomBreedPalpateDate" />
 
 
+    <TextView
+        android:id="@+id/CustomBreedRecomendedFood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:text="Recomended Food: "
+        android:textColor="@color/black"
+        app:layout_goneMarginTop="12dp"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-condensed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CustomBreedBirthDate" />
+
+    <TextView
+        android:id="@+id/CustomBreedFoodQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:text="Food Quantity: "
+        android:textColor="@color/black"
+        app:layout_goneMarginTop="12dp"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-condensed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CustomBreedRecomendedFood" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

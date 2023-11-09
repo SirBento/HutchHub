@@ -1,11 +1,21 @@
 package com.example.hutchhub;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -17,6 +27,10 @@ public class BreedingCare extends AppCompatActivity {
             rabbit_Breed_Doe_Breed,rabbit_Breed_Buck,
             rabbit_Breed_Buck_Age, rabbit_Breed_Buck_Breed,
             rabbit_Breed_Falls,rabbit_Breed_Date;
+
+    DatabaseReference detailsDB = FirebaseDatabase.getInstance()
+            .getReference("BreedingCare")
+            .child(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
     Button btn_Breed_Save;
 
@@ -43,11 +57,17 @@ public class BreedingCare extends AppCompatActivity {
 
         btn_Breed_Save.setOnClickListener(view -> {
 
+            if(!ValidateEditTextValues(rabbit_Breed_Doe)| !ValidateEditTextValues(rabbit_Breed_Doe_Age)
+                    |!ValidateEditTextValues(rabbit_Breed_Doe_Breed) |!ValidateEditTextValues(rabbit_Breed_Buck)|!ValidateEditTextValues(rabbit_Breed_Buck_Age)
+                    |!ValidateEditTextValues(rabbit_Breed_Buck_Breed)|!ValidateEditTextValues(rabbit_Breed_Falls)|!ValidateEditTextValues(rabbit_Breed_Date)){
+
+                return;
+            }
+
             SaveDetails();
 
         });
 
-// Todo : ADD RECOMMENDED FOOD  kgs FOR PREG RABBITS amoung may others
     }
 
 
@@ -64,7 +84,10 @@ public class BreedingCare extends AppCompatActivity {
         BreedingCare.put("Buck_Breed",rabbit_Breed_Buck_Breed.getText().toString());
         BreedingCare.put("Falls",rabbit_Breed_Falls.getText().toString());
         BreedingCare.put("Cross_Date",rabbit_Breed_Date.getText().toString());
-        BreedingCare.put("Reco_food",);
+        BreedingCare.put("Reco_food","Dark Leafy Greens\nAlfAlfa Hay\nRabbit Pellets");
+        BreedingCare.put("Quantity","Grass hay - 85% (ideally unlimited)\nFresh leafy greens - 10% (2 handfuls a day)\nQuality pellets - 5% (just 2-5 tablespoons a day)\n Clean drinking water - unlimited");
+
+
 
         String inputDate = rabbit_Breed_Date.getText().toString();
 
@@ -95,7 +118,19 @@ public class BreedingCare extends AppCompatActivity {
             e.printStackTrace();
         }
 
-//Todo: save all the data, use the current user id
+        detailsDB.setValue(BreedingCare).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+
+                if(task.isSuccessful()){
+                    Toast.makeText(BreedingCare.this, "Breeding Information Saved", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(com.example.hutchhub.BreedingCare.this, BreedingCareList.class));
+                    finish();
+                }
+
+            }
+        });
+
 
 }
 
@@ -115,6 +150,24 @@ private void initializeValues(){
     month = calendar.get(Calendar.MONTH);
     day = calendar.get(Calendar.DAY_OF_MONTH);
 }
+
+
+    private boolean ValidateEditTextValues(EditText editText){
+
+        String Value = editText.getText().toString().trim();
+
+
+        if (Value.isEmpty()) {
+            editText.setError("This field is required");
+            editText.requestFocus();
+            return false;
+        } else {
+            editText.setError(null);
+            return true;
+        }
+
+
+    }
 
 }
 

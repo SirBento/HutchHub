@@ -77,17 +77,13 @@ public class Chat extends AppCompatActivity {
         messageRecyclerView.setAdapter(messageAdapter);
 
 
-        sendButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(validateMessage()){
-                  SaveMessage();
-                  input_message.setText("");
-                }
-
+        sendButton.setOnClickListener(v -> {
+            if(validateMessage()){
+              SaveMessage();
+              input_message.setText("");
             }
-        });
 
+        });
 
     }
 

@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent( MainActivity.this, BreedingCare.class));
+                startActivity(new Intent( MainActivity.this, BreedingCareList.class));
             }
         });
 
