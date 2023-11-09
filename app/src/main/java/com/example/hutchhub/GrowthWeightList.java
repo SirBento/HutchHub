@@ -75,7 +75,8 @@ public class GrowthWeightList extends AppCompatActivity {
 
         btn_addRabbitGrowthWeight.setOnClickListener(view -> {
 
-            startActivity(new Intent( GrowthWeightList.this, GrowthWeight.class));
+            startActivity(new Intent(this, com.example.hutchhub.GrowthWeight.class));
+
 
         });
 
@@ -92,7 +93,7 @@ public class GrowthWeightList extends AppCompatActivity {
 
                         com.example.hutchhub.Models.GrowthWeight growthWeight
                                 = snapshot.getValue(com.example.hutchhub.Models.GrowthWeight.class);
-
+                        GrowthWeight_A_List.add(growthWeight);
                         growthWeightAdapter.notifyDataSetChanged();
                         RabbitGrowthWeight_R_List.smoothScrollToPosition( RabbitGrowthWeight_R_List.getAdapter().getItemCount());
 
@@ -115,7 +116,7 @@ public class GrowthWeightList extends AppCompatActivity {
 
                         com.example.hutchhub.Models.GrowthWeight growthWeight
                                 = snapshot.getValue(com.example.hutchhub.Models.GrowthWeight.class);
-
+                        GrowthWeight_A_List.add(growthWeight);
                         growthWeightAdapter.notifyDataSetChanged();
                         RabbitGrowthWeight_R_List.smoothScrollToPosition( RabbitGrowthWeight_R_List.getAdapter().getItemCount());
 

@@ -106,9 +106,7 @@ public class Chat extends AppCompatActivity {
                             messageAdapter.notifyDataSetChanged();
                             messageRecyclerView.smoothScrollToPosition(messageRecyclerView.getAdapter().getItemCount());
 
-
                         }
-
 
                     }
 

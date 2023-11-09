@@ -43,7 +43,7 @@
         tools:layout_editor_absoluteX="-1dp">
 
         <LinearLayout
-            android:layout_width="390dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="30dp"

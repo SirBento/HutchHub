@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:layout_marginTop="10dp"
+    android:background="#E0F3FF" >
+
+
+    <LinearLayout
+        android:id="@+id/secondtInfoLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.063">
+
+        <TextView
+            android:id="@+id/CustomBreedCareDoeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:text="Doe Name:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="173dp" />
+
+        <TextView
+            android:id="@+id/CustomBreedCareDoeAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:text="Doe Age:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="173dp" />
+
+        <TextView
+            android:id="@+id/CustomBreedCareDoeBreed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:text="Doe Breed:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@+id/GW_CustomRabbitFirstWeight"
+            tools:layout_editor_absoluteX="173dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/thirdInfoLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/wGreen"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.911"
+        app:layout_constraintStart_toEndOf="@+id/secondtInfoLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.063">
+
+        <TextView
+            android:id="@+id/CustomBreedCareBuckName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:text="Buck Name:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="173dp" />
+
+        <TextView
+            android:id="@+id/CustomBreedCareBuckAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:text="Buck Age:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="173dp" />
+
+        <TextView
+            android:id="@+id/CustomBreedCareBuckBreed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:text="Buck Breed:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@+id/GW_CustomRabbitFirstWeight"
+            tools:layout_editor_absoluteX="173dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/CustomBreedCareFalls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:text="Successful Falls: "
+        android:textColor="@color/black"
+        app:layout_goneMarginTop="12dp"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-condensed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/secondtInfoLayout" />
+
+    <TextView
+        android:id="@+id/CustomBreedCrossingDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:text="Crossing Date:"
+        android:textColor="@color/black"
+        app:layout_goneMarginTop="12dp"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-condensed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CustomBreedCareFalls" />
+
+    <TextView
+        android:id="@+id/CustomBreedPalpateDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:text="Predicted Palpating Date:"
+        android:textColor="@color/black"
+        app:layout_goneMarginTop="12dp"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-condensed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CustomBreedCrossingDate" />
+
+
+
+    <TextView
+        android:id="@+id/CustomBreedBirthDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:text="Predicted Birth Date:"
+        android:textColor="@color/black"
+        app:layout_goneMarginTop="12dp"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-condensed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CustomBreedPalpateDate" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+

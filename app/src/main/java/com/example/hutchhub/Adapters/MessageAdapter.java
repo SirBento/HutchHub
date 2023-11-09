@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.hutchhub.Models.Message;
 import com.example.hutchhub.R;
@@ -28,6 +29,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
     public class MessageViewHolder extends RecyclerView.ViewHolder
     {
         public TextView senderMessageText, receiverMessageText,receiver_username;
+        public ConstraintLayout constraintLayout_sender;
 
 
         public MessageViewHolder(@NonNull View itemView) {
@@ -36,6 +38,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             senderMessageText = itemView.findViewById(R.id.sender_message_text);
             receiverMessageText = itemView.findViewById(R.id.receiver_message_text);
             receiver_username = itemView.findViewById(R.id.receiver_username);
+            constraintLayout_sender = itemView.findViewById(R.id.constraintLayout_sender);
         }
     }
 
@@ -58,10 +61,13 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
         if(messageSenderID.equals(fromUserID)){
 
-            holder.senderMessageText.setVisibility(View.VISIBLE);
+
+            holder.constraintLayout_sender.setVisibility(View.INVISIBLE);
             holder.receiverMessageText.setVisibility(View.INVISIBLE);
             holder.receiver_username.setVisibility(View.INVISIBLE);
+
             holder.senderMessageText.setTextColor(Color.BLACK);
+            holder.senderMessageText.setVisibility(View.VISIBLE);
             holder.senderMessageText.setBackgroundResource(R.drawable.sender_messeges_layout);
             holder.senderMessageText.setText(messages.getMessage() + "\n \n" + messages.getTime() + "\n" + messages.getDate());
 

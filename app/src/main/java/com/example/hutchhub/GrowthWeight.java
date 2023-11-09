@@ -33,10 +33,10 @@ public class GrowthWeight extends AppCompatActivity {
     Button GnW_Save;
 
     private int year, month, day;
+    final Calendar calendar = Calendar.getInstance();
 
     View Gnw_View1,Gnw_View2,Gnw_View3;
 
-    final Calendar calendar = Calendar.getInstance();
 
     DatabaseReference SavingInInfoDB  = FirebaseDatabase
                 .getInstance().getReference("GrowthWeight")
