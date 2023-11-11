@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="10dp"
+    android:padding="3dp"
     android:layout_marginTop="10dp"
     android:background="#E0F3FF" >
 
@@ -154,7 +154,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
         android:gravity="center"
-        android:text="Predicted Palpating Date:"
+        android:text="Predicted Palpating Date: "
         android:textColor="@color/black"
         app:layout_goneMarginTop="12dp"
         android:textSize="20sp"
