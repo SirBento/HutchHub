@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -30,14 +31,14 @@ import okhttp3.Response;
 
 public class DetailForRabbit extends AppCompatActivity {
 
-    String PhoneNum, Address, Breed, Description, Price, Quantity, key, String;
+    String PhoneNum, Address, Breed, Description, Price, Quantity, key, SellerID, sellerUsername;
     TextView detPhone, detLocation,detQuantity,detBreed,detPrice;
     EditText detDescription;
 
     Button btn_detForDone;
-
     DatabaseReference  userRef;
 
+    LoadingDialog loadingDialog = new LoadingDialog(DetailForRabbit.this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,12 +61,14 @@ public class DetailForRabbit extends AppCompatActivity {
         detBreed.setText(Breed);
         detPrice.setText(Price);
         detDescription.setText(Description);
+        getUserName();
 
 
         btn_detForDone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                loadingDialog.startLoadingDialog();
+                SendNotification("Hello, there is someone interested in the rabbits you listed for sale");
 
 
             }
@@ -83,6 +86,7 @@ public class DetailForRabbit extends AppCompatActivity {
         Price = getIntent().getStringExtra("Price");
         Quantity = getIntent().getStringExtra("Quantity");
         key = getIntent().getStringExtra("Key");
+        SellerID = getIntent().getStringExtra("SellerID");
 
 
     }
@@ -124,10 +128,16 @@ public class DetailForRabbit extends AppCompatActivity {
             jsonObject.put("to",key);
 
             callApi(jsonObject);
+            Toast.makeText(this, "Seller has been notified! But you can also use there listed number to call them", Toast.LENGTH_LONG).show();
+            loadingDialog.dismissDialog();
 
+            /** open new intent**/
 
         }catch (Exception e){
 
+            Toast.makeText(this, "Error: Something Happened, Please Retry", Toast.LENGTH_LONG).show();
+            loadingDialog.dismissDialog();
+            /** remain on the same intent  to allow user to retry**/
         }
 
 

@@ -13,6 +13,7 @@ import android.widget.Button;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.HashMap;
 
@@ -70,7 +71,7 @@ public class ListRabbit extends AppCompatActivity {
                  rabbitForSale.put("breed", breed);
                  rabbitForSale.put("quantity", quantity);
                  rabbitForSale.put("description", description);
-                 rabbitForSale.put("fcm",);
+                 rabbitForSale.put("key",FirebaseMessaging.getInstance().getToken().toString());
                  databaseRef.push().setValue(rabbitForSale);
                  loadingDialog.dismissDialog();
 
