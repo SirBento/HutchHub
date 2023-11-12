@@ -131,7 +131,7 @@ public class BreedingCare extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
 
                 if(task.isSuccessful()){
-                    Toast.makeText(BreedingCare.this, "Breeding Information Saved", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(BreedingCare.this, "Breeding Information Saved", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(com.example.hutchhub.BreedingCare.this, BreedingCareList.class));
                     finish();
                 }
