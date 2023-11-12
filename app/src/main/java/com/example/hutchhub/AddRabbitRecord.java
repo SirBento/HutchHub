@@ -58,12 +58,11 @@ public class AddRabbitRecord extends AppCompatActivity {
     LoadingDialog loadingDialog = new LoadingDialog(AddRabbitRecord.this);
     Uri resultUri;
 
-    private DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference();
+    private DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference("RabbitRecords");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_rabbit_record);
-
 
 
         //Assigning all values

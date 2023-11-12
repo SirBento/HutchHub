@@ -20,6 +20,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -28,6 +32,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import jp.wasabeef.recyclerview.animators.SlideInUpAnimator;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class Chat extends AppCompatActivity {
 
@@ -80,12 +91,14 @@ public class Chat extends AppCompatActivity {
         sendButton.setOnClickListener(v -> {
             if(validateMessage()){
               SaveMessage();
+              SendNotification(Displaymessage);
               input_message.setText("");
             }
 
         });
 
     }
+
 
 
     @Override
@@ -188,4 +201,35 @@ public class Chat extends AppCompatActivity {
         }
 
     }
+
+
+    private void SendNotification(String displaymessage) {
+
+
+    }
+
+    void callApi(JSONObject jsonObject){
+        MediaType JSON = MediaType.get("application/json; charset=utf-8");
+        OkHttpClient client = new OkHttpClient();
+        String url = "https://fcm.googleapis.com/fcm/send";
+        RequestBody body = RequestBody.create(jsonObject.toString(),JSON);
+        Request request = new Request.Builder()
+                .url(url)
+                .post(body)
+                .header("Authorization","Bearer 9018976dd8f78d5aa658d1d0cf1d5f76e561a224")
+                .build();
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NonNull Call call, @NonNull IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+
+            }
+        });
+
+    }
+
 }

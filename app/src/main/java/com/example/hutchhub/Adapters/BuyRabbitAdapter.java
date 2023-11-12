@@ -85,6 +85,7 @@ public class BuyRabbitAdapter extends RecyclerView.Adapter<BuyRabbitAdapter.BuyR
                 public void onClick(View view) {
                     // open details for rabbit add extra details in intent
                     Intent intent = new Intent(holder.itemView.getContext(), DetailForRabbit.class);
+                    intent.putExtra("Key",arrayList.get(position).getKey());
                     intent.putExtra("PhoneNum", arrayList.get(position).getPhone());
                     intent.putExtra("Address", arrayList.get(position).getAddress());
                     intent.putExtra("Breed", arrayList.get(position).getBreed());

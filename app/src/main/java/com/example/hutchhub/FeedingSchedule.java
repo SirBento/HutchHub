@@ -86,15 +86,8 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
             }
             Log.e("FEEDING",FeedingSchedule_FeedingTimes.getText().toString());
 
-           /*** if(!FeedingSchedule_FeedingTimes.getText().toString().equals("1")
-                    ||!FeedingSchedule_FeedingTimes.getText().toString().equals("2")
-                    ||!FeedingSchedule_FeedingTimes.getText().toString().equals("3")){
 
-                FeedingSchedule_FeedingTimes.setError("Invalid:Use the range of 1 to 3 ");
-                FeedingSchedule_FeedingTimes.requestFocus();
-
-            }else **/
-                if(FeedingSchedule_FeedingTimes.getText().toString().equals("1")){
+            if(FeedingSchedule_FeedingTimes.getText().toString().equals("1")){
 
                 time1_Layout.setVisibility(View.VISIBLE);
                 FeedingSchedule_Done.setVisibility(View.VISIBLE);
@@ -113,6 +106,15 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
                 time2_Layout.setVisibility(View.VISIBLE);
                 time3_Layout.setVisibility(View.VISIBLE);
                 FeedingSchedule_Done.setVisibility(View.VISIBLE);
+
+            }
+            /** May cause issues**/
+            if(!FeedingSchedule_FeedingTimes.getText().toString().equals("1")
+                    ||!FeedingSchedule_FeedingTimes.getText().toString().equals("2")
+                    ||!FeedingSchedule_FeedingTimes.getText().toString().equals("3")){
+
+                FeedingSchedule_FeedingTimes.setError("Invalid:Use the range of 1 to 3 ");
+                FeedingSchedule_FeedingTimes.requestFocus();
 
             }
 

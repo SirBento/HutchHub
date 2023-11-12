@@ -70,6 +70,7 @@ public class ListRabbit extends AppCompatActivity {
                  rabbitForSale.put("breed", breed);
                  rabbitForSale.put("quantity", quantity);
                  rabbitForSale.put("description", description);
+                 rabbitForSale.put("fcm",);
                  databaseRef.push().setValue(rabbitForSale);
                  loadingDialog.dismissDialog();
 

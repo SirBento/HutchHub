@@ -229,7 +229,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="20sp"
         android:background="@drawable/button_background"
-        android:text="Order"
+        android:text="I Want To Buy"
         android:textColor="@color/white"
         android:textSize="23sp"
         android:textStyle="bold"
