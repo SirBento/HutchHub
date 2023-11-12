@@ -48,11 +48,8 @@ public class BreadingAndCareAdapater extends RecyclerView.Adapter<BreadingAndCar
             CustomBreedRecomendedFood = itemView.findViewById(R.id.CustomBreedRecomendedFood);
             CustomBreedFoodQuantity = itemView.findViewById(R.id.CustomBreedFoodQuantity);
 
-
-
         }
     }
-
 
     @NonNull
     @Override
@@ -73,17 +70,17 @@ public class BreadingAndCareAdapater extends RecyclerView.Adapter<BreadingAndCar
 
        BreedingAndCare breedingAndCare = arrayList.get(position);
 
-        holder.CustomBreedCareDoeName.setText("Doe Name: " + breedingAndCare.getDoe_Name());
-        holder.CustomBreedCareDoeBreed.setText("Doe Breed: " + breedingAndCare.getDoe_Breed());
-        holder.CustomBreedCareDoeAge.setText("Doe Age: " + breedingAndCare.getDoe_Age());
-        holder.CustomBreedCareBuckName.setText("Buck Name: " + breedingAndCare.getBuck_Name());
-        holder.CustomBreedCareBuckAge.setText("Buck Age: " + breedingAndCare.getBuck_Age());
-        holder.CustomBreedCareBuckBreed.setText("Buck Breed: " + breedingAndCare.getBuck_Breed());
+        holder.CustomBreedCareDoeName.setText("Name: " + breedingAndCare.getDoe_Name());
+        holder.CustomBreedCareDoeBreed.setText("Breed: " + breedingAndCare.getDoe_Breed());
+        holder.CustomBreedCareDoeAge.setText("Age: " + breedingAndCare.getDoe_Age());
+        holder.CustomBreedCareBuckName.setText("Name: " + breedingAndCare.getBuck_Name());
+        holder.CustomBreedCareBuckAge.setText("Age: " + breedingAndCare.getBuck_Age());
+        holder.CustomBreedCareBuckBreed.setText("Breed: " + breedingAndCare.getBuck_Breed());
         holder.CustomBreedCareFalls.setText("Successful Falls: " + breedingAndCare.getFalls());
         holder.CustomBreedCrossingDate.setText("Crossing Date: " +breedingAndCare.getCross_Date());
         holder.CustomBreedPalpateDate.setText("Predicted Palpating Date: " +breedingAndCare.getPal_Date());
         holder.CustomBreedBirthDate.setText("Predicted Birth Date: " +breedingAndCare.getPregDue_Date());
-        holder.CustomBreedRecomendedFood.setText("Recomended Food: " +breedingAndCare.getReco_food());
+        holder.CustomBreedRecomendedFood.setText("Recommended Food: " +breedingAndCare.getReco_food());
         holder.CustomBreedFoodQuantity.setText("Food Quantity: " +breedingAndCare.getQuantity());
 
     }

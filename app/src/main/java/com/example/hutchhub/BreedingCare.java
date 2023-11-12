@@ -98,7 +98,7 @@ public class BreedingCare extends AppCompatActivity {
         BreedingCare.put("Quantity","Grass hay: 85%(ideally unlimited)\nFresh leafy greens: 10%(2 handfuls a day)\nQuality Pellets: 5%(2-5 tablespoons a day)\nClean Water: unlimited");
 
         String inputDate = rabbit_Breed_Date.getText().toString();
-
+//TODO: should add new alarms based on the calculated date to notify the user
         try {
             SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
             Calendar calendar = Calendar.getInstance();

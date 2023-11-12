@@ -105,6 +105,20 @@ public class BreedingCareList extends AppCompatActivity {
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
 
+                if(snapshot.exists()&& snapshot.getKey().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())){
+
+                    BreedingAndCare breedingAndCare =  snapshot.getValue(BreedingAndCare.class);
+
+                    BreedingAndCareArrayList.add(breedingAndCare);
+                    breadingAndCareAdapater.notifyDataSetChanged();
+                    Breed_Care_R_List.smoothScrollToPosition(Breed_Care_R_List.getAdapter().getItemCount());
+
+                }else{
+
+                    Breed_Care_NoRecord.setVisibility(View.VISIBLE);
+                }
+
+
             }
 
             @Override
@@ -143,7 +157,7 @@ public class BreedingCareList extends AppCompatActivity {
         }
 
         if (filteredlist.isEmpty()) {
-            Toast.makeText(this, "No Rabbit By that Name is available", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "No Rabbit By that Name is available", Toast.LENGTH_LONG).show();
         } else {
 
             breadingAndCareAdapater.setFilteredList(filteredlist);

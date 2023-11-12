@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="3dp"
-    android:layout_marginTop="10dp"
+    android:padding="2dp"
+    android:layout_marginTop="2dp"
     android:background="#E0F3FF" >
 
 
@@ -14,12 +14,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
-        android:background="@color/colorPrimary"
+        android:background="@color/brown"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.063">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:text="Doe Information"
+            android:textColor="@color/green"
+            android:textStyle="italic"
+            android:textSize="25sp"
+            tools:layout_editor_absoluteX="173dp" />
 
         <TextView
             android:id="@+id/CustomBreedCareDoeName"
@@ -30,6 +42,7 @@
             android:gravity="center"
             android:text="Doe Name:"
             android:textColor="@color/black"
+            android:textStyle="bold"
             android:textSize="20sp"
             tools:layout_editor_absoluteX="173dp" />
 
@@ -42,6 +55,7 @@
             android:fontFamily="sans-serif-condensed"
             android:gravity="center"
             android:text="Doe Age:"
+            android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="20sp"
             tools:layout_editor_absoluteX="173dp" />
@@ -55,6 +69,7 @@
             android:fontFamily="sans-serif-condensed"
             android:gravity="center"
             android:text="Doe Breed:"
+            android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintTop_toBottomOf="@+id/GW_CustomRabbitFirstWeight"
@@ -76,12 +91,25 @@
         app:layout_constraintVertical_bias="0.063">
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:text="Buck Information"
+            android:textColor="@color/brown"
+            android:textStyle="italic"
+            android:textSize="25sp"
+            tools:layout_editor_absoluteX="173dp" />
+
+        <TextView
             android:id="@+id/CustomBreedCareBuckName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:fontFamily="sans-serif-condensed"
             android:gravity="center"
+            android:textStyle="bold"
             android:text="Buck Name:"
             android:textColor="@color/black"
             android:textSize="20sp"
@@ -95,6 +123,7 @@
             android:layout_marginTop="1dp"
             android:fontFamily="sans-serif-condensed"
             android:gravity="center"
+            android:textStyle="bold"
             android:text="Buck Age:"
             android:textColor="@color/black"
             android:textSize="20sp"
@@ -109,6 +138,7 @@
             android:fontFamily="sans-serif-condensed"
             android:gravity="center"
             android:text="Buck Breed:"
+            android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintTop_toBottomOf="@+id/GW_CustomRabbitFirstWeight"
@@ -123,7 +153,7 @@
         android:layout_marginTop="1dp"
         android:gravity="center"
         android:text="Successful Falls: "
-        android:textColor="@color/black"
+        android:textColor="@color/deepBrown"
         app:layout_goneMarginTop="12dp"
         android:textSize="20sp"
         android:fontFamily="sans-serif-condensed"
@@ -139,9 +169,9 @@
         android:layout_marginTop="1dp"
         android:gravity="center"
         android:text="Crossing Date:"
-        android:textColor="@color/black"
         app:layout_goneMarginTop="12dp"
         android:textSize="20sp"
+        android:textColor="@color/deepBrown"
         android:fontFamily="sans-serif-condensed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.005"
@@ -155,7 +185,7 @@
         android:layout_marginTop="1dp"
         android:gravity="center"
         android:text="Predicted Palpating Date: "
-        android:textColor="@color/black"
+        android:textColor="@color/deepBrown"
         app:layout_goneMarginTop="12dp"
         android:textSize="20sp"
         android:fontFamily="sans-serif-condensed"
@@ -173,7 +203,7 @@
         android:layout_marginTop="1dp"
         android:gravity="center"
         android:text="Predicted Birth Date:"
-        android:textColor="@color/black"
+        android:textColor="@color/deepBrown"
         app:layout_goneMarginTop="12dp"
         android:textSize="20sp"
         android:fontFamily="sans-serif-condensed"
@@ -189,8 +219,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
         android:gravity="center"
-        android:text="Recomended Food: "
-        android:textColor="@color/black"
+        android:text="Recommended Food: "
+        android:textColor="@color/deepBrown"
         app:layout_goneMarginTop="12dp"
         android:textSize="20sp"
         android:fontFamily="sans-serif-condensed"
@@ -206,7 +236,7 @@
         android:layout_marginTop="1dp"
         android:gravity="center"
         android:text="Food Quantity: "
-        android:textColor="@color/black"
+        android:textColor="@color/deepBrown"
         app:layout_goneMarginTop="12dp"
         android:textSize="20sp"
         android:fontFamily="sans-serif-condensed"
