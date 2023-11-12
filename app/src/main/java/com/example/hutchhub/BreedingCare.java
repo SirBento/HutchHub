@@ -95,9 +95,7 @@ public class BreedingCare extends AppCompatActivity {
         BreedingCare.put("Falls",rabbit_Breed_Falls.getText().toString());
         BreedingCare.put("Cross_Date",rabbit_Breed_Date.getText().toString());
         BreedingCare.put("Reco_food","Dark Leafy Greens\nAlfAlfa Hay\nRabbit Pellets");
-        BreedingCare.put("Quantity","Grass hay - 85% (ideally unlimited)\nFresh leafy greens - 10% (2 handfuls a day)\nQuality pellets - 5% (just 2-5 tablespoons a day)\n Clean drinking water - unlimited");
-
-
+        BreedingCare.put("Quantity","Grass hay: 85%(ideally unlimited)\nFresh leafy greens: 10%(2 handfuls a day)\nQuality Pellets: 5%(2-5 tablespoons a day)\nClean Water: unlimited");
 
         String inputDate = rabbit_Breed_Date.getText().toString();
 
