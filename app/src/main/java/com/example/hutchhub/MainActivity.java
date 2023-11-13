@@ -20,6 +20,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.HashMap;
@@ -30,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
              breedAndCare, pregTrack, Chat, FeedingSchedule, buySell,
              records,growthAndWeight, knowledge, btn_Logout;
 
-
-    DatabaseReference User = FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
-    DatabaseReference SellsRef = FirebaseDatabase.getInstance().getReference("Sells");
+        String UserID= FirebaseAuth.getInstance().getCurrentUser().getUid();
+    DatabaseReference User = FirebaseDatabase.getInstance().getReference("Users").child(UserID);
+    DatabaseReference SellsRef = FirebaseDatabase.getInstance().getReference("Sells").child(UserID);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,51 +91,28 @@ public class MainActivity extends AppCompatActivity {
                 fcmToken.put("fcmToken",token);// change to key
                 User.updateChildren(fcmToken);
 
-                SellsRef.addChildEventListener(new ChildEventListener() {
+
+                HashMap<String, Object> fcmKey = new HashMap<>();
+                fcmKey.put("key",token);// change to key
+
+                /**Find a way to update the Breeding Care node **/
+                SellsRef.setValue(fcmKey);
+
+                    /*    .updateChildren(fcmKey).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
-                    public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                    public void onComplete(@NonNull Task<Void> task) {
 
-                        /** Checking  if there is a sell list that belong to the current user
-                         *  If so update the list with the latest fcm key  */
+                        if(task.isSuccessful()){
+                            Log.e("Care Token",token);
 
-                        if(snapshot.exists() && snapshot.hasChild("sellerId")){
-
-                            if(snapshot.child("sellerId").equals(FirebaseAuth.getInstance().getCurrentUser().getUid())){
-
-                                HashMap<String, Object> fcmKey = new HashMap<>();
-                                fcmKey.put("key",token);// change to key
-                                SellsRef.child(snapshot.getKey()).updateChildren(fcmKey) ;
-                            }
                         }
-                    }
-
-                    @Override
-                    public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-                        if(snapshot.exists() && snapshot.hasChild("sellerId")){
-
-                            if(snapshot.child("sellerId").equals(FirebaseAuth.getInstance().getCurrentUser().getUid())){
-                                SellsRef.child(snapshot.getKey()).updateChildren(fcmToken) ;
-                            }
+                        else{
+                            Log.e("Care Token",task.getException().toString());
                         }
-                    }
-
-
-                    @Override
-                    public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
-                    }
-
-                    @Override
-                    public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
 
                     }
                 });
+*/
             }
 
         });
