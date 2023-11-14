@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         String UserID= FirebaseAuth.getInstance().getCurrentUser().getUid();
     DatabaseReference User = FirebaseDatabase.getInstance().getReference("Users").child(UserID);
-    DatabaseReference SellsRef = FirebaseDatabase.getInstance().getReference("Sells").child(UserID);
+    DatabaseReference SellsRef = FirebaseDatabase.getInstance().getReference().child("Sells");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,23 +96,25 @@ public class MainActivity extends AppCompatActivity {
                 fcmKey.put("key",token);// change to key
 
                 /**Find a way to update the Breeding Care node **/
-                SellsRef.setValue(fcmKey);
-
-                    /*    .updateChildren(fcmKey).addOnCompleteListener(new OnCompleteListener<Void>() {
+                SellsRef.addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onComplete(@NonNull Task<Void> task) {
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if(snapshot.exists()){
 
-                        if(task.isSuccessful()){
-                            Log.e("Care Token",token);
+                            if(UserID.equals(snapshot.hasChild("sellerId"))) {
 
+                                SellsRef.child(snapshot.getKey()).updateChildren(fcmKey);
+                            }
                         }
-                        else{
-                            Log.e("Care Token",task.getException().toString());
-                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
 
                     }
                 });
-*/
+
+
             }
 
         });
