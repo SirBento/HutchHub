@@ -26,17 +26,6 @@ public class Screen extends AppCompatActivity {
 
 
 
-        if(LoggediNuser!= null){
-            LoggediNuser.getUid();
-            startActivity(new Intent(Screen.this, MainActivity.class));
-            finish();
-
-        }else {
-            startActivity(new Intent(Screen.this,Login.class));
-            finish();
-        }
-
-
 
         getStarted.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +49,16 @@ public class Screen extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
+        if(LoggediNuser!= null){
+            LoggediNuser.getUid();
+            startActivity(new Intent(Screen.this, MainActivity.class));
+            finish();
+
+        }else {
+            startActivity(new Intent(Screen.this,Login.class));
+            finish();
+        }
 
 
     }

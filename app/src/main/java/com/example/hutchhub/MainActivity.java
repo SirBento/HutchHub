@@ -91,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
                 fcmToken.put("fcmToken",token);// change to key
                 User.updateChildren(fcmToken);
 
-
                 HashMap<String, Object> fcmKey = new HashMap<>();
                 fcmKey.put("key",token);// change to key
 
