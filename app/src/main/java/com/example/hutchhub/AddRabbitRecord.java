@@ -136,21 +136,18 @@ public class AddRabbitRecord extends AppCompatActivity {
 
 
 
-        btn_rabbit_Record_Save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        btn_rabbit_Record_Save.setOnClickListener(view -> {
 
-                if(!ValidateEditTextValues(rabbit_Record_name)| !ValidateEditTextValues(rabbit_Record_FatherName)
-                   |!ValidateEditTextValues(rabbit_Record_MotherName) |!ValidateEditTextValues(rabbit_Record_Color)|
-                   !ValidateEditTextValues(rabbit_Record_DOB)|!ValidateEditTextValues(rabbit_Record_Weaned)
-                   |!ValidateEditTextValues(rabbit_Record_Notes)){
+            if(!ValidateEditTextValues(rabbit_Record_name)| !ValidateEditTextValues(rabbit_Record_FatherName)
+               |!ValidateEditTextValues(rabbit_Record_MotherName) |!ValidateEditTextValues(rabbit_Record_Color)|
+               !ValidateEditTextValues(rabbit_Record_DOB)|!ValidateEditTextValues(rabbit_Record_Weaned)
+               |!ValidateEditTextValues(rabbit_Record_Notes)){
 
-                    return;
-                }
-
-                SaveImage();
-                SaveRabbitRecords();
+                return;
             }
+
+            SaveImage();
+            SaveRabbitRecords();
         });
 
     }

@@ -20,32 +20,23 @@ public class BuySell extends AppCompatActivity {
         sell = findViewById(R.id.btn_sell);
         sellList = findViewById(R.id.btn_sellList);
 
-        buy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        buy.setOnClickListener(v -> {
 
-                startActivity(new Intent(BuySell.this,BuyRabbit.class));
-                finish();
+            startActivity(new Intent(BuySell.this,BuyRabbit.class));
+            finish();
 
-            }
         });
 
-        sell.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        sell.setOnClickListener(v -> {
 
-                startActivity(new Intent(BuySell.this,ListRabbit.class));
-                finish();
+            startActivity(new Intent(BuySell.this,ListRabbit.class));
+            finish();
 
-            }
         });
 
-        sellList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(BuySell.this,MySellList.class));
-                finish();
-            }
+        sellList.setOnClickListener(view -> {
+            startActivity(new Intent(BuySell.this,MySellList.class));
+            finish();
         });
 
     }

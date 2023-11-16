@@ -126,17 +126,14 @@ public class BreedingCare extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        detailsDB.setValue(BreedingCare).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
+        detailsDB.setValue(BreedingCare).addOnCompleteListener(task -> {
 
-                if(task.isSuccessful()){
-                    Toast.makeText(BreedingCare.this, "Breeding Information Saved", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(com.example.hutchhub.BreedingCare.this, BreedingCareList.class));
-                    finish();
-                }
-
+            if(task.isSuccessful()){
+                Toast.makeText(BreedingCare.this, "Breeding Information Saved", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(com.example.hutchhub.BreedingCare.this, BreedingCareList.class));
+                finish();
             }
+
         });
 
 

@@ -27,20 +27,17 @@ public class Screen extends AppCompatActivity {
 
 
 
-        getStarted.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        getStarted.setOnClickListener(v -> {
 
-                startActivity(new Intent(Screen.this, Login.class ));
+            startActivity(new Intent(Screen.this, Login.class ));
 
-                if(LoggediNuser!= null){
-                    LoggediNuser.getUid();
-                    startActivity(new Intent(Screen.this,MainActivity.class));
-                    finish();
-                }else {
-                    startActivity(new Intent(Screen.this,Login.class));
-                    finish();
-                }
+            if(LoggediNuser!= null){
+                LoggediNuser.getUid();
+                startActivity(new Intent(Screen.this,MainActivity.class));
+                finish();
+            }else {
+                startActivity(new Intent(Screen.this,Login.class));
+                finish();
             }
         });
 
