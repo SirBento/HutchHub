@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,7 +50,7 @@ public class BreedingCareList extends AppCompatActivity {
         Breed_Care_NoRecord = findViewById(R.id.Breed_Care_NoRecord);
 
         detailsFromDB = FirebaseDatabase.getInstance()
-                .getReference("BreedingCare");
+                .getReference().child("BreedingCare");
 
         BreedingAndCareArrayList = new ArrayList<>();
         breadingAndCareAdapater = new BreadingAndCareAdapater(BreedingAndCareArrayList);
@@ -85,7 +86,10 @@ public class BreedingCareList extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
 
-                if(snapshot.exists()&& snapshot.getKey().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())){
+                if(snapshot.exists() && snapshot.getKey().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())){
+
+
+                    Log.e("key", snapshot.getKey().toString());
 
                     BreedingAndCare breedingAndCare =  snapshot.getValue(BreedingAndCare.class);
 

@@ -130,8 +130,6 @@ public class BuyRabbit extends AppCompatActivity {
 
 
 
-
-
     private void filterList(String text) {
 
         ArrayList<RabbitForSale> filteredlist = new ArrayList<>();
