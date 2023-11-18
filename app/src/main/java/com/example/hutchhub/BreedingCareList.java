@@ -32,7 +32,6 @@ import java.util.ArrayList;
 public class BreedingCareList extends AppCompatActivity {
 
     FloatingActionButton btn_Breed_Care_Add;
-
     RecyclerView Breed_Care_R_List;
     SearchView Breed_Care_SearchView;
     TextView Breed_Care_NoRecord;
