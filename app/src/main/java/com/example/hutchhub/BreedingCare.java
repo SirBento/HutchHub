@@ -85,7 +85,6 @@ public class BreedingCare extends AppCompatActivity {
 
 
         HashMap<String,String> BreedingCare = new HashMap<>();
-
         BreedingCare.put("Doe_Name", rabbit_Breed_Doe.getText().toString());
         BreedingCare.put("Doe_Age",rabbit_Breed_Doe_Age.getText().toString());
         BreedingCare.put("Doe_Breed",rabbit_Breed_Doe_Breed.getText().toString());
@@ -111,7 +110,6 @@ public class BreedingCare extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
 
         try {
             SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());

@@ -96,7 +96,6 @@ public class BuyRabbit extends AppCompatActivity {
                 }
                 else{
                     noBuySellText.setVisibility(View.VISIBLE);
-
                 }
             }
 
@@ -109,7 +108,6 @@ public class BuyRabbit extends AppCompatActivity {
             public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
 
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -148,7 +146,6 @@ public class BuyRabbit extends AppCompatActivity {
 
             buyRabbitAdapter.setFilteredList(filteredlist);
         }
-
     }
 }
 
