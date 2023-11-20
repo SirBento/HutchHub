@@ -21,13 +21,10 @@ public class BuySell extends AppCompatActivity {
 
             startActivity(new Intent(BuySell.this,BuyRabbit.class));
             finish();
-
         });
         sell.setOnClickListener(v -> {
-
             startActivity(new Intent(BuySell.this,ListRabbit.class));
             finish();
-
         });
 
         sellList.setOnClickListener(view -> {

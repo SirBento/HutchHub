@@ -172,7 +172,6 @@ public class Chat extends AppCompatActivity {
                 }
 
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -180,7 +179,6 @@ public class Chat extends AppCompatActivity {
         });
 
     }
-
 
     private boolean validateMessage() {
 

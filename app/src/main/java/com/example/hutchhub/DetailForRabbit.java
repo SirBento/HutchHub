@@ -30,7 +30,6 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class DetailForRabbit extends AppCompatActivity {
-
     String PhoneNum, Address, Breed, Description, Price, Quantity, key, SellerID, sellerUsername;
     TextView detPhone, detLocation,detQuantity,detBreed,detPrice;
     EditText detDescription;
@@ -64,14 +63,11 @@ public class DetailForRabbit extends AppCompatActivity {
         getUserName();
 
 
-        btn_detForDone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                loadingDialog.startLoadingDialog();
-                SendNotification("Hello, there is someone interested in the rabbits you listed for sale");
+        btn_detForDone.setOnClickListener(view -> {
+            loadingDialog.startLoadingDialog();
+            SendNotification("Hello, there is someone interested in the rabbits you listed for sale");
 
 
-            }
         });
 
 
@@ -112,7 +108,6 @@ public class DetailForRabbit extends AppCompatActivity {
 
     private void SendNotification(String displaymessage) {
 
-
         try{
             JSONObject jsonObject  = new JSONObject();
 
@@ -139,7 +134,6 @@ public class DetailForRabbit extends AppCompatActivity {
             loadingDialog.dismissDialog();
             /** remain on the same intent  to allow user to retry**/
         }
-
 
     }
 

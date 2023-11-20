@@ -70,7 +70,6 @@ public class BreedingCare extends AppCompatActivity {
             if(!ValidateEditTextValues(rabbit_Breed_Doe)| !ValidateEditTextValues(rabbit_Breed_Doe_Age)
                     |!ValidateEditTextValues(rabbit_Breed_Doe_Breed) |!ValidateEditTextValues(rabbit_Breed_Buck)|!ValidateEditTextValues(rabbit_Breed_Buck_Age)
                     |!ValidateEditTextValues(rabbit_Breed_Buck_Breed)|!ValidateEditTextValues(rabbit_Breed_Falls)|!ValidateEditTextValues(rabbit_Breed_Date)){
-
                 return;
             }
 
@@ -82,7 +81,6 @@ public class BreedingCare extends AppCompatActivity {
 
 
     private void SaveDetails(){
-
 
         HashMap<String,String> BreedingCare = new HashMap<>();
         BreedingCare.put("Doe_Name", rabbit_Breed_Doe.getText().toString());

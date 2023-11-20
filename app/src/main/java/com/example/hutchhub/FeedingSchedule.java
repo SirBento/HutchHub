@@ -233,7 +233,6 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
     @Override
     public void onTimeSet(TimePicker timePicker, int hourOfDay, int minute) {
 
-
         Calendar c = Calendar.getInstance();
         c.set(Calendar.HOUR_OF_DAY, hourOfDay);
         c.set(Calendar.MINUTE, minute);
@@ -251,16 +250,11 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
         timeText += DateFormat.getTimeInstance(DateFormat.SHORT).format(c.getTime());
 
         if (whichTime==1){
-
             FeedingSchedule_Time1.setText(timeText);
-
         }else if(whichTime==2){
             FeedingSchedule_Time2.setText(timeText);
-
-
         }else if(whichTime==3){
             FeedingSchedule_Time3.setText(timeText);
-
         }
 
     }
@@ -275,7 +269,6 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
         if (c.before(Calendar.getInstance())) {
             c.add(Calendar.DATE, 1);
         }
-
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
        // alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
     }
@@ -295,7 +288,6 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
 
         String Value = editText.getText().toString().trim();
 
-
         if (Value.isEmpty()) {
             editText.setError("This field is required");
             editText.requestFocus();
@@ -304,7 +296,6 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
             editText.setError(null);
             return true;
         }
-
 
     }
 }
