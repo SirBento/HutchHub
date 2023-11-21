@@ -96,6 +96,7 @@ public class BreedingCare extends AppCompatActivity {
 
         String inputDate = rabbit_Breed_Date.getText().toString();
 //TODO: should add new alarms based on the calculated date to notify the user
+
         try {
             SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
             Calendar calendar = Calendar.getInstance();
