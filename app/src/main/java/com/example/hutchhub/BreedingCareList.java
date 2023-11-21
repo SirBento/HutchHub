@@ -87,11 +87,9 @@ public class BreedingCareList extends AppCompatActivity {
 
                 if(snapshot.exists() && snapshot.getKey().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())){
 
-
                     Log.e("key", snapshot.getKey().toString());
 
                     BreedingAndCare breedingAndCare =  snapshot.getValue(BreedingAndCare.class);
-
                     BreedingAndCareArrayList.add(breedingAndCare);
                     breadingAndCareAdapater.notifyDataSetChanged();
                     Breed_Care_R_List.smoothScrollToPosition(Breed_Care_R_List.getAdapter().getItemCount());
@@ -109,7 +107,6 @@ public class BreedingCareList extends AppCompatActivity {
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
 
                 if(snapshot.exists()&& snapshot.getKey().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())){
-
                     BreedingAndCare breedingAndCare =  snapshot.getValue(BreedingAndCare.class);
 
                     BreedingAndCareArrayList.add(breedingAndCare);
