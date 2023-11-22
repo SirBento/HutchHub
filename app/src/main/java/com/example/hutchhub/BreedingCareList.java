@@ -49,7 +49,7 @@ public class BreedingCareList extends AppCompatActivity {
         Breed_Care_NoRecord = findViewById(R.id.Breed_Care_NoRecord);
 
         detailsFromDB = FirebaseDatabase.getInstance()
-                .getReference().child("BreedingCare");
+                .getReference("BreedingCare");
 
         BreedingAndCareArrayList = new ArrayList<>();
         breadingAndCareAdapater = new BreadingAndCareAdapater(BreedingAndCareArrayList);
