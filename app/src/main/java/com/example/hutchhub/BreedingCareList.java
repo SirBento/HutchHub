@@ -25,6 +25,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.net.StandardSocketOptions;
 import java.util.ArrayList;
@@ -49,7 +50,7 @@ public class BreedingCareList extends AppCompatActivity {
         Breed_Care_NoRecord = findViewById(R.id.Breed_Care_NoRecord);
 
         detailsFromDB = FirebaseDatabase.getInstance()
-                .getReference("BreedingCare");
+                .getReference().child("BreedingCare");
 
         BreedingAndCareArrayList = new ArrayList<>();
         breadingAndCareAdapater = new BreadingAndCareAdapater(BreedingAndCareArrayList);
@@ -81,54 +82,29 @@ public class BreedingCareList extends AppCompatActivity {
         });
 
 
-        detailsFromDB.addChildEventListener(new ChildEventListener() {
+        detailsFromDB.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                if(snapshot.exists() && snapshot.getKey().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())){
+                if(snapshot.exists()){
 
-                    Log.e("key", snapshot.getKey().toString());
+                    if(snapshot.getKey().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())){
+                        Log.e("Snapshot: ", snapshot.getValue(BreedingAndCare.class).toString());
+                        BreedingAndCare breedingAndCare =  snapshot.getValue(BreedingAndCare.class);
+                        BreedingAndCareArrayList.add(breedingAndCare);
+                        breadingAndCareAdapater.notifyDataSetChanged();
+                        Breed_Care_R_List.smoothScrollToPosition(Breed_Care_R_List.getAdapter().getItemCount());
 
-                    BreedingAndCare breedingAndCare =  snapshot.getValue(BreedingAndCare.class);
-                    BreedingAndCareArrayList.add(breedingAndCare);
-                    breadingAndCareAdapater.notifyDataSetChanged();
-                    Breed_Care_R_List.smoothScrollToPosition(Breed_Care_R_List.getAdapter().getItemCount());
+                    }else{
+                        Log.e("key", snapshot.getKey().toString());
+
+                    }
+
 
                 }else{
-
+                    Log.e("key", "null");
                     Breed_Care_NoRecord.setVisibility(View.VISIBLE);
                 }
-
-
-
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-                if(snapshot.exists()&& snapshot.getKey().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())){
-                    BreedingAndCare breedingAndCare =  snapshot.getValue(BreedingAndCare.class);
-
-                    BreedingAndCareArrayList.add(breedingAndCare);
-                    breadingAndCareAdapater.notifyDataSetChanged();
-                    Breed_Care_R_List.smoothScrollToPosition(Breed_Care_R_List.getAdapter().getItemCount());
-
-                }else{
-
-                    Breed_Care_NoRecord.setVisibility(View.VISIBLE);
-                }
-
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
             }
 
             @Override

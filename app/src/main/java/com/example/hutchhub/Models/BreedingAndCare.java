@@ -11,18 +11,18 @@ public class BreedingAndCare {
     }
 
     public BreedingAndCare(String doe_Name, String doe_Age, String doe_Breed, String buck_Name, String buck_Age, String buck_Breed, String falls, String cross_Date, String reco_food, String quantity, String pal_Date, String pregDue_Date) {
-        Buck_Name = buck_Name;
-        Buck_Age = buck_Age;
-        Buck_Breed = buck_Breed;
-        Doe_Name = doe_Name;
-        Doe_Age = doe_Age;
-        Doe_Breed = doe_Breed;
-        Falls = falls;
-        Cross_Date = cross_Date;
-        Reco_food = reco_food;
-        Quantity = quantity;
-        Pal_Date = pal_Date;
-        PregDue_Date = pregDue_Date;
+        this.Buck_Name = buck_Name;
+        this.Buck_Age = buck_Age;
+        this.Buck_Breed = buck_Breed;
+        this.Doe_Name = doe_Name;
+        this.Doe_Age = doe_Age;
+        this.Doe_Breed = doe_Breed;
+        this.Falls = falls;
+        this.Cross_Date = cross_Date;
+        this.Reco_food = reco_food;
+        this.Quantity = quantity;
+        this.Pal_Date = pal_Date;
+        this.PregDue_Date = pregDue_Date;
     }
 
     public String getDoe_Name() {
