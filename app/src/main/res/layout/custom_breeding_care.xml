@@ -29,7 +29,7 @@
             android:text="Doe Information"
             android:textColor="@color/green"
             android:textStyle="italic"
-            android:textSize="25sp"
+            android:textSize="23sp"
             tools:layout_editor_absoluteX="173dp" />
 
         <TextView
@@ -98,7 +98,7 @@
             android:text="Buck Information"
             android:textColor="@color/brown"
             android:textStyle="italic"
-            android:textSize="25sp"
+            android:textSize="23sp"
             tools:layout_editor_absoluteX="173dp" />
 
         <TextView

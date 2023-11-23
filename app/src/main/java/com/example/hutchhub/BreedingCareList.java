@@ -38,7 +38,9 @@ public class BreedingCareList extends AppCompatActivity {
     TextView Breed_Care_NoRecord;
     BreadingAndCareAdapater breadingAndCareAdapater;
     ArrayList<BreedingAndCare> BreedingAndCareArrayList;
-    DatabaseReference detailsFromDB;
+    DatabaseReference detailsfromdb;
+    FirebaseAuth auth;
+    String currentuserId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,8 +51,9 @@ public class BreedingCareList extends AppCompatActivity {
         Breed_Care_SearchView = findViewById(R.id.Breed_Care_SearchView);
         Breed_Care_NoRecord = findViewById(R.id.Breed_Care_NoRecord);
 
-        detailsFromDB = FirebaseDatabase.getInstance()
-                .getReference().child("BreedingCare");
+        auth = FirebaseAuth.getInstance();
+        currentuserId =auth.getCurrentUser().getUid();
+        detailsfromdb = FirebaseDatabase.getInstance().getReference().child("BreedingCare");
 
         BreedingAndCareArrayList = new ArrayList<>();
         breadingAndCareAdapater = new BreadingAndCareAdapater(BreedingAndCareArrayList);
@@ -81,30 +84,41 @@ public class BreedingCareList extends AppCompatActivity {
             }
         });
 
-
-        detailsFromDB.addValueEventListener(new ValueEventListener() {
+        detailsfromdb.addChildEventListener(new ChildEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
 
                 if(snapshot.exists()){
-
-                    if(snapshot.getKey().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())){
-                        Log.e("Snapshot: ", snapshot.getValue(BreedingAndCare.class).toString());
+                    String id = snapshot.child("Id").getValue().toString();
+                    if(id.equals(currentuserId)){
                         BreedingAndCare breedingAndCare =  snapshot.getValue(BreedingAndCare.class);
                         BreedingAndCareArrayList.add(breedingAndCare);
                         breadingAndCareAdapater.notifyDataSetChanged();
                         Breed_Care_R_List.smoothScrollToPosition(Breed_Care_R_List.getAdapter().getItemCount());
 
                     }else{
-                        Log.e("key", snapshot.getKey().toString());
 
+                        Breed_Care_NoRecord.setVisibility(View.VISIBLE);
                     }
 
-
                 }else{
-                    Log.e("key", "null");
                     Breed_Care_NoRecord.setVisibility(View.VISIBLE);
                 }
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
             }
 
             @Override
@@ -112,6 +126,7 @@ public class BreedingCareList extends AppCompatActivity {
 
             }
         });
+
 
     }
 

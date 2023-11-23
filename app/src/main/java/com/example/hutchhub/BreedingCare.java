@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -36,8 +37,7 @@ public class BreedingCare extends AppCompatActivity {
             rabbit_Breed_Falls,rabbit_Breed_Date;
 
     DatabaseReference detailsDB = FirebaseDatabase.getInstance()
-            .getReference("BreedingCare")
-            .child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+            .getReference("BreedingCare");
 
     Button btn_Breed_Save;
 
@@ -83,6 +83,7 @@ public class BreedingCare extends AppCompatActivity {
     private void SaveDetails(){
 
         HashMap<String,String> BreedingCare = new HashMap<>();
+        BreedingCare.put("Id", FirebaseAuth.getInstance().getCurrentUser().getUid());
         BreedingCare.put("Doe_Name", rabbit_Breed_Doe.getText().toString());
         BreedingCare.put("Doe_Age",rabbit_Breed_Doe_Age.getText().toString());
         BreedingCare.put("Doe_Breed",rabbit_Breed_Doe_Breed.getText().toString());
@@ -108,6 +109,7 @@ public class BreedingCare extends AppCompatActivity {
 
         } catch (Exception e) {
             e.printStackTrace();
+            Log.e("epx:",e.getMessage());
         }
 
         try {
@@ -121,14 +123,17 @@ public class BreedingCare extends AppCompatActivity {
 
         } catch (Exception e) {
             e.printStackTrace();
+            Log.e("epx:",e.getMessage());
         }
 
-        detailsDB.setValue(BreedingCare).addOnCompleteListener(task -> {
+        detailsDB.push().setValue(BreedingCare).addOnCompleteListener(task -> {
 
             if(task.isSuccessful()){
                 Toast.makeText(BreedingCare.this, "Breeding Information Saved", Toast.LENGTH_LONG).show();
                 startActivity(new Intent(com.example.hutchhub.BreedingCare.this, BreedingCareList.class));
                 finish();
+            }else{
+                Log.e("error",task.getException().toString());
             }
 
         });

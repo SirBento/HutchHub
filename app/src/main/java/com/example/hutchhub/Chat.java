@@ -66,8 +66,9 @@ public class Chat extends AppCompatActivity {
         setSupportActionBar(chatToolbar);
         getSupportActionBar().setTitle("Farmer's Chat");
 
-        auth = FirebaseAuth.getInstance();
+
         database = FirebaseDatabase.getInstance();
+        auth = FirebaseAuth.getInstance();
         currentuserId =auth.getCurrentUser().getUid();
         userRef = FirebaseDatabase.getInstance().getReference().child("Users");
         messagedb = FirebaseDatabase.getInstance().getReference().child("Messages");
