@@ -3,6 +3,7 @@ package com.example.hutchhub;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -125,14 +126,14 @@ public class DetailForRabbit extends AppCompatActivity {
             callApi(jsonObject);
             Toast.makeText(this, "Seller has been notified! But you can also use there listed number to call them", Toast.LENGTH_LONG).show();
             loadingDialog.dismissDialog();
+            startActivity(new Intent(DetailForRabbit.this,BuyRabbit.class));
 
-            /** open new intent**/
 
         }catch (Exception e){
 
             Toast.makeText(this, "Error: Something Happened, Please Retry", Toast.LENGTH_LONG).show();
             loadingDialog.dismissDialog();
-            /** remain on the same intent  to allow user to retry**/
+
         }
 
     }

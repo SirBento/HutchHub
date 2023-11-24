@@ -125,7 +125,6 @@ public class ListRabbit extends AppCompatActivity {
 
     }
 
-
     private boolean validateAsking(){
 
         if(price.isEmpty()){

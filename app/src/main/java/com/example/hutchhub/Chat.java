@@ -64,7 +64,7 @@ public class Chat extends AppCompatActivity {
         chatToolbar = findViewById(R.id.chat_toolbar);
         chatToolbar.setTitleTextColor(getResources().getColor(R.color.backgroundcolor));
         setSupportActionBar(chatToolbar);
-        getSupportActionBar().setTitle("Farmer's Chat");
+        getSupportActionBar().setTitle("Farmer's Community");
 
 
         database = FirebaseDatabase.getInstance();
@@ -73,7 +73,6 @@ public class Chat extends AppCompatActivity {
         userRef = FirebaseDatabase.getInstance().getReference().child("Users");
         messagedb = FirebaseDatabase.getInstance().getReference().child("Messages");
         getUserName();
-
 
         messageRecyclerView = findViewById(R.id.private_messages_list_of_users);
         messageRecyclerView.setItemAnimator(new SlideInUpAnimator());
