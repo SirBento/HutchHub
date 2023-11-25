@@ -123,7 +123,7 @@ public class BuyRabbit extends AppCompatActivity {
             public void run () {
                 loadingDialog.dismissDialog();
             }
-            },7000); // dismiss the dialog after 7 seconds
+            },7000);
     }
 
 

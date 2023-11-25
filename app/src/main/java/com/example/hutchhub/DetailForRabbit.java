@@ -151,7 +151,7 @@ public class DetailForRabbit extends AppCompatActivity {
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
-
+                Toast.makeText(DetailForRabbit.this, "Please check your internet connection", Toast.LENGTH_LONG).show();
             }
 
             @Override
