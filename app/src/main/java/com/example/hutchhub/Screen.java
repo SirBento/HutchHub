@@ -52,11 +52,7 @@ public class Screen extends AppCompatActivity {
             startActivity(new Intent(Screen.this, MainActivity.class));
             finish();
 
-        }else {
-            startActivity(new Intent(Screen.this,Login.class));
-            finish();
         }
-
 
     }
 }
