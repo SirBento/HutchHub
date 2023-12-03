@@ -43,49 +43,31 @@ public class Login extends AppCompatActivity {
         btn_login = findViewById(R.id.btn_login);
         btn_Sign_Up  = findViewById(R.id.btn_signup);
 
-        btn_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        btn_login.setOnClickListener(view -> {
 
 
-                if(!validatePassword() |  !validateEmail() ){
-                    // If the functions continue to return false repeat validation until true
-                    return;
-                }
-
-                if(!haveNetworkConnection()){
-
-                    Toast.makeText(Login.this, "Please Check Your Internet Connection", Toast.LENGTH_LONG).show();
-
-                }else{
-                    loadingDialog.startLoadingDialog();
-                    userLogin();
-
-                }
-
+            if(!validatePassword() | !validateEmail() ){
+                // If the functions continue to return false repeat validation until true
+                return;
             }
+
+            if(!haveNetworkConnection()){
+
+                Toast.makeText(Login.this, "Please Check Your Internet Connection", Toast.LENGTH_LONG).show();
+
+            }else{
+                loadingDialog.startLoadingDialog();
+                userLogin();
+            }
+
         });
 
 
         //sign up activity calling
 
-        btn_Sign_Up.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        btn_Sign_Up.setOnClickListener(view -> startActivity(new Intent( Login.this,SignUp.class) ));
 
-                startActivity(new Intent( Login.this,SignUp.class) );
-            }
-        });
-
-
-
-        forgotPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                startActivity(new Intent( Login.this,ForgotPassword.class) );
-            }
-        });
+        forgotPassword.setOnClickListener(view -> startActivity(new Intent( Login.this,ForgotPassword.class) ));
 
 
     }
