@@ -21,7 +21,6 @@
         android:layout_below="@+id/chat_toolbar"
         android:layout_marginBottom="0dp"
         android:background="#E0F3FF">
-
     </androidx.recyclerview.widget.RecyclerView>
 
     <RelativeLayout
@@ -33,6 +32,8 @@
         android:background="?attr/selectableItemBackgroundBorderless"
         android:orientation="horizontal"
         android:layout_alignParentLeft="true">
+
+
         <EditText
             android:id="@+id/BuySellChatInput_message"
             android:layout_width="match_parent"
@@ -59,4 +60,5 @@
             android:src="@drawable/text_send" />
 
     </RelativeLayout>
+
 </RelativeLayout>
