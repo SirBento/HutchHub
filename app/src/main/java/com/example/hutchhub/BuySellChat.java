@@ -59,12 +59,10 @@ public class BuySellChat extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy_sell_chat);
 
-
         chatToolbar = findViewById(R.id.chat_toolbar);
         chatToolbar.setTitleTextColor(getResources().getColor(R.color.backgroundcolor));
         setSupportActionBar(chatToolbar);
         getSupportActionBar().setTitle("Buy & Sell Chat");
-
 
         database = FirebaseDatabase.getInstance();
         auth = FirebaseAuth.getInstance();
@@ -74,7 +72,6 @@ public class BuySellChat extends AppCompatActivity {
         /**this hase to change to point a different node that contains buy sell messages**/
         messagedb = FirebaseDatabase.getInstance().getReference().child("Messages");
         getUserName();
-
         BuySellChat_messages_list_of_users = findViewById(R.id.BuySellChat_messages_list_of_users);
         BuySellChat_messages_list_of_users.setItemAnimator(new SlideInUpAnimator());
         BuySellChatSend_message_bnt = findViewById(R.id.BuySellChatSend_message_bnt);
@@ -84,6 +81,8 @@ public class BuySellChat extends AppCompatActivity {
         linearLayoutManager = new LinearLayoutManager(this);
         BuySellChat_messages_list_of_users.setLayoutManager(linearLayoutManager);
         BuySellChat_messages_list_of_users.setAdapter(messageAdapter);
+
+
 
 
         BuySellChatSend_message_bnt.setOnClickListener(v -> {
@@ -111,6 +110,7 @@ public class BuySellChat extends AppCompatActivity {
         saveMessage.put("date",date);
         messagedb.push().setValue(saveMessage);
     }
+
 
     /** Change the first name  that is being taken to the one who wants to buy the rabbits **/
     private void getUserName() {
