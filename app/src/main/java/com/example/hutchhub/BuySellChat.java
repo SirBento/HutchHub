@@ -106,6 +106,8 @@ public class BuySellChat extends AppCompatActivity {
         HashMap<String, Object> saveMessage = new HashMap<>();
 
         saveMessage.put("id",currentuserId);
+        //TODO: ADD BUYER ID
+        saveMessage.put("buyer","");
         saveMessage.put("name",currentusername);
         saveMessage.put("message", Displaymessage);
         saveMessage.put("time",CurrentTime);
