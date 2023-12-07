@@ -70,9 +70,8 @@ public class BuySellChat extends AppCompatActivity {
         userRef = FirebaseDatabase.getInstance().getReference().child("Users");
 
 
-
         /**this hase to change to point a different node that contains buy sell messages**/
-        messagedb = FirebaseDatabase.getInstance().getReference().child("Messages");
+        messagedb = FirebaseDatabase.getInstance().getReference().child("Buy_Sell_Messages");
         getUserName();
         BuySellChat_messages_list_of_users = findViewById(R.id.BuySellChat_messages_list_of_users);
         BuySellChat_messages_list_of_users.setItemAnimator(new SlideInUpAnimator());
@@ -83,7 +82,6 @@ public class BuySellChat extends AppCompatActivity {
         linearLayoutManager = new LinearLayoutManager(this);
         BuySellChat_messages_list_of_users.setLayoutManager(linearLayoutManager);
         BuySellChat_messages_list_of_users.setAdapter(messageAdapter);
-
 
 
 
