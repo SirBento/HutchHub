@@ -2,7 +2,10 @@ package com.example.hutchhub;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.hutchhub.Classses.GlobalValues;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -68,10 +72,6 @@ public class DetailForRabbit extends AppCompatActivity {
             loadingDialog.startLoadingDialog();
             SendNotification("Hello" + sellerUsername+", there is someone interested " +
                              "in the rabbits you listed for sale");
-
-            /***open one on one chat with for selling */
-
-
         });
 
 
@@ -88,6 +88,7 @@ public class DetailForRabbit extends AppCompatActivity {
         key = getIntent().getStringExtra("Key");
         SellerID = getIntent().getStringExtra("SellerID");
 
+        GlobalValues.GlobalSellerID = SellerID;
 
     }
 
@@ -129,7 +130,7 @@ public class DetailForRabbit extends AppCompatActivity {
             callApi(jsonObject);
             Toast.makeText(this, "Seller has been notified! But you can also use there listed number to call them", Toast.LENGTH_LONG).show();
             loadingDialog.dismissDialog();
-            startActivity(new Intent(DetailForRabbit.this,BuyRabbit.class));
+            startActivity(new Intent(DetailForRabbit.this,BuySellChat.class));
 
 
         }catch (Exception e){

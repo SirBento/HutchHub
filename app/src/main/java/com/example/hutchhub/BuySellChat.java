@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 
 import com.example.hutchhub.Adapters.MessageAdapter;
+import com.example.hutchhub.Classses.GlobalValues;
 import com.example.hutchhub.Models.Message;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -103,9 +104,8 @@ public class BuySellChat extends AppCompatActivity {
         date =  new SimpleDateFormat("dd/LLL/yyyy", Locale.getDefault()).format(new Date());
         HashMap<String, Object> saveMessage = new HashMap<>();
 
-        saveMessage.put("id",currentuserId);
-        //TODO: ADD BUYER ID
-        saveMessage.put("buyer","");
+        saveMessage.put("buyer",currentuserId);
+        saveMessage.put("seller", GlobalValues.GlobalSellerID);
         saveMessage.put("name",currentusername);
         saveMessage.put("message", Displaymessage);
         saveMessage.put("time",CurrentTime);

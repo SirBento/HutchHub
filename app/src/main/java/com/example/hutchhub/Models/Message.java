@@ -2,17 +2,35 @@ package com.example.hutchhub.Models;
 
 public class Message {
 
-    String message, name,id, time, date;
+    String message, name,id, time, date,buyer,seller;
 
     public Message() {
     }
 
-    public Message(String message, String name, String id) {
+    public Message(String message, String name, String id ,String buyer,String seller) {
         this.message = message;
         this.name = name;
         this.id = id;
+        this.buyer = buyer;
+        this.seller = seller;
         this.time = time;
         this.date = date;
+    }
+
+    public String getBuyer() {
+        return buyer;
+    }
+
+    public void setBuyer(String buyer) {
+        this.buyer = buyer;
+    }
+
+    public String getSeller() {
+        return seller;
+    }
+
+    public void setSeller(String seller) {
+        this.seller = seller;
     }
 
     public String getMessage() {
