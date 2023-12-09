@@ -111,6 +111,7 @@ public class BuySellChat extends AppCompatActivity {
         saveMessage.put("time",CurrentTime);
         saveMessage.put("date",date);
         messagedb.push().setValue(saveMessage);
+
     }
 
 
@@ -120,7 +121,9 @@ public class BuySellChat extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
+
                 if(snapshot.exists()){
+
                     currentusername = snapshot.child("firstname").getValue().toString();
                 }
 
