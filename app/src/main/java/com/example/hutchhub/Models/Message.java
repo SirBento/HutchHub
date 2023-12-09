@@ -7,7 +7,7 @@ public class Message {
     public Message() {
     }
 
-    public Message(String message, String name, String id ,String buyer,String seller) {
+    public Message(String message, String name, String id ,String buyer,String seller,String time, String date) {
         this.message = message;
         this.name = name;
         this.id = id;
