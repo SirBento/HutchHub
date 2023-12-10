@@ -51,7 +51,6 @@ public class BuySellChat extends AppCompatActivity {
     MessageAdapter messageAdapter;
     RecyclerView BuySellChat_messages_list_of_users;
     LinearLayoutManager linearLayoutManager;
-
     Toolbar chatToolbar;
     String currentuserId, currentusername,CurrentTime,date, Displaymessage;
 
@@ -85,7 +84,6 @@ public class BuySellChat extends AppCompatActivity {
         BuySellChat_messages_list_of_users.setAdapter(messageAdapter);
 
 
-
         BuySellChatSend_message_bnt.setOnClickListener(v -> {
             if(validateMessage()){
                 SaveMessage();
@@ -110,8 +108,8 @@ public class BuySellChat extends AppCompatActivity {
         saveMessage.put("message", Displaymessage);
         saveMessage.put("time",CurrentTime);
         saveMessage.put("date",date);
-        messagedb.push().setValue(saveMessage);
 
+        messagedb.push().setValue(saveMessage);
     }
 
 
@@ -121,7 +119,6 @@ public class BuySellChat extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-
                 if(snapshot.exists()){
 
                     currentusername = snapshot.child("firstname").getValue().toString();
@@ -130,7 +127,6 @@ public class BuySellChat extends AppCompatActivity {
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
 
@@ -141,11 +137,13 @@ public class BuySellChat extends AppCompatActivity {
         String message = BuySellChatInput_message.getText().toString().trim();
 
         if (message.isEmpty()) {
+
             BuySellChatInput_message.setError("This field cannot be empty");
             BuySellChatInput_message.requestFocus();
             return false;
 
         } else {
+
             BuySellChatInput_message.setError(null);
             return true;
 
@@ -154,7 +152,7 @@ public class BuySellChat extends AppCompatActivity {
     }
 
 
-    private void SendNotification(String displaymessage) {
+    private void SendNotification(String buyerUID) {
         /** send notification to each individual  among those who want to strike a deal  **/
 
     }
