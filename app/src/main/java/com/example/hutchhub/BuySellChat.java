@@ -155,6 +155,37 @@ public class BuySellChat extends AppCompatActivity {
     private void SendNotification(String buyerUID) {
         /** send notification to each individual  among those who want to strike a deal  **/
 
+        /*
+
+        try{
+            JSONObject jsonObject  = new JSONObject();
+
+            JSONObject notificationObj = new JSONObject();
+            notificationObj.put("title",sellerUsername);
+            notificationObj.put("body",displaymessage);
+
+            JSONObject dataObj = new JSONObject();
+            dataObj.put("userId",FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+            jsonObject.put("notification",notificationObj);
+            jsonObject.put("data",dataObj);
+            jsonObject.put("to",key);
+
+            callApi(jsonObject);
+            Toast.makeText(this, "Seller has been notified! But you can also use there listed number to call them", Toast.LENGTH_LONG).show();
+            loadingDialog.dismissDialog();
+            startActivity(new Intent(DetailForRabbit.this,BuySellChat.class));
+
+
+        }catch (Exception e){
+
+            Toast.makeText(this, "Error: Something Happened, Please Retry", Toast.LENGTH_LONG).show();
+            loadingDialog.dismissDialog();
+
+        }
+
+        * */
+
     }
 
     void callApi(JSONObject jsonObject){
