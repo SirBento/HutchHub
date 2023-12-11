@@ -18,11 +18,9 @@ import java.util.List;
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageViewHolder> {
 
     List<Message> userMessageList;
-     FirebaseAuth Auth;
+    FirebaseAuth Auth;
 
-
-    public MessageAdapter(List<Message> userMessagesList)
-    {
+    public MessageAdapter(List<Message> userMessagesList) {
         this.userMessageList = userMessagesList;
     }
 
@@ -30,7 +28,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
     {
         public TextView senderMessageText, receiverMessageText,receiver_username;
         public ConstraintLayout constraintLayout_sender;
-
 
         public MessageViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -88,8 +85,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
     public int getItemCount() {
         return userMessageList.size();
     }
-
-
 
 
 }

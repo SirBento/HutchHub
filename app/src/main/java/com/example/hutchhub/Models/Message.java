@@ -1,11 +1,9 @@
 package com.example.hutchhub.Models;
 
 public class Message {
-
     String message, name,id, time, date,buyer,seller;
 
-    public Message() {
-    }
+    public Message() {}
 
     public Message(String message, String name, String id ,String buyer,String seller,String time, String date) {
         this.message = message;
@@ -14,8 +12,7 @@ public class Message {
         this.buyer = buyer;
         this.seller = seller;
         this.time = time;
-        this.date = date;
-    }
+        this.date = date;  }
 
     public String getBuyer() {
         return buyer;
