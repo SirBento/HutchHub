@@ -201,9 +201,7 @@ public class Chat extends AppCompatActivity {
     private void SendNotification(String displaymessage) {
 
         /** try to use the subscribe feature **/
-
            /*
-
         try{
             JSONObject jsonObject  = new JSONObject();
 
@@ -222,7 +220,6 @@ public class Chat extends AppCompatActivity {
             Toast.makeText(this, "Seller has been notified! But you can also use there listed number to call them", Toast.LENGTH_LONG).show();
             loadingDialog.dismissDialog();
             startActivity(new Intent(DetailForRabbit.this,BuySellChat.class));
-
 
         }catch (Exception e){
 
@@ -247,9 +244,7 @@ public class Chat extends AppCompatActivity {
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
-
             }
-
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
 
