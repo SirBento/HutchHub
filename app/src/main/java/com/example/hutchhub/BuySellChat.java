@@ -133,12 +133,11 @@ public class BuySellChat extends AppCompatActivity {
     }
 
     private boolean validateMessage() {
-
         String message = BuySellChatInput_message.getText().toString().trim();
 
         if (message.isEmpty()) {
 
-            BuySellChatInput_message.setError("This field cannot be empty");
+            BuySellChatInput_message.setError("This field cannot be empty!");
             BuySellChatInput_message.requestFocus();
             return false;
 

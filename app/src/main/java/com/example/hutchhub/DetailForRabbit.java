@@ -100,7 +100,6 @@ public class DetailForRabbit extends AppCompatActivity {
                 if(snapshot.exists()){
                     sellerUsername = snapshot.child("firstname").getValue().toString();
                 }
-
             }
 
             @Override
@@ -113,6 +112,7 @@ public class DetailForRabbit extends AppCompatActivity {
 
     private void SendNotification(String displaymessage) {
 
+        // creating a JSON object
         try{
             JSONObject jsonObject  = new JSONObject();
 

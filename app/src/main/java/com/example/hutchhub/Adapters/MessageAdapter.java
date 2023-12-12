@@ -78,9 +78,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             holder.receiver_username.setText(messages.getName());
             holder.receiverMessageText.setText(messages.getMessage() + "\n \n" + messages.getTime() + "\n" + messages.getDate());
         }
-
     }
-
     @Override
     public int getItemCount() {
         return userMessageList.size();
