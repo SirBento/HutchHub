@@ -29,11 +29,10 @@ public class DetailForRabbit extends AppCompatActivity {
     String PhoneNum, Address, Breed, Description, Price, Quantity, key, SellerID, sellerUsername;
     TextView detPhone, detLocation,detQuantity,detBreed,detPrice;
     EditText detDescription;
-
     Button btn_detForDone;
     DatabaseReference  userRef;
-
     LoadingDialog loadingDialog = new LoadingDialog(DetailForRabbit.this);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

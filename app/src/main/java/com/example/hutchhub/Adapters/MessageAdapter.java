@@ -69,7 +69,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             holder.senderMessageText.setText(messages.getMessage() + "\n \n" + messages.getTime() + "\n" + messages.getDate());
 
         }else{
-
             holder.receiverMessageText.setVisibility(View.VISIBLE);
             holder.receiver_username.setVisibility(View.VISIBLE);
             holder.senderMessageText.setVisibility(View.INVISIBLE);

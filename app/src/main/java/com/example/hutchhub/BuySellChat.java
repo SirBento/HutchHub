@@ -63,7 +63,6 @@ public class BuySellChat extends AppCompatActivity {
         chatToolbar.setTitleTextColor(getResources().getColor(R.color.backgroundcolor));
         setSupportActionBar(chatToolbar);
         getSupportActionBar().setTitle("Buy & Sell Chat");
-
         database = FirebaseDatabase.getInstance();
         auth = FirebaseAuth.getInstance();
         currentuserId =auth.getCurrentUser().getUid();

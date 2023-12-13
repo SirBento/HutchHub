@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.hutchhub.DetailForRabbit;
 import com.example.hutchhub.Models.RabbitForSale;
+import com.example.hutchhub.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
@@ -19,12 +20,9 @@ public class BuyRabbitAdapter extends RecyclerView.Adapter<BuyRabbitAdapter.BuyR
     ArrayList<RabbitForSale> arrayList;
     FirebaseAuth Auth;
 
-
     public BuyRabbitAdapter(ArrayList<RabbitForSale> arrayList){
 
-        this.arrayList = arrayList;
-
-    }
+        this.arrayList = arrayList;}
 
     public class BuyRabbitAdapterViewHolder extends RecyclerView.ViewHolder {
         public TextView rabbitBreedName, rabbitPrice,rabbitQuantity;
