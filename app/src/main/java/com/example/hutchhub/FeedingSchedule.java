@@ -79,7 +79,8 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
 
         FeedingSchedule_Next.setOnClickListener(view -> {
 
-            if(!ValidateEditTextValues(FeedingSchedule_NumberOfRabbits)| !ValidateEditTextValues(FeedingSchedule_TypeOfFeed)
+            if(!ValidateEditTextValues(FeedingSchedule_NumberOfRabbits)
+                    | !ValidateEditTextValues(FeedingSchedule_TypeOfFeed)
                     |!ValidateEditTextValues(FeedingSchedule_FeedingTimes)){
 
                 return;
@@ -152,7 +153,8 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
                     || View.VISIBLE==time2_Layout.getVisibility()
                     ||View.VISIBLE==time3_Layout.getVisibility()){
 
-                if(!ValidateEditTextValues(FeedingSchedule_Time1 )| !ValidateEditTextValues(FeedingSchedule_Time2)
+                if(!ValidateEditTextValues(FeedingSchedule_Time1 )
+                        | !ValidateEditTextValues(FeedingSchedule_Time2)
                         |!ValidateEditTextValues(FeedingSchedule_Time3)){
 
                     return;
@@ -162,7 +164,8 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
             }else if (View.VISIBLE==time1_Layout.getVisibility()
                     || View.VISIBLE==time2_Layout.getVisibility()){
 
-                if(!ValidateEditTextValues(FeedingSchedule_Time1 )| !ValidateEditTextValues(FeedingSchedule_Time2)){
+                if(!ValidateEditTextValues(FeedingSchedule_Time1 )
+                        | !ValidateEditTextValues(FeedingSchedule_Time2)){
 
                     return;
                 }
@@ -171,7 +174,8 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
             } else if (View.VISIBLE==time1_Layout.getVisibility()
                     || View.VISIBLE==time3_Layout.getVisibility()){
 
-                if(!ValidateEditTextValues(FeedingSchedule_Time1 )| !ValidateEditTextValues(FeedingSchedule_Time3)){
+                if(!ValidateEditTextValues(FeedingSchedule_Time1 )
+                        | !ValidateEditTextValues(FeedingSchedule_Time3)){
 
                     return;
                 }
@@ -181,7 +185,8 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
             else if (View.VISIBLE==time2_Layout.getVisibility()
                     || View.VISIBLE==time3_Layout.getVisibility()){
 
-                if(!ValidateEditTextValues(FeedingSchedule_Time2 )| !ValidateEditTextValues(FeedingSchedule_Time3)){
+                if(!ValidateEditTextValues(FeedingSchedule_Time2 )
+                        | !ValidateEditTextValues(FeedingSchedule_Time3)){
 
                     return;
                 }
@@ -211,7 +216,6 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
 
 
 
-
             feedsDB.setValue(saveFeedingInfo).addOnCompleteListener(task -> {
                 if(task.isSuccessful()){
 
@@ -221,7 +225,6 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
                     Toast.makeText(FeedingSchedule.this, "ERROR: Please check you internet connection", Toast.LENGTH_LONG).show();
                 }
             });
-
 
         });
 

@@ -12,9 +12,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:id="@+id/pic"
-        >
-
+        android:id="@+id/pic">
 
         <ImageView
             android:id="@+id/imageView"

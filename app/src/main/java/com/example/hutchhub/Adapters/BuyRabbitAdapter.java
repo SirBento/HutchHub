@@ -28,7 +28,6 @@ public class BuyRabbitAdapter extends RecyclerView.Adapter<BuyRabbitAdapter.BuyR
         public TextView rabbitBreedName, rabbitPrice,rabbitQuantity;
         public Button btnOrder,btnDelete;
 
-
         public BuyRabbitAdapterViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -37,7 +36,6 @@ public class BuyRabbitAdapter extends RecyclerView.Adapter<BuyRabbitAdapter.BuyR
             rabbitQuantity = itemView.findViewById(R.id.rabbitQuantity);
             btnOrder = itemView.findViewById(R.id.btnOrder);
             btnDelete = itemView.findViewById(R.id.btnDelete);
-
         }
     }
 
