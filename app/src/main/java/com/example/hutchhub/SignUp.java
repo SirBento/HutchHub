@@ -19,7 +19,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUp extends AppCompatActivity {
-
     private EditText firstName, email, passWord1, passWord2;
     private Button signUp;
     private FirebaseAuth mAuth;
@@ -29,7 +28,6 @@ public class SignUp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-
 
         signUp = findViewById(R.id.btn_CreateAcc);
         firstName = findViewById(R.id.signUp_Name);
@@ -41,18 +39,18 @@ public class SignUp extends AppCompatActivity {
         // creating a variable for accessing the database authentication
         mAuth = FirebaseAuth.getInstance();
 
-        signUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        signUp.setOnClickListener(view -> {
 
-                if(!validateSecondPassword() | !validateFirstPassword() | !validateFirstName()  |  !validateEmail() ){
+            if(!validateSecondPassword()
+                    | !validateFirstPassword()
+                    | !validateFirstName()
+                    |  !validateEmail() ){
 
-                    return;
-                }
-                loadingDialog.startLoadingDialog();
-                registerUser();
-
+                return;
             }
+            loadingDialog.startLoadingDialog();
+            registerUser();
+
         });
     }
 
@@ -80,45 +78,42 @@ public class SignUp extends AppCompatActivity {
 
         //entering data into the firebase database during signup
         mAuth.createUserWithEmailAndPassword(e_mail, pass1)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+                .addOnCompleteListener(task -> {
 
-                        if (task.isSuccessful()) {  //for if the user was successfully registered
+                    if (task.isSuccessful()) {  //for if the user was successfully registered
 
-                            User user = new User(fname, e_mail, pass1);
+                        User user = new User(fname, e_mail, pass1);
 
-                            FirebaseDatabase.getInstance().getReference("Users")
-                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<Void> task) {
+                        FirebaseDatabase.getInstance().getReference("Users")
+                                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
 
-                                            if (task.isSuccessful()) {
+                                        if (task.isSuccessful()) {
 
-                                                //checking if the account is verified , if not the user has to first verify the account before logging in
-                                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                                                //show a notification if the account was created successfully
-                                                user.sendEmailVerification();
-                                                Toast.makeText(SignUp.this, "Account created successfully.Please check your email to verify then LogIn with your account", Toast.LENGTH_LONG).show();
-                                                loadingDialog.dismissDialog();
-                                                // Go to login page
-                                                startActivity(new Intent(SignUp.this, Login.class));
-                                                finish();
+                                            //checking if the account is verified , if not the user has to first verify the account before logging in
+                                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                                            //show a notification if the account was created successfully
+                                            user.sendEmailVerification();
+                                            Toast.makeText(SignUp.this, "Account created successfully.Please check your email to verify then LogIn with your account", Toast.LENGTH_LONG).show();
+                                            loadingDialog.dismissDialog();
+                                            // Go to login page
+                                            startActivity(new Intent(SignUp.this, Login.class));
+                                            finish();
 
 
-                                            } else {
-                                                loadingDialog.dismissDialog();
-                                                //show a notification if the account failed to create an account successfully
-                                                Toast.makeText(SignUp.this, "Account creation failed. Please check your internet connection and try again!", Toast.LENGTH_LONG).show();
-
-                                            }
+                                        } else {
+                                            loadingDialog.dismissDialog();
+                                            //show a notification if the account failed to create an account successfully
+                                            Toast.makeText(SignUp.this, "Account creation failed. Please check your internet connection and try again!", Toast.LENGTH_LONG).show();
 
                                         }
-                                    });
+
+                                    }
+                                });
 
 
-                        }
                     }
                 });
 

@@ -2,7 +2,6 @@ package com.example.hutchhub;
 
 public class User {
 
-
     public String firstname, Email, password;
 
 
