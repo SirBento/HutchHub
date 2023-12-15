@@ -89,7 +89,6 @@ public class BuySellChat extends AppCompatActivity {
                 SendNotification(Displaymessage);
                 BuySellChatInput_message.setText("");
             }
-
         });
     }
 
@@ -122,7 +121,6 @@ public class BuySellChat extends AppCompatActivity {
 
                     currentusername = snapshot.child("firstname").getValue().toString();
                 }
-
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
