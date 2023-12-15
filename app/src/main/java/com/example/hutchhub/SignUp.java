@@ -50,10 +50,8 @@ public class SignUp extends AppCompatActivity {
             }
             loadingDialog.startLoadingDialog();
             registerUser();
-
         });
     }
-
 
     //if checks if there is a user already logged in, if so it opens the homepage
     @Override
@@ -66,7 +64,6 @@ public class SignUp extends AppCompatActivity {
             finish();
         }
     }
-
 
     private void registerUser() {
 
