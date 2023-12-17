@@ -60,7 +60,8 @@ public class DetailForRabbit extends AppCompatActivity {
 
         btn_detForDone.setOnClickListener(view -> {
             loadingDialog.startLoadingDialog();
-            SendNotification("Hello" + sellerUsername+", there is someone interested " +
+            SendNotification("Hello" + sellerUsername
+                    + ", there is someone interested " +
                              "in the rabbits you listed for sale");
         });
 
