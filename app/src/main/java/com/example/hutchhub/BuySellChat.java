@@ -145,7 +145,6 @@ public class BuySellChat extends AppCompatActivity {
 
     }
 
-
     private void SendNotification(String buyerUID) {
         /** send notification to each individual  among those who want to strike a deal  **/
 
