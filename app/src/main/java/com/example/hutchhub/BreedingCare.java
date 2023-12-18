@@ -30,7 +30,6 @@ import java.util.HashMap;
 import java.util.Locale;
 
 public class BreedingCare extends AppCompatActivity {
-
     EditText rabbit_Breed_Doe, rabbit_Breed_Doe_Age,
             rabbit_Breed_Doe_Breed,rabbit_Breed_Buck,
             rabbit_Breed_Buck_Age, rabbit_Breed_Buck_Breed,
@@ -43,7 +42,6 @@ public class BreedingCare extends AppCompatActivity {
 
     private int year, month, day;
     final Calendar calendar = Calendar.getInstance();
-
 
 
     @Override
@@ -163,11 +161,11 @@ private void initializeValues(){
 
         String Value = editText.getText().toString().trim();
 
-
         if (Value.isEmpty()) {
             editText.setError("This field is required");
             editText.requestFocus();
             return false;
+
         } else {
             editText.setError(null);
             return true;

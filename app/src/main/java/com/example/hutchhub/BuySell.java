@@ -18,10 +18,11 @@ public class BuySell extends AppCompatActivity {
         sellList = findViewById(R.id.btn_sellList);
 
         buy.setOnClickListener(v -> {
-
             startActivity(new Intent(BuySell.this,BuyRabbit.class));
             finish();
+
         });
+
         sell.setOnClickListener(v -> {
             startActivity(new Intent(BuySell.this,ListRabbit.class));
             finish();
