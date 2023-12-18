@@ -1,7 +1,6 @@
 package com.example.hutchhub.Models;
 public class Message {
     String message, name,id, time, date,buyer,seller;
-
     public Message() {}
     public Message(String message, String name, String id ,String buyer,String seller,String time, String date) {
         this.message = message;

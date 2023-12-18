@@ -61,8 +61,7 @@ public class SignUp extends AppCompatActivity {
         if (LoggediNuser != null) {
 
             startActivity(new Intent(SignUp.this, MainActivity.class));
-            finish();
-        }
+            finish();}
     }
 
     private void registerUser() {
@@ -70,8 +69,6 @@ public class SignUp extends AppCompatActivity {
         String fname = firstName.getText().toString().trim();
         String e_mail = email.getText().toString().trim();
         String pass1 = passWord1.getText().toString().trim();
-        String pass2 = passWord2.getText().toString().trim();
-
 
         //entering data into the firebase database during signup
         mAuth.createUserWithEmailAndPassword(e_mail, pass1)

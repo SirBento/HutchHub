@@ -44,7 +44,6 @@ public class BuySellChat extends AppCompatActivity {
     FirebaseAuth auth;
     DatabaseReference messagedb, userRef;
     FirebaseDatabase database;
-
     ImageButton BuySellChatSend_message_bnt;
     EditText BuySellChatInput_message;
     List<Message> message;
@@ -119,8 +118,7 @@ public class BuySellChat extends AppCompatActivity {
 
                 if(snapshot.exists()){
 
-                    currentusername = snapshot.child("firstname").getValue().toString();
-                }
+                    currentusername = snapshot.child("firstname").getValue().toString();}
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

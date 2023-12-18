@@ -65,7 +65,6 @@ public class DetailForRabbit extends AppCompatActivity {
                              "in the rabbits you listed for sale");
         });
 
-
     }
 
     private void populateValues(){

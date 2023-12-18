@@ -91,7 +91,6 @@ public class Chat extends AppCompatActivity {
               SendNotification(Displaymessage);
               input_message.setText("");
             }
-
         });
 
     }

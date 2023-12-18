@@ -46,8 +46,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
         Auth = FirebaseAuth.getInstance();
 
-        return new MessageViewHolder(view);
-    }
+        return new MessageViewHolder(view); }
 
     @Override
     public void onBindViewHolder(@NonNull MessageViewHolder holder, int position) {
