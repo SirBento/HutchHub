@@ -22,7 +22,6 @@ public class BreedingCare extends AppCompatActivity {
             rabbit_Breed_Doe_Breed,rabbit_Breed_Buck,
             rabbit_Breed_Buck_Age, rabbit_Breed_Buck_Breed,
             rabbit_Breed_Falls,rabbit_Breed_Date;
-
     DatabaseReference detailsDB = FirebaseDatabase.getInstance()
             .getReference("BreedingCare");
 

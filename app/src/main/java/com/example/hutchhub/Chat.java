@@ -96,7 +96,6 @@ public class Chat extends AppCompatActivity {
     }
 
 
-
     @Override
     protected void onStart() {
         super.onStart();

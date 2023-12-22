@@ -66,7 +66,6 @@ public class DetailForRabbit extends AppCompatActivity {
         });
 
     }
-
     private void populateValues(){
 
         PhoneNum = getIntent().getStringExtra("PhoneNum");

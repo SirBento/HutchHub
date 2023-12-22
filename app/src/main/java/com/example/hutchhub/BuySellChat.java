@@ -126,7 +126,6 @@ public class BuySellChat extends AppCompatActivity {
         });
 
     }
-
     private boolean validateMessage() {
         String message = BuySellChatInput_message.getText().toString().trim();
 

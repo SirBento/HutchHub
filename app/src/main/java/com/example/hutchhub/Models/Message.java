@@ -10,7 +10,6 @@ public class Message {
         this.seller = seller;
         this.time = time;
         this.date = date;  }
-
     public String getBuyer() {
         return buyer;
     }
