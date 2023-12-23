@@ -63,7 +63,6 @@ public class SignUp extends AppCompatActivity {
             startActivity(new Intent(SignUp.this, MainActivity.class));
             finish();}
     }
-
     private void registerUser() {
 
         String fname = firstName.getText().toString().trim();
@@ -75,7 +74,6 @@ public class SignUp extends AppCompatActivity {
                 .addOnCompleteListener(task -> {
 
                     if (task.isSuccessful()) {  //for if the user was successfully registered
-
                         User user = new User(fname, e_mail, pass1);
 
                         FirebaseDatabase.getInstance().getReference("Users")
