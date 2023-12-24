@@ -6,7 +6,6 @@ public class BreedingAndCare {
             Buck_Name,Buck_Age,Buck_Breed,
             Falls,Cross_Date,Reco_food,
             Quantity,Pal_Date, PregDue_Date;
-
     public BreedingAndCare() {}
 
     public BreedingAndCare(String id, String doe_Name, String doe_Age, String doe_Breed, String buck_Name, String buck_Age, String buck_Breed, String falls, String cross_Date, String reco_food, String quantity, String pal_Date, String pregDue_Date) {
