@@ -1,7 +1,6 @@
 package com.example.hutchhub.Models;
 
 public class BreedingAndCare {
-
     String Id,Doe_Name, Doe_Age,Doe_Breed,
             Buck_Name,Buck_Age,Buck_Breed,
             Falls,Cross_Date,Reco_food,

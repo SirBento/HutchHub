@@ -35,7 +35,6 @@ public class SignUp extends AppCompatActivity {
         passWord1 = findViewById(R.id.signUp_pass);
         passWord2 = findViewById(R.id.signUp_pass2);
 
-
         // creating a variable for accessing the database authentication
         mAuth = FirebaseAuth.getInstance();
 
@@ -46,8 +45,8 @@ public class SignUp extends AppCompatActivity {
                     | !validateFirstName()
                     |  !validateEmail() ){
 
-                return;
-            }
+                return;}
+
             loadingDialog.startLoadingDialog();
             registerUser();
         });
@@ -58,6 +57,7 @@ public class SignUp extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         FirebaseUser LoggediNuser = mAuth.getCurrentUser();
+
         if (LoggediNuser != null) {
 
             startActivity(new Intent(SignUp.this, MainActivity.class));
