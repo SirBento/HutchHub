@@ -24,12 +24,9 @@ public class BreedingCare extends AppCompatActivity {
             rabbit_Breed_Falls,rabbit_Breed_Date;
     DatabaseReference detailsDB = FirebaseDatabase.getInstance()
             .getReference("BreedingCare");
-
     Button btn_Breed_Save;
-
     private int year, month, day;
     final Calendar calendar = Calendar.getInstance();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +34,6 @@ public class BreedingCare extends AppCompatActivity {
         setContentView(R.layout.activity_breeding_care);
 
         initializeValues();
-
 
         rabbit_Breed_Date.setOnClickListener(view -> {
             DatePickerDialog datePickerDialog = new DatePickerDialog(BreedingCare.this, new DatePickerDialog.OnDateSetListener() {
@@ -57,11 +53,9 @@ public class BreedingCare extends AppCompatActivity {
                     |!ValidateEditTextValues(rabbit_Breed_Buck_Breed)|!ValidateEditTextValues(rabbit_Breed_Falls)|!ValidateEditTextValues(rabbit_Breed_Date)){
                 return;
             }
-
             SaveDetails();
 
         });
-
     }
 
 
@@ -110,7 +104,6 @@ public class BreedingCare extends AppCompatActivity {
             e.printStackTrace();
             Log.e("epx:",e.getMessage());
         }
-
         detailsDB.push().setValue(BreedingCare).addOnCompleteListener(task -> {
 
             if(task.isSuccessful()){
@@ -158,11 +151,6 @@ private void initializeValues(){
             return true;
         }
 
-
     }
-
-
-
-
 }
 

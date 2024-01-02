@@ -57,7 +57,6 @@ public class DetailForRabbit extends AppCompatActivity {
         detDescription.setText(Description);
         getUserName();
 
-
         btn_detForDone.setOnClickListener(view -> {
             loadingDialog.startLoadingDialog();
             SendNotification("Hello" + sellerUsername
