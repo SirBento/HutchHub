@@ -31,7 +31,6 @@ public class MySellList extends AppCompatActivity {
     RecyclerView mySellRecyclerList;
     SearchView searchView;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,18 +99,15 @@ public class MySellList extends AppCompatActivity {
                     mySellRecyclerList.smoothScrollToPosition(mySellRecyclerList.getAdapter().getItemCount());
                     if(!auth.getCurrentUser().getUid().equals(rabbitForSale.getSellerId())){
                         noSellText.setVisibility(View.VISIBLE);
-
                     }
                 }
                 else{
                     noSellText.setVisibility(View.VISIBLE);
-
                 }
             }
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
             }
 
             @Override
