@@ -72,7 +72,7 @@ public class BuyRabbit extends AppCompatActivity {
         sellsDB.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
+        /** Check this condition here to fix the bug that is existing if(!sellerID.equals(fromUserID))  **/
                 if(snapshot.exists()) {
                     RabbitForSale rabbitForSale =snapshot.getValue(RabbitForSale.class);
                     rabbitForSaleList.add(rabbitForSale);

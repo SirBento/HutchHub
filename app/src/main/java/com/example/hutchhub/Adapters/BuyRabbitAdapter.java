@@ -63,7 +63,7 @@ public class BuyRabbitAdapter extends RecyclerView.Adapter<BuyRabbitAdapter.BuyR
         RabbitForSale rabbitForSale = arrayList.get(position);
         String fromUserID = rabbitForSale.getSellerId();
 
-        if(!sellerID.equals(fromUserID)){
+        if(!sellerID.equals(fromUserID)){ /** this should be checked in the buy rabbit page  **/
 
             holder.btnDelete.setVisibility(View.INVISIBLE);
             holder.rabbitBreedName.setText("Breed: "+ rabbitForSale.getBreed());
