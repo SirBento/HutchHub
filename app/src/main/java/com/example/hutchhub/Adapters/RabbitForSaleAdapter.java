@@ -75,7 +75,7 @@ public class RabbitForSaleAdapter extends RecyclerView.Adapter<RabbitForSaleAdap
         String sellerID = Auth.getCurrentUser().getUid();
         RabbitForSale rabbitForSale = arrayList.get(position);
         String fromUserID = rabbitForSale.getSellerId();
-
+/**    This line probably causing errors, it should be tested* **/
         if(sellerID.equals(fromUserID)){
 
             holder.btnDelete.setVisibility(View.VISIBLE);

@@ -68,6 +68,8 @@ public class MySellList extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
 
+                /*** probably causing bugs  ***/
+  /***
                 if(snapshot.exists()) {
                     RabbitForSale rabbitForSale =snapshot.getValue(RabbitForSale.class);
                     rabbitForSaleList.add(rabbitForSale);
@@ -86,6 +88,24 @@ public class MySellList extends AppCompatActivity {
                     noSellText.setVisibility(View.VISIBLE);
 
                 }
+
+   ***/
+
+                if(snapshot.exists()) {
+                    RabbitForSale rabbitForSale =snapshot.getValue(RabbitForSale.class);
+                    rabbitForSale.setKey(snapshot.getKey());
+                    rabbitForSaleList.add(rabbitForSale);
+                    rabbitForSaleAdapter.notifyDataSetChanged();
+                    mySellRecyclerList.smoothScrollToPosition(mySellRecyclerList.getAdapter().getItemCount());
+                    if(!auth.getCurrentUser().getUid().equals(rabbitForSale.getSellerId())){
+                        noSellText.setVisibility(View.VISIBLE);
+                    }
+                }
+                else{
+                    noSellText.setVisibility(View.VISIBLE);
+                }
+
+
             }
 
             @Override
