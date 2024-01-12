@@ -40,7 +40,6 @@ public class RabbitForSaleAdapter extends RecyclerView.Adapter<RabbitForSaleAdap
         public TextView rabbitBreedName, rabbitPrice,rabbitQuantity;
         public Button btnOrder,btnDelete;
 
-
         public RabbitForSaleAdapterViewHolder(@NonNull View itemView) {
             super(itemView);
 
