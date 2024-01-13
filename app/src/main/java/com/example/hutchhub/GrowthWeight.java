@@ -36,8 +36,6 @@ public class GrowthWeight extends AppCompatActivity {
     final Calendar calendar = Calendar.getInstance();
 
     View Gnw_View1,Gnw_View2,Gnw_View3;
-
-
     DatabaseReference SavingInInfoDB  = FirebaseDatabase
                 .getInstance().getReference("GrowthWeight")
                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid());
@@ -233,8 +231,6 @@ public class GrowthWeight extends AppCompatActivity {
     private boolean ValidateEditTextValues(EditText editText){
 
         String Value = editText.getText().toString().trim();
-
-
         if (Value.isEmpty()) {
             editText.setError("This field is required");
             editText.requestFocus();

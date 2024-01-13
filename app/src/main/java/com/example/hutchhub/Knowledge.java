@@ -25,51 +25,16 @@ public class Knowledge extends AppCompatActivity {
 
 
 
-        book1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        book1.setOnClickListener(view -> startActivity(new Intent(Knowledge.this, BreedingTechs.class)));
 
-                startActivity(new Intent(Knowledge.this, BreedingTechs.class));
+        book2.setOnClickListener(view -> startActivity(new Intent(Knowledge.this, RabbitHusbandry.class)));
 
-            }
-        });
+        book3.setOnClickListener(view -> startActivity(new Intent(Knowledge.this, RabbitProduction.class)));
 
-        book2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        book4.setOnClickListener(view -> startActivity(new Intent(Knowledge.this, RabbitTracks.class)));
 
-                startActivity(new Intent(Knowledge.this, RabbitHusbandry.class));
-            }
-        });
+        book5.setOnClickListener(view -> startActivity(new Intent(Knowledge.this, RaisingRabbits.class)));
 
-        book3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                startActivity(new Intent(Knowledge.this, RabbitProduction.class));
-            }
-        });
-
-        book4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Knowledge.this, RabbitTracks.class));
-            }
-        });
-
-        book5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Knowledge.this, RaisingRabbits.class));
-            }
-        });
-
-        book6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Knowledge.this, RaisingRabbbit2.class));
-
-            }
-        });
+        book6.setOnClickListener(view -> startActivity(new Intent(Knowledge.this, RaisingRabbbit2.class)));
     }
 }
