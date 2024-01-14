@@ -108,8 +108,6 @@ public class SignUp extends AppCompatActivity {
 
                     }
                 });
-
-
     }
 
     private boolean validateFirstName() {

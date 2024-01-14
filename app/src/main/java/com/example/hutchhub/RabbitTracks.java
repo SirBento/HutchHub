@@ -9,7 +9,6 @@ import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle;
 import com.github.barteksc.pdfviewer.util.FitPolicy;
 
 public class RabbitTracks extends AppCompatActivity {
-
     private PDFView pdfView;
     private int pageNumber = 0;
     @Override
