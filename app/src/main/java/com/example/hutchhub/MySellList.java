@@ -105,7 +105,6 @@ public class MySellList extends AppCompatActivity {
                     noSellText.setVisibility(View.VISIBLE);
                 }
 
-
             }
 
             @Override

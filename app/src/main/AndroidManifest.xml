@@ -19,6 +19,9 @@
         android:theme="@style/Theme.HutchHIub"
         tools:targetApi="31">
         <activity
+            android:name=".Add_PregRabbit_Details"
+            android:exported="false" />
+        <activity
             android:name=".BuySellChat"
             android:exported="false" />
         <activity
