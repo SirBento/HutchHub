@@ -109,7 +109,7 @@
 
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_rabbit_Record_Save"
+                android:id="@+id/btn_rabbit_Preg_Record_Save"
                 style="@android:style/Widget.Button"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
