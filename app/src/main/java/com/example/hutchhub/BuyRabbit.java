@@ -72,12 +72,20 @@ public class BuyRabbit extends AppCompatActivity {
         sellsDB.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-        /** Check this condition here to fix the bug that is existing if(!sellerID.equals(fromUserID))  **/
-                if(snapshot.exists()) {
-                    RabbitForSale rabbitForSale =snapshot.getValue(RabbitForSale.class);
-                    rabbitForSaleList.add(rabbitForSale);
-                    buyRabbitAdapter.notifyDataSetChanged();
-                    myBuyRecyclerList.smoothScrollToPosition(myBuyRecyclerList.getAdapter().getItemCount());
+                if(snapshot.exists() && snapshot.hasChildren()) {
+                    RabbitForSale rabbitForSale = snapshot.getValue(RabbitForSale.class);
+                    String sellerID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                    String fromUserID = rabbitForSale.getSellerId();
+
+                    if(!sellerID.equals(fromUserID)){
+                        rabbitForSaleList.add(rabbitForSale);
+                        buyRabbitAdapter.notifyDataSetChanged();
+                        myBuyRecyclerList.smoothScrollToPosition(myBuyRecyclerList.getAdapter().getItemCount());
+
+                    }else{
+                            noBuySellText.setVisibility(View.VISIBLE);
+                        }
+
                 }
                 else{
                     noBuySellText.setVisibility(View.VISIBLE);
@@ -88,7 +96,7 @@ public class BuyRabbit extends AppCompatActivity {
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
 
-                if(snapshot.exists()) {
+                if(snapshot.exists()&& snapshot.hasChildren()) {
                     RabbitForSale rabbitForSale =snapshot.getValue(RabbitForSale.class);
                     rabbitForSaleList.add(rabbitForSale);
                     buyRabbitAdapter.notifyDataSetChanged();

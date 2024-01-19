@@ -58,12 +58,7 @@ public class BuyRabbitAdapter extends RecyclerView.Adapter<BuyRabbitAdapter.BuyR
     @Override
     public void onBindViewHolder(@NonNull BuyRabbitAdapterViewHolder holder, int position) {
 
-
-        String sellerID = Auth.getCurrentUser().getUid();
         RabbitForSale rabbitForSale = arrayList.get(position);
-        String fromUserID = rabbitForSale.getSellerId();
-
-        if(!sellerID.equals(fromUserID)){ /** this should be checked in the buy rabbit page  **/
 
             holder.btnDelete.setVisibility(View.INVISIBLE);
             holder.rabbitBreedName.setText("Breed: "+ rabbitForSale.getBreed());
@@ -71,27 +66,23 @@ public class BuyRabbitAdapter extends RecyclerView.Adapter<BuyRabbitAdapter.BuyR
             holder.rabbitQuantity.setText("Quantity: "+rabbitForSale.getQuantity());
             holder.btnOrder.setVisibility(View.VISIBLE);
 
-            holder.btnOrder.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    // open details for rabbit add extra details in intent
-                    Intent intent = new Intent(holder.itemView.getContext(), DetailForRabbit.class);
-                    intent.putExtra("Key",arrayList.get(position).getKey());
-                    intent.putExtra("SellerID",arrayList.get(position).getSellerId());
-                    intent.putExtra("PhoneNum", arrayList.get(position).getPhone());
-                    intent.putExtra("Address", arrayList.get(position).getAddress());
-                    intent.putExtra("Breed", arrayList.get(position).getBreed());
-                    intent.putExtra("Description", arrayList.get(position).getDescription());
-                    intent.putExtra("Price", arrayList.get(position).getPrice());
-                    intent.putExtra("Quantity", arrayList.get(position).getQuantity());
-                    holder.itemView.getContext().startActivity(intent);
+            holder.btnOrder.setOnClickListener(view -> {
+                // open details for rabbit add extra details in intent
+                Intent intent = new Intent(holder.itemView.getContext(), DetailForRabbit.class);
+                intent.putExtra("Key",arrayList.get(position).getKey());
+                intent.putExtra("SellerID",arrayList.get(position).getSellerId());
+                intent.putExtra("PhoneNum", arrayList.get(position).getPhone());
+                intent.putExtra("Address", arrayList.get(position).getAddress());
+                intent.putExtra("Breed", arrayList.get(position).getBreed());
+                intent.putExtra("Description", arrayList.get(position).getDescription());
+                intent.putExtra("Price", arrayList.get(position).getPrice());
+                intent.putExtra("Quantity", arrayList.get(position).getQuantity());
+                holder.itemView.getContext().startActivity(intent);
 
-                }
             });
 
         }
 
-    }
 
     @Override
     public int getItemCount() {
