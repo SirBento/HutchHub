@@ -100,7 +100,7 @@
                 android:textStyle="italic" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:orientation="horizontal">
@@ -120,10 +120,10 @@
 
                 <Spinner
                     android:id="@+id/rabbit_Record_Sex"
-                    android:layout_width="270dp"
+                    android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:layout_marginStart="30dp"
-                    android:background="@drawable/rounded_corners2"
+                    android:layout_marginStart="40dp"
+                    android:background="@drawable/edittext_background"
                     android:fontFamily="serif"
                     android:textColor="@color/black"
                     android:textSize="24sp"
@@ -132,7 +132,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:orientation="horizontal">
@@ -145,18 +145,18 @@
                     android:background="@drawable/edittext_background"
                     android:fontFamily="serif"
                     android:padding="6dp"
-                    android:text="Rabbit Breed:"
+                    android:text="Breed:"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
 
                 <Spinner
                     android:id="@+id/rabbit_Record_Breeds"
-                    android:layout_width="205dp"
+                    android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:background="@drawable/rounded_corners2"
+                    android:background="@drawable/edittext_background"
+                    android:layout_marginStart="20dp"
                     android:fontFamily="serif"
-                    android:layout_marginStart="10dp"
                     android:textColor="@color/black"
                     android:textSize="24sp"
                     tools:ignore="SpeakableTextPresentCheck" />
@@ -164,7 +164,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:orientation="horizontal">
@@ -184,10 +184,10 @@
 
                 <Spinner
                     android:id="@+id/rabbit_Record_Purpose"
-                    android:layout_width="225dp"
+                    android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:layout_marginStart="30dp"
-                    android:background="@drawable/rounded_corners2"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/edittext_background"
                     android:fontFamily="serif"
                     android:textColor="@color/black"
                     android:textSize="24sp"
@@ -196,7 +196,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:orientation="horizontal">
@@ -216,10 +216,10 @@
 
                 <Spinner
                     android:id="@+id/rabbit_Record_Origin"
-                    android:layout_width="240dp"
+                    android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:layout_marginStart="30dp"
-                    android:background="@drawable/rounded_corners2"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/edittext_background"
                     android:fontFamily="serif"
                     android:textColor="@color/black"
                     android:textSize="24sp"
@@ -228,7 +228,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:orientation="horizontal">
@@ -250,6 +250,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="3dp"
+                    android:layout_marginStart="10dp"
                     android:background="@drawable/edittext_background"
                     android:ems="10"
                     android:hint="Select date"
@@ -264,7 +265,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:orientation="horizontal">
@@ -285,6 +286,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="3dp"
+                    android:layout_marginStart="10dp"
                     android:background="@drawable/edittext_background"
                     android:ems="10"
                     android:focusable="false"
@@ -305,6 +307,7 @@
                 android:layout_marginTop="12dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
+                android:padding="5dp"
                 android:gravity="top"
                 android:hint="General Notes About The Rabbit(Optional)"
                 android:inputType="text|textMultiLine" />
