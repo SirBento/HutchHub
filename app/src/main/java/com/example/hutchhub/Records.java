@@ -35,6 +35,7 @@ public class Records extends AppCompatActivity {
     DatabaseReference rabbitRecord;
     ArrayList<RabbitRecord> rabbitRecordArrayList;
     RabbitRecordAdapter RabbitRecordAdapter;
+    String currentUserUID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +46,8 @@ public class Records extends AppCompatActivity {
         rabbit_Record_RC_List = findViewById(R.id.rabbit_Record_List);
         rabbit_Record_RC_List.setItemAnimator(new SlideInUpAnimator());
         auth = FirebaseAuth.getInstance();
-        rabbitRecord = FirebaseDatabase.getInstance().getReference().child("RabbitRecords");
+        currentUserUID =auth.getCurrentUser().getUid();
+        rabbitRecord = FirebaseDatabase.getInstance().getReference().child("RabbitRecords").child(currentUserUID);
         rabbitRecordArrayList = new ArrayList<>();
         RabbitRecordAdapter = new RabbitRecordAdapter(rabbitRecordArrayList,Records.this);
         rabbit_Record_RC_List.setHasFixedSize(true);
@@ -67,31 +69,20 @@ public class Records extends AppCompatActivity {
                 super.onScrolled(recyclerView, dx, dy);
             }
         });
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                startActivity(new Intent(Records.this, AddRabbitRecord.class));
-            }
-        });
+        fab.setOnClickListener(view -> startActivity(new Intent(Records.this, AddRabbitRecord.class)));
 
         rabbitRecord.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
 
                 if(snapshot.exists()) {
+
                     RabbitRecord rabbitRecord1 =snapshot.getValue(RabbitRecord.class);
+                    rabbitRecord1.setKey(snapshot.getKey());
                     rabbitRecordArrayList.add(rabbitRecord1);
+                    RabbitRecordAdapter.notifyDataSetChanged();
+                    rabbit_Record_RC_List.smoothScrollToPosition(rabbit_Record_RC_List.getAdapter().getItemCount());
 
-                    // if the first node the records is the same as the user then the data should be display
-                    if(snapshot.getKey().equals(auth.getCurrentUser().getUid())){
-
-                        RabbitRecordAdapter.notifyDataSetChanged();
-                        rabbit_Record_RC_List.smoothScrollToPosition(rabbit_Record_RC_List.getAdapter().getItemCount());
-
-                    }else{
-                        Toast.makeText(Records.this, "No Record Yet", Toast.LENGTH_LONG).show();
-                    }
                 }
                 else{
                     Toast.makeText(Records.this, "No Record Yet", Toast.LENGTH_LONG).show();
@@ -105,16 +96,8 @@ public class Records extends AppCompatActivity {
                 if(snapshot.exists()) {
                     RabbitRecord rabbitRecord1 =snapshot.getValue(RabbitRecord.class);
                     rabbitRecordArrayList.add(rabbitRecord1);
-
-                    // if the first node the records is the same as the user then the data should be display
-                    if(snapshot.getKey().equals(auth.getCurrentUser().getUid())){
-
-                        RabbitRecordAdapter.notifyDataSetChanged();
-                        rabbit_Record_RC_List .smoothScrollToPosition(rabbit_Record_RC_List.getAdapter().getItemCount());
-
-                    }else{
-                        Toast.makeText(Records.this, "No Record Yet", Toast.LENGTH_LONG).show();
-                    }
+                    RabbitRecordAdapter.notifyDataSetChanged();
+                    rabbit_Record_RC_List .smoothScrollToPosition(rabbit_Record_RC_List.getAdapter().getItemCount());
                 }
                 else{
                     Toast.makeText(Records.this, "No Record Yet", Toast.LENGTH_LONG).show();
