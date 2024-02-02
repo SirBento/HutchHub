@@ -1,10 +1,11 @@
 package com.example.hutchhub.Models;
 
 public class RabbitRecord {
-    String Name,Sex, DOB,
+    String Key,Name,Sex, DOB,
             Fname,Mname,Origin,
             Color,Wdate,Breed,
             Purpose,Notes,Image;
+
 
     public RabbitRecord() {
     }
@@ -12,7 +13,7 @@ public class RabbitRecord {
     public RabbitRecord(String name, String sex, String DOB,
                         String fname, String mname, String origin,
                         String color, String wdate, String breed,
-                        String purpose, String notes, String image) {
+                        String purpose, String notes, String image,String key) {
         this.Name = name;
         this.Sex = sex;
         this.DOB = DOB;
@@ -25,8 +26,16 @@ public class RabbitRecord {
         this.Purpose = purpose;
         this.Notes = notes;
         this.Image = image;
+        this.Key = key;
     }
 
+    public String getKey() {
+        return Key;
+    }
+
+    public void setKey(String key) {
+        Key = key;
+    }
 
     public String getName() {
         return Name;
