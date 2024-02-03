@@ -2,6 +2,7 @@ package com.example.hutchhub;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.app.DatePickerDialog;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.github.dhaval2404.imagepicker.ImagePicker;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -142,12 +144,12 @@ public class AddRabbitRecord extends AppCompatActivity {
                |!ValidateEditTextValues(rabbit_Record_MotherName) |!ValidateEditTextValues(rabbit_Record_Color)|
                !ValidateEditTextValues(rabbit_Record_DOB)|!ValidateEditTextValues(rabbit_Record_Weaned)
                |!ValidateEditTextValues(rabbit_Record_Notes)){
-
+                loadingDialog.dismissDialog();
                 return;
+
             }
 
             SaveImage();
-            SaveRabbitRecords();
         });
 
     }
@@ -166,27 +168,16 @@ public class AddRabbitRecord extends AppCompatActivity {
 
                 firebaseUri.addOnSuccessListener(uri -> {
 
-                    Toast.makeText(AddRabbitRecord.this, "Rabbit Picture Uploaded Successfully", Toast.LENGTH_SHORT).show();
+
                     downloadUrl = uri.toString();
-                    // complete the rest of your code
+                    SaveRabbitRecords();
 
-                    RootRef.child("RabbitRecords").child(currentUserID).child("image").setValue(downloadUrl)
-                            .addOnCompleteListener(task -> {
-                                if (task.isSuccessful()){
 
-                                    loadingDialog.dismissDialog();
-
-                                }else{
-
-                                    Toast.makeText(AddRabbitRecord.this, "Error: Please check your internet connection", Toast.LENGTH_SHORT).show();
-                                    loadingDialog.dismissDialog();
-                                }
-
-                            });
                 });
             });
         }else{
             Toast.makeText(AddRabbitRecord.this, "Error: Please add the rabbit picture", Toast.LENGTH_LONG).show();
+            loadingDialog.dismissDialog();
         }
 
     }
@@ -264,7 +255,15 @@ public class AddRabbitRecord extends AppCompatActivity {
      rabbitRecord.put("Notes", rabbit_Record_Notes.getText().toString().trim());
      rabbitRecord.put("Image",downloadUrl);
 
-     databaseRef.child(currentUserID).setValue(rabbitRecord);
+     databaseRef.child(currentUserID).push().setValue(rabbitRecord).addOnCompleteListener(new OnCompleteListener<Void>() {
+         @Override
+         public void onComplete(@NonNull Task<Void> task) {
+             if (task.isSuccessful()){
+                 Toast.makeText(AddRabbitRecord.this, "Rabbit Record Saved Successfully", Toast.LENGTH_SHORT).show();
+                 finish();
+             }
+         }
+     });
 
  }
 
