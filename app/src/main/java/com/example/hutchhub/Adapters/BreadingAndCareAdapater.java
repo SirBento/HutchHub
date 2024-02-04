@@ -28,7 +28,7 @@ public class BreadingAndCareAdapater extends RecyclerView.Adapter<BreadingAndCar
                 CustomBreedCareBuckAge,CustomBreedCareBuckBreed,
                 CustomBreedCareFalls,CustomBreedCrossingDate,
                 CustomBreedPalpateDate,CustomBreedBirthDate,
-                CustomBreedRecomendedFood,CustomBreedFoodQuantity;
+                CustomBreedRecommendedFood,CustomBreedFoodQuantity;
 
 
 
@@ -45,7 +45,7 @@ public class BreadingAndCareAdapater extends RecyclerView.Adapter<BreadingAndCar
             CustomBreedCrossingDate = itemView.findViewById(R.id.CustomBreedCrossingDate);
             CustomBreedPalpateDate = itemView.findViewById(R.id.CustomBreedPalpateDate);
             CustomBreedBirthDate = itemView.findViewById(R.id.CustomBreedBirthDate);
-            CustomBreedRecomendedFood = itemView.findViewById(R.id.CustomBreedRecomendedFood);
+            CustomBreedRecommendedFood = itemView.findViewById(R.id.CustomBreedRecommendedFood);
             CustomBreedFoodQuantity = itemView.findViewById(R.id.CustomBreedFoodQuantity);
 
         }
@@ -80,7 +80,7 @@ public class BreadingAndCareAdapater extends RecyclerView.Adapter<BreadingAndCar
         holder.CustomBreedCrossingDate.setText("Crossing Date: " +breedingAndCare.getCross_Date());
         holder.CustomBreedPalpateDate.setText("Predicted Palpating Date: " +breedingAndCare.getPal_Date());
         holder.CustomBreedBirthDate.setText("Predicted Birth Date: " +breedingAndCare.getPregDue_Date());
-        holder.CustomBreedRecomendedFood.setText("Recommended Food: " +breedingAndCare.getReco_food());
+        holder.CustomBreedRecommendedFood.setText("Recommended Food: " +breedingAndCare.getReco_food());
         holder.CustomBreedFoodQuantity.setText("Food Quantity: " +breedingAndCare.getQuantity());
 
     }
