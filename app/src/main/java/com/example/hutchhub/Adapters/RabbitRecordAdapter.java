@@ -9,11 +9,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.hutchhub.Models.RabbitRecord;
 import com.example.hutchhub.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -31,7 +39,11 @@ public class RabbitRecordAdapter extends RecyclerView.Adapter<RabbitRecordAdapte
     Button btn_moreInfoDone;
 
     CircleImageView moreInfoRabbitPic;
-   Activity activity;
+    Activity activity;
+
+    DatabaseReference rabbitRecord = FirebaseDatabase.getInstance().getReference("RabbitRecords");
+
+
 
     public RabbitRecordAdapter(ArrayList<RabbitRecord> arrayList,Activity Activity){
 
@@ -45,7 +57,7 @@ public class RabbitRecordAdapter extends RecyclerView.Adapter<RabbitRecordAdapte
 
         public CircleImageView rabbitPic;
         public TextView rabbitName, rabbitDOB,rabbitSex,rabbit_Breed;
-        public Button btnViewMoreRabbitInfo;
+        public Button btnViewMoreRabbitInfo, btnDeleteRabbitInfo ;
 
         public LinearLayout layout;
 
@@ -61,6 +73,7 @@ public class RabbitRecordAdapter extends RecyclerView.Adapter<RabbitRecordAdapte
             rabbitSex = itemView.findViewById(R.id.rabbitSex);
             rabbit_Breed = itemView.findViewById(R.id.rabbit_Breed);
             btnViewMoreRabbitInfo = itemView.findViewById(R.id.btnViewMoreRabbitInfo);
+            btnDeleteRabbitInfo = itemView.findViewById(R.id.btnDeleteRabbitInfo );
 
 
 
@@ -99,49 +112,54 @@ public class RabbitRecordAdapter extends RecyclerView.Adapter<RabbitRecordAdapte
        moreInfoPurpose=dialog.findViewById(R.id.moreInfoPurpose);
        moreInfoNotes=dialog.findViewById(R.id.moreInfoNotes);
 
-        rabbitRecordAdapterViewHolder.btnViewMoreRabbitInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        rabbitRecordAdapterViewHolder.btnViewMoreRabbitInfo.setOnClickListener(view1 -> {
 
-                moreInfoRabbitName.setText(arrayList.get(rabbitRecordAdapterViewHolder.getAbsoluteAdapterPosition()).getName());
-                moreInfoRabbitSex.setText(arrayList.get(rabbitRecordAdapterViewHolder.getAbsoluteAdapterPosition()).getSex());
-                moreInfoDOB.setText(arrayList.get(rabbitRecordAdapterViewHolder.getAbsoluteAdapterPosition()).getDOB());
-                moreInfoFather.setText(arrayList.get(rabbitRecordAdapterViewHolder.getAbsoluteAdapterPosition()).getFname());
-                moreInfoMother.setText(arrayList.get(rabbitRecordAdapterViewHolder.getAbsoluteAdapterPosition()).getMname());
-                moreInfoOrigin.setText(arrayList.get(rabbitRecordAdapterViewHolder.getAbsoluteAdapterPosition()).getOrigin());
-                moreInfoColor.setText(arrayList.get(rabbitRecordAdapterViewHolder.getAbsoluteAdapterPosition()).getColor());
-                moreInfoWeaning.setText(arrayList.get(rabbitRecordAdapterViewHolder.getAbsoluteAdapterPosition()).getWdate());
-                moreInfoBreed.setText(arrayList.get(rabbitRecordAdapterViewHolder.getAbsoluteAdapterPosition()).getBreed());
-                moreInfoPurpose.setText(arrayList.get(rabbitRecordAdapterViewHolder.getAbsoluteAdapterPosition()).getPurpose());
-                moreInfoNotes.setText(arrayList.get(rabbitRecordAdapterViewHolder.getAbsoluteAdapterPosition()).getNotes());
+            moreInfoRabbitName.setText(arrayList.get(rabbitRecordAdapterViewHolder.getAbsoluteAdapterPosition()).getName());
+            moreInfoRabbitSex.setText(arrayList.get(rabbitRecordAdapterViewHolder.getAbsoluteAdapterPosition()).getSex());
+            moreInfoDOB.setText(arrayList.get(rabbitRecordAdapterViewHolder.getAbsoluteAdapterPosition()).getDOB());
+            moreInfoFather.setText(arrayList.get(rabbitRecordAdapterViewHolder.getAbsoluteAdapterPosition()).getFname());
+            moreInfoMother.setText(arrayList.get(rabbitRecordAdapterViewHolder.getAbsoluteAdapterPosition()).getMname());
+            moreInfoOrigin.setText(arrayList.get(rabbitRecordAdapterViewHolder.getAbsoluteAdapterPosition()).getOrigin());
+            moreInfoColor.setText(arrayList.get(rabbitRecordAdapterViewHolder.getAbsoluteAdapterPosition()).getColor());
+            moreInfoWeaning.setText(arrayList.get(rabbitRecordAdapterViewHolder.getAbsoluteAdapterPosition()).getWdate());
+            moreInfoBreed.setText(arrayList.get(rabbitRecordAdapterViewHolder.getAbsoluteAdapterPosition()).getBreed());
+            moreInfoPurpose.setText(arrayList.get(rabbitRecordAdapterViewHolder.getAbsoluteAdapterPosition()).getPurpose());
+            moreInfoNotes.setText(arrayList.get(rabbitRecordAdapterViewHolder.getAbsoluteAdapterPosition()).getNotes());
 
-                //retrieving Image
-                Picasso.get().
-                        load(arrayList.get(rabbitRecordAdapterViewHolder.getAbsoluteAdapterPosition())
-                                .getImage())
-                        .placeholder(R.drawable.rpic5)
-                        .into(moreInfoRabbitPic);
+            //retrieving Image
+            Picasso.get().
+                    load(arrayList.get(rabbitRecordAdapterViewHolder.getAbsoluteAdapterPosition())
+                            .getImage())
+                    .placeholder(R.drawable.rpic5)
+                    .into(moreInfoRabbitPic);
 
 
-                dialog.show();
-            }
+            dialog.show();
+        });
+
+        rabbitRecordAdapterViewHolder.btnDeleteRabbitInfo.setOnClickListener(view14 -> {
+            String key = arrayList.get(rabbitRecordAdapterViewHolder.getAbsoluteAdapterPosition()).getKey();
+           rabbitRecord.child(key).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+               @Override
+               public void onComplete(@NonNull Task<Void> task) {
+                   if(task.isSuccessful()){
+                       Toast.makeText(activity, "Done", Toast.LENGTH_SHORT).show();
+                   }else {
+                       String ex = task.getException().toString();
+                       Toast.makeText(activity, task.getException().toString(), Toast.LENGTH_SHORT).show();
+
+                   }
+
+               }
+           });
+
         });
 
 
 
-       txtclose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog.dismiss();
-            }
-        });
+       txtclose.setOnClickListener(view13 -> dialog.dismiss());
 
-        btn_moreInfoDone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog.dismiss();
-            }
-        });
+        btn_moreInfoDone.setOnClickListener(view12 -> dialog.dismiss());
 
 
         return rabbitRecordAdapterViewHolder;
