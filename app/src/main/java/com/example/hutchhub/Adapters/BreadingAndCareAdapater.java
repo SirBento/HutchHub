@@ -76,12 +76,12 @@ public class BreadingAndCareAdapater extends RecyclerView.Adapter<BreadingAndCar
         holder.CustomBreedCareBuckName.setText("Name: " + breedingAndCare.getBuck_Name());
         holder.CustomBreedCareBuckAge.setText("Age: " + breedingAndCare.getBuck_Age());
         holder.CustomBreedCareBuckBreed.setText("Breed: " + breedingAndCare.getBuck_Breed());
-        holder.CustomBreedCareFalls.setText("Successful Falls: " + breedingAndCare.getFalls());
-        holder.CustomBreedCrossingDate.setText("Crossing Date: " +breedingAndCare.getCross_Date());
-        holder.CustomBreedPalpateDate.setText("Predicted Palpating Date: " +breedingAndCare.getPal_Date());
-        holder.CustomBreedBirthDate.setText("Predicted Birth Date: " +breedingAndCare.getPregDue_Date());
-        holder.CustomBreedRecommendedFood.setText("Recommended Food: " +breedingAndCare.getReco_food());
-        holder.CustomBreedFoodQuantity.setText("Food Quantity: " +breedingAndCare.getQuantity());
+        holder.CustomBreedCareFalls.setText(breedingAndCare.getFalls());
+        holder.CustomBreedCrossingDate.setText(breedingAndCare.getCross_Date());
+        holder.CustomBreedPalpateDate.setText(breedingAndCare.getPal_Date());
+        holder.CustomBreedBirthDate.setText(breedingAndCare.getPregDue_Date());
+        holder.CustomBreedRecommendedFood.setText(breedingAndCare.getReco_food());
+        holder.CustomBreedFoodQuantity.setText(breedingAndCare.getQuantity());
 
     }
 
