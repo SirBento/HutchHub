@@ -79,14 +79,15 @@
         android:id="@+id/thirdInfoLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
         android:background="@color/wGreen"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginLeft="80dp"
+        app:layout_constraintHorizontal_bias="0.474"
         app:layout_constraintStart_toEndOf="@+id/secondtInfoLayout"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.063">
+        app:layout_constraintVertical_bias="0.071">
 
         <TextView
             android:layout_width="wrap_content"
@@ -96,8 +97,8 @@
             android:gravity="center"
             android:text="Buck Information"
             android:textColor="@color/brown"
-            android:textStyle="italic"
             android:textSize="23sp"
+            android:textStyle="italic"
             tools:layout_editor_absoluteX="173dp" />
 
         <TextView
@@ -107,10 +108,10 @@
             android:layout_marginTop="1dp"
             android:fontFamily="sans-serif-condensed"
             android:gravity="center"
-            android:textStyle="bold"
             android:text="Buck Name:"
             android:textColor="@color/black"
             android:textSize="20sp"
+            android:textStyle="bold"
             tools:layout_editor_absoluteX="173dp" />
 
         <TextView
@@ -121,10 +122,10 @@
             android:layout_marginTop="1dp"
             android:fontFamily="sans-serif-condensed"
             android:gravity="center"
-            android:textStyle="bold"
             android:text="Buck Age:"
             android:textColor="@color/black"
             android:textSize="20sp"
+            android:textStyle="bold"
             tools:layout_editor_absoluteX="173dp" />
 
         <TextView
@@ -136,9 +137,9 @@
             android:fontFamily="sans-serif-condensed"
             android:gravity="center"
             android:text="Buck Breed:"
-            android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@+id/GW_CustomRabbitFirstWeight"
             tools:layout_editor_absoluteX="173dp" />
 
@@ -150,7 +151,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
         android:gravity="center"
-        android:text="Successful Falls: "
+        android:text="Successful Falls:  "
         android:textColor="@color/deepBrown"
         app:layout_goneMarginTop="12dp"
         android:textSize="20sp"
@@ -184,7 +185,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
         android:gravity="center"
-        android:text="Crossing Date:"
+        android:text="Crossing Date: "
         android:textStyle="bold"
         app:layout_goneMarginTop="12dp"
         android:textSize="20sp"
@@ -303,7 +304,6 @@
         android:gravity="center"
         android:text="Recommended Food"
         android:inputType="textMultiLine"
-        android:padding="2dp"
         android:textColor="@color/deepBrown"
         app:layout_goneMarginTop="12dp"
         android:textSize="20sp"
@@ -319,7 +319,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
         android:gravity="center"
-        android:text="Food Quantity: "
+        android:text="Quantity:"
         android:textStyle="bold"
         android:textColor="@color/deepBrown"
         app:layout_goneMarginTop="12dp"
@@ -340,7 +340,6 @@
         android:gravity="center"
         android:text="Food Quantity"
         android:inputType="textMultiLine"
-        android:padding="2dp"
         android:textColor="@color/deepBrown"
         app:layout_goneMarginTop="12dp"
         android:textSize="20sp"
