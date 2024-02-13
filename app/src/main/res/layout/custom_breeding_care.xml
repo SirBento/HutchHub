@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="2dp"
+    android:padding="5dp"
     android:layout_marginTop="1dp"
     android:background="#E0F3FF" >
 
@@ -28,7 +28,7 @@
             android:text="Doe Information"
             android:textColor="@color/green"
             android:textStyle="italic"
-            android:textSize="23sp"
+            android:textSize="22sp"
             tools:layout_editor_absoluteX="173dp" />
 
         <TextView
@@ -82,6 +82,7 @@
         android:layout_marginLeft="80dp"
         android:background="@color/wGreen"
         android:orientation="vertical"
+        android:padding="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.474"
@@ -97,7 +98,7 @@
             android:gravity="center"
             android:text="Buck Information"
             android:textColor="@color/brown"
-            android:textSize="23sp"
+            android:textSize="22sp"
             android:textStyle="italic"
             tools:layout_editor_absoluteX="173dp" />
 
