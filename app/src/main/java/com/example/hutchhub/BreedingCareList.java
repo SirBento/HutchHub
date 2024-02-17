@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -59,6 +60,7 @@ public class BreedingCareList extends AppCompatActivity {
         breadingAndCareAdapater = new BreadingAndCareAdapater(BreedingAndCareArrayList);
         Breed_Care_R_List.setHasFixedSize(true);
         Breed_Care_R_List.setLayoutManager(new LinearLayoutManager(this));
+        Breed_Care_R_List.addItemDecoration(new DividerItemDecoration(Breed_Care_R_List.getContext(),DividerItemDecoration.VERTICAL));
         Breed_Care_R_List.setAdapter(breadingAndCareAdapater);
 
 
