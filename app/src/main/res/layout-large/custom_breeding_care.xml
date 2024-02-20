@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="1dp"
+    android:background="#E0F3FF" >
+
+    <LinearLayout
+        android:id="@+id/secondtInfoLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/brown"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.063">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:text="Doe Information"
+            android:textColor="@color/green"
+            android:textStyle="italic"
+            android:textSize="22sp"
+            tools:layout_editor_absoluteX="173dp" />
+
+        <TextView
+            android:id="@+id/CustomBreedCareDoeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:text="Doe Name:"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="173dp" />
+
+        <TextView
+            android:id="@+id/CustomBreedCareDoeAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:text="Doe Age:"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="173dp" />
+
+        <TextView
+            android:id="@+id/CustomBreedCareDoeBreed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:text="Doe Breed:"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@+id/GW_CustomRabbitFirstWeight"
+            tools:layout_editor_absoluteX="173dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/thirdInfoLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:paddingRight="4dp"
+        android:background="@color/wGreen"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintStart_toEndOf="@+id/secondtInfoLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.071">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:text="Buck Information"
+            android:textColor="@color/brown"
+            android:textSize="22sp"
+            android:textStyle="italic"
+            tools:layout_editor_absoluteX="173dp" />
+
+        <TextView
+            android:id="@+id/CustomBreedCareBuckName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:text="Buck Name:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="173dp" />
+
+        <TextView
+            android:id="@+id/CustomBreedCareBuckAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:text="Buck Age:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="173dp" />
+
+        <TextView
+            android:id="@+id/CustomBreedCareBuckBreed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:text="Buck Breed:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/GW_CustomRabbitFirstWeight"
+            tools:layout_editor_absoluteX="173dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/lblfalls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:text="Successful Falls:  "
+        android:textColor="@color/deepBrown"
+        app:layout_goneMarginTop="12dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/secondtInfoLayout" />
+
+    <TextView
+        android:id="@+id/CustomBreedCareFalls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="172dp"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:text="4"
+        android:textColor="@color/deepBrown"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toEndOf="@+id/lblfalls"
+        app:layout_constraintTop_toBottomOf="@+id/secondtInfoLayout"
+        app:layout_goneMarginTop="12dp" />
+
+    <TextView
+        android:id="@+id/lblCrossingDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:text="Crossing Date: "
+        android:textStyle="bold"
+        app:layout_goneMarginTop="12dp"
+        android:textSize="20sp"
+        android:textColor="@color/deepBrown"
+        android:fontFamily="sans-serif-condensed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CustomBreedCareFalls" />
+
+    <TextView
+        android:id="@+id/CustomBreedCrossingDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:text="Crossing Date"
+        app:layout_goneMarginTop="12dp"
+        android:textSize="20sp"
+        android:textColor="@color/deepBrown"
+        android:fontFamily="sans-serif-condensed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toEndOf="@+id/lblCrossingDate"
+        app:layout_constraintTop_toBottomOf="@+id/CustomBreedCareFalls" />
+
+    <TextView
+        android:id="@+id/lblPalpateDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:text="Palpating Date: "
+        android:textColor="@color/deepBrown"
+        android:textStyle="bold"
+        app:layout_goneMarginTop="12dp"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-condensed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CustomBreedCrossingDate" />
+    <TextView
+        android:id="@+id/CustomBreedPalpateDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:text="Palpating Date"
+        android:textColor="@color/deepBrown"
+        app:layout_goneMarginTop="12dp"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-condensed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toEndOf="@+id/lblPalpateDate"
+        app:layout_constraintTop_toBottomOf="@+id/CustomBreedCrossingDate" />
+
+
+
+    <TextView
+        android:id="@+id/lblBirthDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:text="Predicted Birth Date: "
+        android:textColor="@color/deepBrown"
+        android:textStyle="bold"
+        app:layout_goneMarginTop="12dp"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-condensed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CustomBreedPalpateDate" />
+    <TextView
+        android:id="@+id/CustomBreedBirthDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:text="Birth Date"
+        android:textColor="@color/deepBrown"
+        app:layout_goneMarginTop="12dp"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-condensed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toEndOf="@+id/lblBirthDate"
+        app:layout_constraintTop_toBottomOf="@+id/CustomBreedPalpateDate" />
+
+
+    <TextView
+        android:id="@+id/lblRecommendedFood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:text="Recommended Food:  "
+        android:textColor="@color/deepBrown"
+        android:textStyle="bold"
+        app:layout_goneMarginTop="12dp"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-condensed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CustomBreedBirthDate" />
+
+    <TextView
+        android:id="@+id/CustomBreedRecommendedFood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:text="Recommended Food"
+        android:inputType="textMultiLine"
+        android:textColor="@color/deepBrown"
+        app:layout_goneMarginTop="12dp"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-condensed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toEndOf="@+id/lblBirthDate"
+        app:layout_constraintTop_toBottomOf="@+id/CustomBreedBirthDate" />
+
+    <TextView
+        android:id="@+id/lblFoodQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:text="Food Quantity:"
+        android:textStyle="bold"
+        android:textColor="@color/deepBrown"
+        app:layout_goneMarginTop="12dp"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-condensed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CustomBreedRecommendedFood" />
+
+
+
+    <TextView
+        android:id="@+id/CustomBreedFoodQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:text="Food Quantity"
+        android:inputType="textMultiLine"
+        android:textColor="@color/deepBrown"
+        app:layout_goneMarginTop="12dp"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-condensed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintTop_toBottomOf="@+id/lblFoodQuantity" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+

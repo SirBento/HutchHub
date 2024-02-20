@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListRabbit">
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/top_background"
+        tools:srcCompat="@drawable/top_background" />
+
+    <TextView
+        android:id="@+id/textlistRabbit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sell Your\n Rabbit"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView1"
+        app:layout_constraintVertical_bias="0.0"
+        android:fillViewport="true"
+        tools:layout_editor_absoluteX="-1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.267">
+
+
+            <EditText
+                android:id="@+id/rabbitSellerNumber"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/edittext_background"
+                android:ems="10"
+                android:hint="Enter Your Phone Number"
+                android:inputType="text"
+                android:padding="5dp"
+                android:textColor="#070707"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+            <EditText
+                android:id="@+id/rabbitSellerLocation"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/edittext_background"
+                android:ems="10"
+                android:hint="Enter Your Location"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textColor="#070707"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+
+            <EditText
+                android:id="@+id/rabbitAskingPrice"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/edittext_background"
+                android:ems="10"
+                android:hint="Enter Your Asking Price(for each)"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textColor="#070707"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+
+            <EditText
+                android:id="@+id/rabbitQuantity"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/edittext_background"
+                android:ems="10"
+                android:hint="Quantity(How many are you selling)"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textColor="#070707"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+            <EditText
+                android:id="@+id/rabbitDescription"
+                android:hint="A short description of the rabbit:\n -Weight\n -Purpose(for meat of breading)\n -Type(Buck or Doe)\n -Age"
+                android:layout_marginTop="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:inputType="text|textMultiLine"
+                android:gravity="top"
+                android:background="@drawable/edittext_background"
+                android:ems="10"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:layout_marginTop="3dp"
+                    android:text="Rabbit Breed:"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:fontFamily="serif"
+                    android:background="@drawable/edittext_background"
+                    />
+
+
+                <Spinner
+                    android:id="@+id/rabbitBreeds"
+                    android:layout_width="200dp"
+                    android:layout_height="48dp"
+                    android:fontFamily="serif"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:background="@drawable/rounded_corners2"
+                    tools:ignore="SpeakableTextPresentCheck"
+                    />
+
+            </LinearLayout>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_upForSale"
+                style="@android:style/Widget.Button"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20sp"
+                android:background="@drawable/button_background"
+                android:text="List Up For Sale"
+                android:textColor="@color/white"
+                android:textSize="23sp"
+                android:textStyle="bold">
+
+            </androidx.appcompat.widget.AppCompatButton>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
