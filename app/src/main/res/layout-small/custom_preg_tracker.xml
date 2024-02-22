@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_marginTop="10dp"
+        android:background="#E0F3FF" >
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/rabbitPic"
+        android:layout_width="144dp"
+        android:layout_height="149dp"
+        android:padding="1dp"
+        android:src="@drawable/rpic5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/pregrabbitName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:text="Name"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/rabbitPic"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/pegrabbitDOB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="1dp"
+            android:gravity="center"
+            android:text="DOB"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/rabbitPic"
+            app:layout_constraintTop_toBottomOf="@+id/pregrabbitName" />
+
+        <TextView
+            android:id="@+id/pregRabbitCrossDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="1dp"
+            android:gravity="center"
+            android:text="Crossed Dated"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/rabbitPic"
+            app:layout_constraintTop_toBottomOf="@+id/pegrabbitDOB" />
+
+        <TextView
+            android:id="@+id/pregRabbitPalpatingDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="1dp"
+            android:gravity="center"
+            android:text="Palpate:"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/rabbitPic"
+            app:layout_constraintTop_toBottomOf="@+id/pregRabbitCrossDate" />
+
+    <TextView
+        android:id="@+id/pregRabbitBreedingBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:text="Box:"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@id/rabbitPic"
+        app:layout_constraintTop_toBottomOf="@+id/pregRabbitPalpatingDate" />
+
+    <TextView
+        android:id="@+id/pregRabbitWeaningDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:text="Weaning:"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@id/rabbitPic"
+        app:layout_constraintTop_toBottomOf="@+id/pregRabbitBreedingBox" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

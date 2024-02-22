@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FeedingSchedule">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/top_background"
+            tools:srcCompat="@drawable/top_background" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rabbit\nFeeding\nSchedule"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="32dp"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5"
+            app:layout_constraintVertical_bias="0.0"
+            android:fillViewport="true"
+            tools:layout_editor_absoluteX="-1dp">
+            <LinearLayout
+                android:layout_width="390dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView5"
+                app:layout_constraintVertical_bias="0.267">
+
+                <EditText
+                    android:id="@+id/FeedingSchedule_NumberOfRabbits"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/edittext_background"
+                    android:ems="10"
+                    android:hint="Number of rabbits to be fed"
+                    android:inputType="text"
+                    android:padding="12dp"
+                    android:textColor="#070707"
+                    android:textSize="18sp"
+                    android:textStyle="italic" />
+
+                <EditText
+                    android:id="@+id/FeedingSchedule_TypeOfFeed"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/edittext_background"
+                    android:ems="10"
+                    android:hint="Type of feed"
+                    android:inputType="text"
+                    android:padding="12dp"
+                    android:textColor="#070707"
+                    android:textSize="18sp"
+                    android:textStyle="italic" />
+
+                <EditText
+                    android:id="@+id/FeedingSchedule_FeedingTimes"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/edittext_background"
+                    android:ems="10"
+                    android:hint="Feeds per day? e.g 1,2 or 3"
+                    android:inputType="text"
+                    android:padding="12dp"
+                    android:textColor="#070707"
+                    android:textSize="18sp"
+                    android:textStyle="italic" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/FeedingSchedule_Next"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20sp"
+                    android:background="@drawable/button_background"
+                    android:text="Next"
+                    android:textColor="@color/white"
+                    android:textSize="23sp"
+                    android:textStyle="bold">
+
+                </androidx.appcompat.widget.AppCompatButton>
+
+                <LinearLayout
+                    android:id="@+id/time1_Layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    >
+
+
+                    <EditText
+                        android:id="@+id/FeedingSchedule_Time1"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/edittext_background"
+                        android:ems="10"
+                        android:hint="Morning Time"
+                        android:focusable="false"
+                        android:clickable="false"
+                        android:inputType="text"
+                        android:padding="12dp"
+                        android:textColor="#070707"
+                        android:textSize="18sp"
+                        android:textStyle="italic" />
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_FeedingSchedule_Time1"
+                        style="@android:style/Widget.Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/button_background"
+                        android:text="Set"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold">
+
+                    </androidx.appcompat.widget.AppCompatButton>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/time2_Layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    >
+
+
+                    <EditText
+                        android:id="@+id/FeedingSchedule_Time2"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/edittext_background"
+                        android:ems="10"
+                        android:hint="Afternoon Time"
+                        android:focusable="false"
+                        android:clickable="false"
+                        android:inputType="text"
+                        android:padding="12dp"
+                        android:textColor="#070707"
+                        android:textSize="18sp"
+                        android:textStyle="italic" />
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_FeedingSchedule_Time2"
+                        style="@android:style/Widget.Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/button_background"
+                        android:text="Set"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold">
+
+                    </androidx.appcompat.widget.AppCompatButton>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/time3_Layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    >
+
+
+                    <EditText
+                        android:id="@+id/FeedingSchedule_Time3"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/edittext_background"
+                        android:ems="10"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:hint="Evening Time"
+                        android:inputType="text"
+                        android:padding="12dp"
+                        android:textColor="#070707"
+                        android:textSize="18sp"
+                        android:textStyle="italic" />
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_FeedingSchedule_Time3"
+                        style="@android:style/Widget.Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/button_background"
+                        android:text="Set"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold">
+
+                    </androidx.appcompat.widget.AppCompatButton>
+
+
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/FeedingSchedule_Done"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20sp"
+                    android:background="@drawable/button_background"
+                    android:text="Done"
+                    android:textColor="@color/white"
+                    android:textSize="23sp"
+                    android:textStyle="bold"
+                    android:visibility="gone">
+
+                </androidx.appcompat.widget.AppCompatButton>
+            </LinearLayout>
+
+
+
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
