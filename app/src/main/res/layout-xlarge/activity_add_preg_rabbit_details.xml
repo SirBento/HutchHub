@@ -9,9 +9,10 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
+        android:paddingBottom="180dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,20 +24,20 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="88dp"
-        android:text="Rabbit\nPregnancy\nTracker "
+        android:layout_marginBottom="188dp"
+        android:text="Rabbit Pregnancy\nTracker "
         android:textColor="@color/white"
-        android:textSize="30sp"
+        android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintHorizontal_bias="0.093"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="698dp"
+        android:layout_height="wrap_content"
         android:fillViewport="true"
         android:orientation="vertical"
         android:layout_marginTop="1dp"
@@ -56,8 +57,8 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/rabbit_Preg_Record_image"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center"
@@ -68,21 +69,21 @@
             <EditText
                 android:id="@+id/rabbit_Preg_Record_name"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="100dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
                 android:hint="Rabbit 0r Cage Number"
                 android:inputType="text"
-                android:padding="12dp"
+                android:padding="15dp"
                 android:textColor="#070707"
-                android:textSize="18sp"
+                android:textSize="25sp"
                 android:textStyle="italic" />
 
             <EditText
                 android:id="@+id/rabbit_Preg_Record_DOB"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="100dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
@@ -90,13 +91,13 @@
                 android:inputType="text"
                 android:padding="12dp"
                 android:textColor="#070707"
-                android:textSize="18sp"
+                android:textSize="25sp"
                 android:textStyle="italic" />
 
             <EditText
                 android:id="@+id/rabbit_Preg_Record_CrossDate"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="100dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
@@ -104,20 +105,22 @@
                 android:inputType="text"
                 android:padding="12dp"
                 android:textColor="#070707"
-                android:textSize="18sp"
+                android:textSize="25sp"
                 android:textStyle="italic" />
 
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_rabbit_Preg_Record_Save"
                 style="@android:style/Widget.Button"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
                 android:layout_marginTop="20sp"
+                android:gravity="center"
                 android:background="@drawable/button_background"
                 android:text="Save"
+                android:layout_gravity="center"
                 android:textColor="@color/white"
-                android:textSize="23sp"
+                android:textSize="45sp"
                 android:textStyle="bold">
 
             </androidx.appcompat.widget.AppCompatButton>
