@@ -33,8 +33,8 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/rabbit_Record_image"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center"
@@ -45,58 +45,58 @@
             <EditText
                 android:id="@+id/rabbit_Record_name"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="35dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
                 android:hint="Rabbit 0r Cage Number"
                 android:inputType="text"
-                android:padding="12dp"
+                android:padding="9dp"
                 android:textColor="#070707"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="italic" />
 
             <EditText
                 android:id="@+id/rabbit_Record_FatherName"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="35dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
                 android:hint="Father's Name 0r Cage Number"
                 android:inputType="text"
-                android:padding="12dp"
+                android:padding="9dp"
                 android:textColor="#070707"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="italic" />
 
             <EditText
                 android:id="@+id/rabbit_Record_MotherName"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="35dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
                 android:hint="Mother's Name 0r Cage Number"
                 android:inputType="text"
-                android:padding="12dp"
+                android:padding="9dp"
                 android:textColor="#070707"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="italic" />
 
 
             <EditText
                 android:id="@+id/rabbit_Record_Color"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="35dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
                 android:hint="Color"
                 android:inputType="text"
-                android:padding="12dp"
+                android:padding="9dp"
                 android:textColor="#070707"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="italic" />
 
             <LinearLayout
@@ -109,24 +109,22 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
-                    android:background="@drawable/edittext_background"
                     android:fontFamily="serif"
                     android:padding="6dp"
                     android:text="Sex:"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="15sp" />
 
 
                 <Spinner
                     android:id="@+id/rabbit_Record_Sex"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:layout_marginStart="40dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="20dp"
                     android:background="@drawable/edittext_background"
                     android:fontFamily="serif"
                     android:textColor="@color/black"
-                    android:textSize="24sp"
+                    android:textSize="14sp"
                     tools:ignore="SpeakableTextPresentCheck" />
 
             </LinearLayout>
@@ -141,21 +139,19 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
-                    android:background="@drawable/edittext_background"
                     android:fontFamily="serif"
                     android:padding="6dp"
                     android:text="Breed:"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="14sp" />
 
 
                 <Spinner
                     android:id="@+id/rabbit_Record_Breeds"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                    android:layout_height="30dp"
                     android:background="@drawable/edittext_background"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="10dp"
                     android:fontFamily="serif"
                     android:textColor="@color/black"
                     android:textSize="24sp"
@@ -173,24 +169,21 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
-                    android:background="@drawable/edittext_background"
                     android:fontFamily="serif"
                     android:padding="6dp"
                     android:text="Purpose:"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="14sp" />
 
 
                 <Spinner
                     android:id="@+id/rabbit_Record_Purpose"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:layout_marginStart="4dp"
+                    android:layout_height="30dp"
                     android:background="@drawable/edittext_background"
                     android:fontFamily="serif"
                     android:textColor="@color/black"
-                    android:textSize="24sp"
+                    android:textSize="14sp"
                     tools:ignore="SpeakableTextPresentCheck" />
 
             </LinearLayout>
@@ -206,23 +199,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
-                    android:background="@drawable/edittext_background"
                     android:fontFamily="serif"
                     android:padding="6dp"
                     android:text="Origin:"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="14sp" />
 
 
                 <Spinner
                     android:id="@+id/rabbit_Record_Origin"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:layout_marginStart="20dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
                     android:background="@drawable/edittext_background"
                     android:fontFamily="serif"
                     android:textColor="@color/black"
-                    android:textSize="24sp"
+                    android:textSize="14sp"
                     tools:ignore="SpeakableTextPresentCheck" />
 
             </LinearLayout>
@@ -237,20 +229,17 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
-                    android:background="@drawable/edittext_background"
                     android:fontFamily="serif"
                     android:padding="6dp"
                     android:text="Date of Birth:"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="14sp" />
 
                 <EditText
                     android:id="@+id/rabbit_Record_DOB"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="30dp"
                     android:layout_marginTop="3dp"
-                    android:layout_marginStart="10dp"
                     android:background="@drawable/edittext_background"
                     android:ems="10"
                     android:hint="Select date"
@@ -258,7 +247,7 @@
                     android:inputType="text"
                     android:padding="3dp"
                     android:textColor="#070707"
-                    android:textSize="18sp"
+                    android:textSize="14sp"
                     android:textStyle="italic" />
 
 
@@ -273,20 +262,17 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
-                    android:background="@drawable/edittext_background"
                     android:fontFamily="serif"
                     android:padding="6dp"
                     android:text="Date Weaned:"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="14sp" />
 
                 <EditText
                     android:id="@+id/rabbit_Record_Weaned"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="30dp"
                     android:layout_marginTop="3dp"
-                    android:layout_marginStart="10dp"
                     android:background="@drawable/edittext_background"
                     android:ems="10"
                     android:focusable="false"
@@ -294,7 +280,7 @@
                     android:inputType="text"
                     android:padding="3dp"
                     android:textColor="#070707"
-                    android:textSize="18sp"
+                    android:textSize="14sp"
                     android:textStyle="italic" />
 
 
@@ -303,11 +289,12 @@
             <EditText
                 android:id="@+id/rabbit_Record_Notes"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="12dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
                 android:padding="5dp"
+                android:textSize="14sp"
                 android:gravity="top"
                 android:hint="General Notes About The Rabbit(Optional)"
                 android:inputType="text|textMultiLine" />
@@ -316,13 +303,14 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_rabbit_Record_Save"
                 style="@android:style/Widget.Button"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginTop="10sp"
+                android:layout_gravity="center"
                 android:background="@drawable/button_background"
                 android:text="Save"
                 android:textColor="@color/white"
-                android:textSize="23sp"
+                android:textSize="14sp"
                 android:textStyle="bold">
 
             </androidx.appcompat.widget.AppCompatButton>
