@@ -7,10 +7,11 @@
     tools:context=".DetailForRabbit">
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
+        android:paddingBottom="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -36,7 +37,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
@@ -54,11 +55,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:background="@drawable/text_view_background"
                     android:padding="4dp"
                     android:text="Contact:"
                     android:textColor="#000000"
-                    android:textSize="20sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
 
@@ -73,9 +73,8 @@
                     android:fontFamily="serif-monospace"
                     android:padding="4dp"
                     android:text="0786291896"
-
                     android:textColor="#000000"
-                    android:textSize="20sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -83,11 +82,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="55dp"
-                    android:background="@drawable/text_view_background"
                     android:padding="4dp"
                     android:text="Breed:"
                     android:textColor="#000000"
-                    android:textSize="20sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -101,7 +99,7 @@
                     android:padding="4dp"
                     android:text="Masango"
                     android:textColor="#000000"
-                    android:textSize="20sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -109,11 +107,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="96dp"
-                    android:background="@drawable/text_view_background"
                     android:padding="4dp"
                     android:text="Quantity:"
                     android:textColor="#000000"
-                    android:textSize="20sp"
+                    android:textSize="22sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -129,7 +126,7 @@
                     android:padding="4dp"
                     android:text="5"
                     android:textColor="#000000"
-                    android:textSize="20sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -137,11 +134,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="136dp"
-                    android:background="@drawable/text_view_background"
                     android:padding="4dp"
                     android:text="Price(Each)$:"
                     android:textColor="#000000"
-                    android:textSize="20sp"
+                    android:textSize="22sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -158,7 +154,7 @@
                     android:padding="4dp"
                     android:text="20"
                     android:textColor="#000000"
-                    android:textSize="20sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -166,19 +162,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="180dp"
-                    android:background="@drawable/text_view_background"
                     android:padding="4dp"
                     android:text="Location:"
                     android:textColor="#000000"
-                    android:textSize="20sp"
+                    android:textSize="22sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
                 <TextView
                     android:id="@+id/detLocation"
-                    android:layout_width="226dp"
-                    android:layout_height="72dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
                     android:layout_marginStart="150dp"
                     android:layout_marginTop="180dp"
                     android:background="@drawable/text_view_updatable_background"
@@ -187,7 +182,7 @@
                     android:padding="4dp"
                     android:text="7390 Unit K"
                     android:textColor="#000000"
-                    android:textSize="20sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -195,11 +190,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="270dp"
-                    android:background="@drawable/text_view_background"
                     android:padding="4dp"
                     android:text="Description:"
                     android:textColor="#000000"
-                    android:textSize="20sp"
+                    android:textSize="22sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/textView2"
@@ -207,8 +201,8 @@
 
                 <EditText
                     android:id="@+id/detDescription"
-                    android:layout_width="226dp"
-                    android:layout_height="128dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
                     android:layout_marginLeft="150dp"
                     android:layout_marginTop="270dp"
                     android:background="@drawable/text_view_updatable_background"
@@ -223,13 +217,14 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_detForDone"
                 style="@android:style/Widget.Button"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="60dp"
                 android:layout_marginTop="20sp"
                 android:background="@drawable/button_background"
-                android:text="I Want To Buy"
+                android:text="Buy"
                 android:textColor="@color/white"
-                android:textSize="23sp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/detDescription"
