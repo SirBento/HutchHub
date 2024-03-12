@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailForRabbit">
+    tools:context=".DetailForRabbit"
+    android:background="#00668B">
 
     <ImageView
         android:id="@+id/imageView5"
@@ -72,7 +73,6 @@
                     android:fontFamily="serif-monospace"
                     android:padding="4dp"
                     android:text="0786291896"
-
                     android:textColor="#000000"
                     android:textSize="20sp"
                     android:textStyle="bold" />
