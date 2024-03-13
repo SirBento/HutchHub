@@ -4,47 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FeedingSchedule">
+    tools:context=".FeedingSchedule"
+    android:background="#00668B">
 
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/top_background"
-            tools:srcCompat="@drawable/top_background" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/top_background"
+        tools:srcCompat="@drawable/top_background" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Rabbit\nFeeding\nSchedule"
-            android:layout_marginTop="32dp"
-            android:layout_marginStart="32dp"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-        <ScrollView
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="24dp"
+        android:text="Rabbit Feeding\nSchedule"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView5"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
             app:layout_constraintVertical_bias="0.0"
             android:fillViewport="true"
             tools:layout_editor_absoluteX="-1dp">
             <LinearLayout
-                android:layout_width="390dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp"
+                android:padding="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView5"
@@ -53,55 +56,55 @@
                 <EditText
                     android:id="@+id/FeedingSchedule_NumberOfRabbits"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="2dp"
                     android:background="@drawable/edittext_background"
                     android:ems="10"
                     android:hint="Number of rabbits to be fed"
                     android:inputType="text"
-                    android:padding="12dp"
+                    android:padding="2dp"
                     android:textColor="#070707"
-                    android:textSize="18sp"
+                    android:textSize="14sp"
                     android:textStyle="italic" />
 
                 <EditText
                     android:id="@+id/FeedingSchedule_TypeOfFeed"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="2dp"
                     android:background="@drawable/edittext_background"
                     android:ems="10"
                     android:hint="Type of feed"
                     android:inputType="text"
-                    android:padding="12dp"
+                    android:padding="2dp"
                     android:textColor="#070707"
-                    android:textSize="18sp"
+                    android:textSize="14sp"
                     android:textStyle="italic" />
 
                 <EditText
                     android:id="@+id/FeedingSchedule_FeedingTimes"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="2dp"
                     android:background="@drawable/edittext_background"
                     android:ems="10"
                     android:hint="Feeds per day? e.g 1,2 or 3"
                     android:inputType="text"
-                    android:padding="12dp"
+                    android:padding="2dp"
                     android:textColor="#070707"
-                    android:textSize="18sp"
+                    android:textSize="14sp"
                     android:textStyle="italic" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/FeedingSchedule_Next"
                     style="@android:style/Widget.Button"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="2sp"
                     android:background="@drawable/button_background"
                     android:text="Next"
                     android:textColor="@color/white"
-                    android:textSize="23sp"
+                    android:textSize="15sp"
                     android:textStyle="bold">
 
                 </androidx.appcompat.widget.AppCompatButton>

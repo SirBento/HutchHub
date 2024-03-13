@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FeedingSchedule">
+    tools:context=".FeedingSchedule"
+    android:background="#00668B">
 
         <ImageView
             android:id="@+id/imageView5"
@@ -41,7 +42,7 @@
             android:fillViewport="true"
             tools:layout_editor_absoluteX="-1dp">
             <LinearLayout
-                android:layout_width="390dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="20dp"
@@ -61,7 +62,7 @@
                     android:inputType="text"
                     android:padding="12dp"
                     android:textColor="#070707"
-                    android:textSize="18sp"
+                    android:textSize="19sp"
                     android:textStyle="italic" />
 
                 <EditText
@@ -75,7 +76,7 @@
                     android:inputType="text"
                     android:padding="12dp"
                     android:textColor="#070707"
-                    android:textSize="18sp"
+                    android:textSize="19sp"
                     android:textStyle="italic" />
 
                 <EditText
@@ -89,19 +90,20 @@
                     android:inputType="text"
                     android:padding="12dp"
                     android:textColor="#070707"
-                    android:textSize="18sp"
+                    android:textSize="19sp"
                     android:textStyle="italic" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/FeedingSchedule_Next"
                     style="@android:style/Widget.Button"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="50dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="20sp"
                     android:background="@drawable/button_background"
                     android:text="Next"
                     android:textColor="@color/white"
-                    android:textSize="23sp"
+                    android:textSize="24sp"
                     android:textStyle="bold">
 
                 </androidx.appcompat.widget.AppCompatButton>
