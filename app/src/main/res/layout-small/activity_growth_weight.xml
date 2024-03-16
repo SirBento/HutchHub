@@ -107,6 +107,7 @@
                 android:id="@+id/GnW_FirstHeight"
                 android:layout_width="match_parent"
                 android:textStyle="italic"
+                android:inputType="text"
                 android:layout_height="20dp"
                 android:layout_marginTop="2dp"
                 android:textSize="14sp"
@@ -114,7 +115,6 @@
                 android:background="@drawable/edittext_background"
                 android:ems="10"
                 android:hint="First Height(5cm)"
-                android:inputType="text"
                 android:textColor="#070707"
 
                 />
@@ -124,6 +124,7 @@
                 android:id="@+id/GnW_FirstWeighingDate"
                 android:layout_width="match_parent"
                 android:textStyle="italic"
+                android:inputType="text"
                 android:layout_height="20dp"
                 android:layout_marginTop="2dp"
                 android:textSize="14sp"
@@ -131,7 +132,6 @@
                 android:background="@drawable/edittext_background"
                 android:ems="10"
                 android:hint="First Weighting Date"
-                android:inputType="text"
                 android:textColor="#070707"
               />
 
@@ -147,6 +147,7 @@
                 android:id="@+id/GnW_SecondWeight"
                 android:layout_width="match_parent"
                 android:textStyle="italic"
+                android:inputType="text"
                 android:layout_height="20dp"
                 android:layout_marginTop="2dp"
                 android:textSize="14sp"
@@ -154,7 +155,6 @@
                 android:background="@drawable/edittext_background"
                 android:ems="10"
                 android:hint="Second Weight(3kg)"
-                android:inputType="text"
                 android:textColor="#070707"
                  />
 
