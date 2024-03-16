@@ -8,11 +8,12 @@
 
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/top_background"
@@ -22,11 +23,11 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="16dp"
-        android:text="Rabbit\nGrowth\nAnd\nWeight"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Rabbit Growth\nAnd Weight"
         android:textColor="@color/white"
-        android:textSize="30sp"
+        android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -38,7 +39,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.0"
         android:fillViewport="true"
         tools:layout_editor_absoluteX="-1dp">
@@ -47,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp"
+            android:padding="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView5"
@@ -56,191 +57,201 @@
             <EditText
                 android:id="@+id/GnW_RabbitName"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="20dp"
                 android:layout_marginTop="1dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
                 android:hint="Rabbit name or Cage number "
                 android:inputType="text"
-                android:padding="12dp"
+                android:padding="2dp"
                 android:textColor="#070707"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="italic" />
 
             <EditText
                 android:id="@+id/GnW_RabbitDOB"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="4dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="2dp"
+                android:textSize="14sp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
                 android:hint="Rabbit DOB"
                 android:inputType="text"
-                android:padding="12dp"
+                android:padding="2dp"
                 android:textColor="#070707"
-                android:textSize="18sp"
                 android:textStyle="italic" />
 
             <View
                 android:id="@+id/Gnw_View1"
                 android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:layout_marginTop="10dp"
+                android:layout_height="3dp"
+                android:layout_marginTop="3dp"
                 android:background="@color/blue" />
 
             <EditText
                 android:id="@+id/GnW_FirstWeight"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="12dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="2dp"
+                android:textSize="14sp"
+                android:padding="2dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
                 android:hint="First Weight(2kg)"
                 android:inputType="text"
-                android:padding="12dp"
                 android:textColor="#070707"
-                android:textSize="18sp"
                 android:textStyle="italic" />
 
             <EditText
                 android:id="@+id/GnW_FirstHeight"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="12dp"
+                android:textStyle="italic"
+                android:layout_height="20dp"
+                android:layout_marginTop="2dp"
+                android:textSize="14sp"
+                android:padding="2dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
                 android:hint="First Height(5cm)"
                 android:inputType="text"
-                android:padding="12dp"
                 android:textColor="#070707"
-                android:textSize="18sp"
-                android:textStyle="italic" />
+
+                />
 
 
             <EditText
                 android:id="@+id/GnW_FirstWeighingDate"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="12dp"
+                android:textStyle="italic"
+                android:layout_height="20dp"
+                android:layout_marginTop="2dp"
+                android:textSize="14sp"
+                android:padding="2dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
                 android:hint="First Weighting Date"
                 android:inputType="text"
-                android:padding="12dp"
                 android:textColor="#070707"
-                android:textSize="18sp"
-                android:textStyle="italic" />
+              />
 
             <View
                 android:id="@+id/Gnw_View2"
                 android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:layout_marginTop="10dp"
+                android:layout_height="3dp"
+                android:layout_marginTop="3dp"
                 android:background="@color/blue" />
 
 
             <EditText
                 android:id="@+id/GnW_SecondWeight"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="12dp"
+                android:textStyle="italic"
+                android:layout_height="20dp"
+                android:layout_marginTop="2dp"
+                android:textSize="14sp"
+                android:padding="2dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
                 android:hint="Second Weight(3kg)"
                 android:inputType="text"
-                android:padding="12dp"
                 android:textColor="#070707"
-                android:textSize="18sp"
-                android:textStyle="italic" />
+                 />
 
             <EditText
                 android:id="@+id/GnW_SecondHeight"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="12dp"
                 android:background="@drawable/edittext_background"
+                android:textStyle="italic"
+                android:layout_height="20dp"
+                android:layout_marginTop="2dp"
+                android:textSize="14sp"
+                android:padding="2dp"
                 android:ems="10"
                 android:hint="Second Height(7cm)"
                 android:inputType="text"
-                android:padding="12dp"
                 android:textColor="#070707"
-                android:textSize="18sp"
-                android:textStyle="italic" />
+           />
 
             <EditText
                 android:id="@+id/GnW_SecondWeighingDate"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="12dp"
+                android:textStyle="italic"
+                android:layout_height="20dp"
+                android:layout_marginTop="2dp"
+                android:textSize="14sp"
+                android:padding="2dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
                 android:hint="Second Weighting Date"
                 android:inputType="text"
-                android:padding="12dp"
                 android:textColor="#070707"
-                android:textSize="18sp"
-                android:textStyle="italic" />
+                 />
 
             <View
                 android:id="@+id/Gnw_View3"
                 android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:layout_marginTop="10dp"
+                android:layout_height="3dp"
+                android:layout_marginTop="3dp"
                 android:background="@color/blue" />
 
             <EditText
                 android:id="@+id/GnW_ThirdWeight"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="12dp"
+                android:textStyle="italic"
+                android:layout_height="20dp"
+                android:layout_marginTop="2dp"
+                android:textSize="14sp"
+                android:padding="2dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
                 android:hint="Third Weight(4kg)"
                 android:inputType="text"
-                android:padding="12dp"
                 android:textColor="#070707"
-                android:textSize="18sp"
-                android:textStyle="italic" />
+               />
 
             <EditText
                 android:id="@+id/GnW_ThirdHeight"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="12dp"
+                android:textStyle="italic"
+                android:layout_height="20dp"
+                android:layout_marginTop="2dp"
+                android:textSize="14sp"
+                android:padding="2dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
                 android:hint="Third Height(8cm)"
                 android:inputType="text"
-                android:padding="12dp"
                 android:textColor="#070707"
-                android:textSize="18sp"
-                android:textStyle="italic" />
+                 />
 
             <EditText
                 android:id="@+id/GnW_ThirdWeighingDate"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="12dp"
+                android:textStyle="italic"
+                android:layout_height="20dp"
+                android:layout_marginTop="2dp"
+                android:textSize="14sp"
+                android:padding="2dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
                 android:hint="Third Weighting Date"
                 android:inputType="text"
-                android:padding="12dp"
                 android:textColor="#070707"
-                android:textSize="18sp"
-                android:textStyle="italic" />
+                 />
 
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/GnW_Save"
                 style="@android:style/Widget.Button"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginTop="3dp"
+                android:layout_gravity="center"
                 android:background="@drawable/button_background"
                 android:text="Save"
                 android:textColor="@color/white"
-                android:textSize="23sp"
+                android:textSize="13sp"
                 android:textStyle="bold">
 
             </androidx.appcompat.widget.AppCompatButton>

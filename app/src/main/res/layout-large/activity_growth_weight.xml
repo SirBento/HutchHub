@@ -9,8 +9,9 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,16 +24,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="16dp"
-        android:text="Rabbit\nGrowth\nAnd\nWeight"
+        android:layout_marginTop="20dp"
+        android:text="Rabbit Growth\nAnd Weight"
         android:textColor="@color/white"
-        android:textSize="30sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -56,7 +57,7 @@
             <EditText
                 android:id="@+id/GnW_RabbitName"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="1dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
@@ -70,7 +71,7 @@
             <EditText
                 android:id="@+id/GnW_RabbitDOB"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="4dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
@@ -91,7 +92,7 @@
             <EditText
                 android:id="@+id/GnW_FirstWeight"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
@@ -105,7 +106,7 @@
             <EditText
                 android:id="@+id/GnW_FirstHeight"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
@@ -120,7 +121,7 @@
             <EditText
                 android:id="@+id/GnW_FirstWeighingDate"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
@@ -142,7 +143,7 @@
             <EditText
                 android:id="@+id/GnW_SecondWeight"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
@@ -156,7 +157,7 @@
             <EditText
                 android:id="@+id/GnW_SecondHeight"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
@@ -170,7 +171,7 @@
             <EditText
                 android:id="@+id/GnW_SecondWeighingDate"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
@@ -191,7 +192,7 @@
             <EditText
                 android:id="@+id/GnW_ThirdWeight"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
@@ -205,7 +206,7 @@
             <EditText
                 android:id="@+id/GnW_ThirdHeight"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
@@ -223,7 +224,7 @@
                 android:layout_marginTop="12dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
-                android:hint="Third Weighting Date"
+                android:hint="Third Weighing Date"
                 android:inputType="text"
                 android:padding="12dp"
                 android:textColor="#070707"
@@ -234,13 +235,14 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/GnW_Save"
                 style="@android:style/Widget.Button"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
                 android:layout_height="50dp"
                 android:layout_marginTop="20sp"
                 android:background="@drawable/button_background"
                 android:text="Save"
                 android:textColor="@color/white"
-                android:textSize="23sp"
+                android:textSize="25sp"
                 android:textStyle="bold">
 
             </androidx.appcompat.widget.AppCompatButton>
