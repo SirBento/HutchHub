@@ -22,7 +22,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hi\nPlease Login"
+        android:text="Hello, Please Login"
         android:layout_marginTop="32dp"
         android:layout_marginStart="32dp"
         android:textSize="30sp"

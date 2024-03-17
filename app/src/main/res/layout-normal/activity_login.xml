@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="160dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -91,8 +91,9 @@
 
         <TextView
             android:id="@+id/lgn_forgot_pass"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="12dp"
             android:clickable="true"
             android:text="Forgot password?"
@@ -140,15 +141,14 @@
             style="@android:style/Widget.Button"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
+            android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:background="@drawable/button_background"
             android:text="Login"
             android:textColor="@color/white"
             android:textSize="23sp"
             android:textStyle="bold"
-            android:layout_marginRight="50dp"
             app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginLeft="80dp"
             app:layout_constraintLeft_toLeftOf="parent">
 
         </androidx.appcompat.widget.AppCompatButton>
@@ -158,15 +158,14 @@
             style="@android:style/Widget.Button"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
+            android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:background="@drawable/button_background"
             android:text="SignUp"
             android:textColor="@color/white"
             android:textSize="23sp"
             android:textStyle="bold"
-            android:layout_marginRight="50dp"
             app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginLeft="80dp"
             app:layout_constraintLeft_toLeftOf="parent"
             >
 
