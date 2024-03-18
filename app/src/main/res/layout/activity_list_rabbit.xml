@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="160dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,7 @@
         android:id="@+id/textlistRabbit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sell Your\n Rabbit"
+        android:text="Sell Your\nRabbit"
         android:layout_marginTop="32dp"
         android:layout_marginStart="32dp"
         android:textSize="30sp"
@@ -118,10 +118,11 @@
                 android:inputType="text|textMultiLine"
                 android:gravity="top"
                 android:background="@drawable/edittext_background"
+                android:padding="10dp"
                 android:ems="10"/>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="5dp">
@@ -136,13 +137,13 @@
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:fontFamily="serif"
-                    android:background="@drawable/edittext_background"
+                    android:textStyle="bold"
                     />
 
 
                 <Spinner
                     android:id="@+id/rabbitBreeds"
-                    android:layout_width="200dp"
+                    android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:fontFamily="serif"
                     android:textColor="@color/black"
@@ -157,8 +158,9 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_upForSale"
                 style="@android:style/Widget.Button"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginTop="20sp"
                 android:background="@drawable/button_background"
                 android:text="List Up For Sale"
