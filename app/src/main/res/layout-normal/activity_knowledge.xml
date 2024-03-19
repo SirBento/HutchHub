@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/rpic6"
+    android:layout_height="match_parent"
+    android:background="#00668B"
     tools:context=".Knowledge">
 
     <LinearLayout
@@ -22,15 +22,14 @@
             android:layout_marginRight="15dp"
             android:layout_marginTop="20dp">
 
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
                 android:text="Make Your Choice"
-                android:textColor="@color/green"
-                android:textSize="30dp"
-                android:textStyle="italic">
+                android:textColor="@color/pearlGreen"
+                android:textSize="33dp"
+                android:textStyle="bold">
 
             </TextView>
 
@@ -43,14 +42,15 @@
             android:orientation="horizontal"
             android:gravity="center"
             android:clipToPadding="false"
-            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/book1"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
-                android:layout_width="160dp"
+                android:layout_width="180dp"
                 android:layout_height="190dp"
                 android:layout_margin="10dp">
                 <LinearLayout
@@ -76,7 +76,7 @@
                 android:id="@+id/book2"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
-                android:layout_width="160dp"
+                android:layout_width="180dp"
                 android:layout_height="190dp"
                 android:layout_margin="10dp">
                 <LinearLayout
@@ -101,14 +101,15 @@
             android:orientation="horizontal"
             android:gravity="center"
             android:clipToPadding="false"
-            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/book3"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
-                android:layout_width="160dp"
+                android:layout_width="180dp"
                 android:layout_height="190dp"
                 android:layout_margin="10dp">
                 <LinearLayout
@@ -133,7 +134,7 @@
                 android:id="@+id/book4"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
-                android:layout_width="160dp"
+                android:layout_width="180dp"
                 android:layout_height="190dp"
                 android:layout_margin="10dp">
                 <LinearLayout
@@ -157,14 +158,15 @@
             android:orientation="horizontal"
             android:gravity="center"
             android:clipToPadding="false"
-            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/book5"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
-                android:layout_width="160dp"
+                android:layout_width="180dp"
                 android:layout_height="190dp"
                 android:layout_margin="10dp">
                 <LinearLayout
@@ -189,7 +191,7 @@
                 android:id="@+id/book6"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
-                android:layout_width="160dp"
+                android:layout_width="180dp"
                 android:layout_height="190dp"
                 android:layout_margin="10dp">
                 <LinearLayout

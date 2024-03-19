@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/rpic6"
+    android:background="#00668B"
     tools:context=".Knowledge">
 
     <LinearLayout
@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="10dp"
-        android:layout_marginTop="12dp">
+        android:layout_marginTop="5dp">
 
 
         <RelativeLayout
@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:layout_marginTop="20dp">
+            android:layout_gravity="center">
 
 
             <TextView
@@ -28,9 +28,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
                 android:text="Make Your Choice"
-                android:textColor="@color/green"
-                android:textSize="30dp"
-                android:textStyle="italic">
+                android:textColor="@color/pearlGreen"
+                android:textSize="14dp"
+                android:textStyle="bold">
 
             </TextView>
 
@@ -39,19 +39,20 @@
 
 
         <LinearLayout
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="8dp"
             android:orientation="horizontal"
             android:gravity="center"
+            android:layout_gravity="center"
             android:clipToPadding="false"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/book1"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
-                android:layout_width="160dp"
-                android:layout_height="190dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="10dp">
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -76,8 +77,8 @@
                 android:id="@+id/book2"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
-                android:layout_width="160dp"
-                android:layout_height="190dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="10dp">
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -100,16 +101,17 @@
         <LinearLayout
             android:orientation="horizontal"
             android:gravity="center"
+            android:layout_gravity="center"
             android:clipToPadding="false"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/book3"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
-                android:layout_width="160dp"
-                android:layout_height="190dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="10dp">
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -133,8 +135,8 @@
                 android:id="@+id/book4"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
-                android:layout_width="160dp"
-                android:layout_height="190dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="10dp">
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -156,16 +158,17 @@
         <LinearLayout
             android:orientation="horizontal"
             android:gravity="center"
+            android:layout_gravity="center"
             android:clipToPadding="false"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/book5"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
-                android:layout_width="160dp"
-                android:layout_height="190dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="10dp">
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -189,8 +192,8 @@
                 android:id="@+id/book6"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
-                android:layout_width="160dp"
-                android:layout_height="190dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="10dp">
                 <LinearLayout
                     android:layout_width="match_parent"
