@@ -8,10 +8,10 @@
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/Breed_Care_SearchView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="160dp"
+        android:layout_height="30dp"
         android:layout_margin="2dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="9dp"
         android:background="@drawable/search_view_bg"
         app:iconifiedByDefault="false"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,7 +40,7 @@
         android:text="No Records Yet"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold"
-        android:textSize="25sp"
+        android:textSize="18sp"
         android:gravity="center"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -52,16 +52,16 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_Breed_Care_Add"
-        android:layout_width="80dp"
-        android:layout_height="55dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_gravity="end|bottom"
         android:layout_margin="16dp"
         android:src="@drawable/add_circle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.914"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.914" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
