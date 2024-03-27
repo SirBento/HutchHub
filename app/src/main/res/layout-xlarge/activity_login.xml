@@ -47,13 +47,13 @@
             android:layout_height="wrap_content"
             android:text="Email"
             android:textColor="#000000"
-            android:textSize="25sp"
+            android:textSize="28sp"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/lgn_email"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="70dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/edittext_background"
             android:ems="10"
@@ -72,13 +72,13 @@
             android:layout_marginTop="12dp"
             android:text="Password"
             android:textColor="#000000"
-            android:textSize="25sp"
+            android:textSize="28sp"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/lgn_pass"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="70dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/edittext_background"
             android:ems="10"
@@ -91,10 +91,12 @@
 
         <TextView
             android:id="@+id/lgn_forgot_pass"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:textSize="24sp"
+            android:layout_gravity="center"
+            android:textSize="26sp"
+            android:textStyle="italic"
             android:clickable="true"
             android:text="Forgot password?"
             android:textAlignment="center"
@@ -133,45 +135,51 @@
                 android:background="#707070" />
         </LinearLayout>
 
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_login"
-            style="@android:style/Widget.Button"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_gravity="center"
-            android:layout_marginTop="13dp"
-            android:background="@drawable/button_background"
-            android:text="Login"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:layout_marginRight="50dp"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginLeft="80dp"
-            app:layout_constraintLeft_toLeftOf="parent">
+            android:layout_marginTop="13dp">
 
-        </androidx.appcompat.widget.AppCompatButton>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_signup"
-            style="@android:style/Widget.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/button_background"
-            android:text="SignUp"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:layout_marginRight="50dp"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginLeft="80dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            >
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_login"
+                style="@android:style/Widget.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="110dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="150dp"
+                android:background="@drawable/button_background"
+                android:text="Login"
+                android:textColor="@color/white"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent">
 
-        </androidx.appcompat.widget.AppCompatButton>
+            </androidx.appcompat.widget.AppCompatButton>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_signup"
+                style="@android:style/Widget.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="110dp"
+                android:layout_gravity="center"
+                android:background="@drawable/button_background"
+                android:text="SignUp"
+                android:textColor="@color/white"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                >
+
+            </androidx.appcompat.widget.AppCompatButton>
+
+        </LinearLayout>
+
+
 
 
     </LinearLayout>

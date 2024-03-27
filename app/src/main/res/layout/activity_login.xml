@@ -91,9 +91,12 @@
 
         <TextView
             android:id="@+id/lgn_forgot_pass"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="12dp"
+            android:textSize="16dp"
+            android:textStyle="italic"
             android:clickable="true"
             android:text="Forgot password?"
             android:textAlignment="center"
@@ -141,11 +144,10 @@
             android:background="@drawable/button_background"
             android:text="Login"
             android:textColor="@color/white"
-            android:textSize="23sp"
+            android:textSize="25sp"
             android:textStyle="bold"
-            android:layout_marginRight="50dp"
+            android:layout_gravity="center"
             app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginLeft="80dp"
             app:layout_constraintLeft_toLeftOf="parent">
 
         </androidx.appcompat.widget.AppCompatButton>
@@ -159,11 +161,10 @@
             android:background="@drawable/button_background"
             android:text="SignUp"
             android:textColor="@color/white"
-            android:textSize="23sp"
+            android:textSize="25sp"
             android:textStyle="bold"
-            android:layout_marginRight="50dp"
+            android:layout_gravity="center"
             app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginLeft="80dp"
             app:layout_constraintLeft_toLeftOf="parent"
             >
 

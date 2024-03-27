@@ -110,6 +110,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="3dp"
                 android:clickable="true"
+                android:textStyle="italic"
                 android:text="Forgot password?"
                 android:textAlignment="center"
                 android:textColor="#4CAF50"

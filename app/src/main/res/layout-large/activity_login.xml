@@ -9,9 +9,10 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
+        android:paddingBottom="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,10 +23,10 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello, Please Login"
+        android:text="Hello,\nPlease Login"
         android:layout_marginTop="32dp"
         android:layout_marginStart="32dp"
-        android:textSize="30sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +44,7 @@
 
         <TextView
             android:id="@+id/textView4"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Email"
             android:textColor="#000000"
@@ -53,7 +54,7 @@
         <EditText
             android:id="@+id/lgn_email"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="65dp"
             android:layout_marginTop="12dp"
             android:background="@drawable/edittext_background"
             android:ems="10"
@@ -67,7 +68,7 @@
 
         <TextView
             android:id="@+id/textView5"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:text="Password"
@@ -78,7 +79,7 @@
         <EditText
             android:id="@+id/lgn_pass"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="65dp"
             android:layout_marginTop="12dp"
             android:background="@drawable/edittext_background"
             android:ems="10"
@@ -91,10 +92,13 @@
 
         <TextView
             android:id="@+id/lgn_forgot_pass"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20dp"
             android:layout_marginTop="12dp"
             android:clickable="true"
+            android:textStyle="italic"
             android:text="Forgot password?"
             android:textAlignment="center"
             android:textColor="#4CAF50" />
@@ -118,6 +122,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:textSize="20dp"
                 android:layout_marginEnd="16dp"
                 android:text="Or Login With"
                 android:textStyle="italic" />
@@ -136,16 +141,15 @@
             android:id="@+id/btn_login"
             style="@android:style/Widget.Button"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:background="@drawable/button_background"
             android:text="Login"
             android:textColor="@color/white"
             android:textSize="23sp"
             android:textStyle="bold"
-            android:layout_marginRight="50dp"
             app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginLeft="80dp"
             app:layout_constraintLeft_toLeftOf="parent">
 
         </androidx.appcompat.widget.AppCompatButton>
@@ -154,16 +158,15 @@
             android:id="@+id/btn_signup"
             style="@android:style/Widget.Button"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:background="@drawable/button_background"
             android:text="SignUp"
             android:textColor="@color/white"
             android:textSize="23sp"
             android:textStyle="bold"
-            android:layout_marginRight="50dp"
             app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginLeft="80dp"
             app:layout_constraintLeft_toLeftOf="parent"
             >
 
