@@ -17,7 +17,7 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="240dp"
+            android:layout_height="340dp"
             android:scaleType="fitXY"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -27,8 +27,8 @@
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/lottieHome"
-            android:layout_width="220dp"
-            android:layout_height="228dp"
+            android:layout_width="330dp"
+            android:layout_height="320dp"
             android:layout_marginBottom="51dp"
             android:elevation="5dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageView"
@@ -67,11 +67,10 @@
 
                 android:id="@+id/breedAndCare"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="150dp"
                 android:layout_margin="5dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/back_1_1"
-                tools:layout_margin="10dp"
                 android:clickable="true">
 
                 <TextView
@@ -80,9 +79,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
-                    android:text="Breading\nand Care"
+                    android:text="Breading and Care"
                     android:textColor="#0020bf"
-                    android:textSize="20sp"
+                    android:textSize="40sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/constraintLayout1"
                     app:layout_constraintStart_toEndOf="@+id/constraintLayout1"
@@ -90,8 +89,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout1"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
@@ -103,8 +102,8 @@
 
                     <ImageView
                         android:id="@+id/breadingIcon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -116,11 +115,10 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/pregTrack"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="150dp"
                 android:layout_margin="5dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/back_2_1"
-                tools:layout_margin="10dp"
                 android:clickable="true">
 
                 <TextView
@@ -129,9 +127,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
-                    android:text="Pregnancy\nTracker"
+                    android:text="Pregnancy Tracker"
                     android:textColor="#0020bf"
-                    android:textSize="20sp"
+                    android:textSize="40sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
                     app:layout_constraintStart_toEndOf="@+id/constraintLayout2"
@@ -139,8 +137,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout2"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
@@ -152,8 +150,8 @@
 
                     <ImageView
                         android:id="@+id/pregnancyTrackerIcon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -172,21 +170,20 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/Chat"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="150dp"
                 android:layout_margin="5dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/back_3_1"
-                tools:layout_margin="10dp"
                 android:clickable="true">
 
                 <TextView
                     android:id="@+id/ChatText"
-                    android:layout_width="74dp"
-                    android:layout_height="24dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:text="Chat"
                     android:textColor="#0020bf"
-                    android:textSize="20sp"
+                    android:textSize="40sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/constraintLayout5"
                     app:layout_constraintStart_toEndOf="@+id/constraintLayout5"
@@ -194,8 +191,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout5"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
@@ -207,8 +204,8 @@
 
                     <ImageView
                         android:id="@+id/chatIcon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -220,11 +217,10 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/FeedingSchedule"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="150dp"
                 android:layout_margin="5dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/back_4_1"
-                tools:layout_margin="10dp"
                 android:clickable="true">
 
                 <TextView
@@ -233,9 +229,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
-                    android:text="Feeding\nSchedule"
+                    android:text="Feeding Schedule"
                     android:textColor="#0020bf"
-                    android:textSize="20sp"
+                    android:textSize="40sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/constraintLayout3"
                     app:layout_constraintStart_toEndOf="@+id/constraintLayout3"
@@ -243,8 +239,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout3"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
@@ -256,8 +252,8 @@
 
                     <ImageView
                         android:id="@+id/FeedingScheduleIcon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -276,11 +272,10 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/buySell"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="150dp"
                 android:layout_margin="5dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/back_5_1"
-                tools:layout_margin="10dp"
                 android:clickable="true">
 
                 <TextView
@@ -289,9 +284,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
-                    android:text="Buy and\nSell"
+                    android:text="Buy and Sell"
                     android:textColor="#0020bf"
-                    android:textSize="20sp"
+                    android:textSize="40sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/constraintLayout4"
                     app:layout_constraintStart_toEndOf="@+id/constraintLayout4"
@@ -299,8 +294,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout4"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
@@ -312,8 +307,8 @@
 
                     <ImageView
                         android:id="@+id/buySellIcon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -325,11 +320,10 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/records"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="150dp"
                 android:layout_margin="5dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/back_6_1"
-                tools:layout_margin="10dp"
                 android:clickable="true">
 
                 <TextView
@@ -338,9 +332,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
-                    android:text="Record\nKeeping"
+                    android:text="Record Keeping"
                     android:textColor="#0020bf"
-                    android:textSize="20sp"
+                    android:textSize="40sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/constraintLayout6"
                     app:layout_constraintStart_toEndOf="@+id/constraintLayout6"
@@ -348,8 +342,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout6"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
@@ -361,8 +355,8 @@
 
                     <ImageView
                         android:id="@+id/recordIcon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -381,11 +375,10 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/growthAndWeight"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="150dp"
                 android:layout_margin="5dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/back_7_1"
-                tools:layout_margin="10dp"
                 android:clickable="true">
 
                 <TextView
@@ -394,9 +387,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
-                    android:text="Growth &amp;\n Weight"
+                    android:text="Growth &amp;  Weight"
                     android:textColor="#0020bf"
-                    android:textSize="20sp"
+                    android:textSize="40sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/constraintLayout7"
                     app:layout_constraintStart_toEndOf="@+id/constraintLayout7"
@@ -404,8 +397,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout7"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
@@ -417,8 +410,8 @@
 
                     <ImageView
                         android:id="@+id/imageView3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -430,11 +423,10 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/knowledge"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="150dp"
                 android:layout_margin="5dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/back_8_1"
-                tools:layout_margin="10dp"
                 android:clickable="true">
 
                 <TextView
@@ -443,9 +435,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
-                    android:text="Get\nKnowledge"
+                    android:text="Get Knowledge"
                     android:textColor="#0020bf"
-                    android:textSize="19sp"
+                    android:textSize="40sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
                     app:layout_constraintStart_toEndOf="@+id/constraintLayout"
@@ -453,8 +445,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
@@ -466,8 +458,8 @@
 
                     <ImageView
                         android:id="@+id/lottie"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -479,30 +471,29 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="250dp"
-            android:layout_height="100dp"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginLeft="70dp">
+            android:layout_gravity="center">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/btn_Logout"
                 android:layout_width="30dp"
-                android:layout_height="90dp"
+                android:layout_height="150dp"
                 android:layout_margin="5dp"
                 android:layout_weight="0.5"
-                android:background="@drawable/back_2_1"
-                tools:layout_margin="10dp"
+                android:background="@drawable/back_9_1"
                 android:clickable="true">
 
                 <TextView
                     android:id="@+id/btn_LogoutText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginLeft="8dp"
                     android:text="Logout"
-                    android:textColor="#BF003C"
-                    android:textSize="20sp"
+                    android:textColor="#0020bf"
+                    android:textSize="40sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/constraintLayout8"
                     app:layout_constraintStart_toEndOf="@+id/constraintLayout8"
@@ -510,8 +501,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout8"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
@@ -523,8 +514,8 @@
 
                     <ImageView
                         android:id="@+id/img_logout"
-                        android:layout_width="54dp"
-                        android:layout_height="53dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
