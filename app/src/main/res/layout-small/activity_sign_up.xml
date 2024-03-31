@@ -8,11 +8,12 @@
 
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/top_background"
@@ -22,14 +23,15 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="28dp"
         android:text="Create\nAccount"
-        android:layout_marginTop="32dp"
-        android:layout_marginStart="32dp"
-        android:textSize="30sp"
-        android:textStyle="bold"
         android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,7 +39,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.0"
         android:fillViewport="true"
         tools:layout_editor_absoluteX="-1dp">
@@ -45,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp"
+        android:padding="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5"
@@ -57,21 +59,21 @@
             android:layout_height="wrap_content"
             android:text="Name"
             android:textColor="#000000"
-            android:textSize="20sp"
+            android:textSize="14sp"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/signUp_Name"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="12dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="2dp"
             android:background="@drawable/edittext_background"
             android:ems="10"
             android:hint="Enter Your name"
             android:inputType="text"
-            android:padding="12dp"
+            android:padding="2dp"
             android:textColor="#070707"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:textStyle="italic" />
 
 
@@ -79,24 +81,24 @@
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="2dp"
             android:text="Email"
             android:textColor="#000000"
-            android:textSize="20sp"
+            android:textSize="14sp"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/signUp_Email"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="12dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="2dp"
             android:background="@drawable/edittext_background"
             android:ems="10"
             android:hint="Enter Your email"
             android:inputType="textEmailAddress"
-            android:padding="12dp"
+            android:padding="2dp"
             android:textColor="#070707"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:textStyle="italic" />
 
         <TextView
@@ -105,21 +107,21 @@
             android:layout_height="wrap_content"
             android:text="Password"
             android:textColor="#000000"
-            android:textSize="20sp"
+            android:textSize="14sp"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/signUp_pass"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="12dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="2dp"
             android:background="@drawable/edittext_background"
             android:ems="10"
             android:hint="Enter Your Password"
             android:inputType="textPassword"
-            android:padding="12dp"
+            android:padding="2dp"
             android:textColor="#070707"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:textStyle="italic" />
 
 
@@ -127,36 +129,37 @@
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="2dp"
             android:text="Confrim Password"
             android:textColor="#000000"
-            android:textSize="20sp"
+            android:textSize="14sp"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/signUp_pass2"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="12dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="2dp"
             android:background="@drawable/edittext_background"
             android:ems="10"
             android:hint="Confirm Your password"
             android:inputType="textPassword"
-            android:padding="12dp"
+            android:padding="2dp"
             android:textColor="#070707"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:textStyle="italic" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_CreateAcc"
             style="@android:style/Widget.Button"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="2sp"
             android:background="@drawable/button_background"
             android:text="Create Account"
             android:textColor="@color/white"
-            android:textSize="23sp"
+            android:textSize="14sp"
             android:textStyle="bold">
 
         </androidx.appcompat.widget.AppCompatButton>

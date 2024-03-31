@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="170dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -108,19 +108,26 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/signUp_pass"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/edittext_background"
-            android:ems="10"
-            android:hint="Enter Your Password"
-            android:inputType="textPassword"
-            android:padding="12dp"
-            android:textColor="#070707"
-            android:textSize="18sp"
-            android:textStyle="italic" />
+      <com.google.android.material.textfield.TextInputLayout
+          android:layout_width="match_parent"
+          android:layout_height="70dp"
+          android:textColor="#070707"
+          app:passwordToggleEnabled="true">
+
+          <EditText
+              android:id="@+id/signUp_pass"
+              android:layout_width="match_parent"
+              android:layout_height="50dp"
+              android:background="@drawable/edittext_background"
+              android:ems="10"
+              android:hint="Enter Your Password"
+              android:inputType="textPassword"
+              android:padding="12dp"
+              android:textColor="#070707"
+              android:textSize="18sp"
+              android:textStyle="italic" />
+
+      </com.google.android.material.textfield.TextInputLayout>
 
 
         <TextView
@@ -133,26 +140,35 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/signUp_pass2"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/edittext_background"
-            android:ems="10"
-            android:hint="Confirm Your password"
-            android:inputType="textPassword"
-            android:padding="12dp"
+            android:layout_height="70dp"
             android:textColor="#070707"
-            android:textSize="18sp"
-            android:textStyle="italic" />
+            app:passwordToggleEnabled="true">
+
+            <EditText
+                android:id="@+id/signUp_pass2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/edittext_background"
+                android:ems="10"
+                android:hint="Confirm Your password"
+                android:inputType="textPassword"
+                android:padding="12dp"
+                android:textColor="#070707"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_CreateAcc"
             style="@android:style/Widget.Button"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20sp"
+            android:layout_gravity="center"
             android:background="@drawable/button_background"
             android:text="Create Account"
             android:textColor="@color/white"
