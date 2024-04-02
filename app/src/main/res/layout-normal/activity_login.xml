@@ -75,19 +75,26 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/lgn_pass"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/edittext_background"
-            android:ems="10"
-            android:hint="Enter Your password"
-            android:inputType="textPassword"
-            android:padding="12dp"
+            android:layout_height="wrap_content"
             android:textColor="#070707"
-            android:textSize="18sp"
-            android:textStyle="italic" />
+            app:passwordToggleEnabled="true">
+
+            <EditText
+                android:id="@+id/lgn_pass"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/edittext_background"
+                android:ems="10"
+                android:hint="Enter Your password"
+                android:inputType="textPassword"
+                android:padding="12dp"
+                android:textColor="#070707"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <TextView
             android:id="@+id/lgn_forgot_pass"
