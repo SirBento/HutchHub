@@ -117,7 +117,7 @@
                 android:layout_height="150dp"
                 android:inputType="text|textMultiLine"
                 android:gravity="top"
-                android:padding="10"
+                android:padding="10dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"/>
 
