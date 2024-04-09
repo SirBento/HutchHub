@@ -11,9 +11,10 @@
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:textColor="@color/white"
+        android:layout_gravity="end"
         android:text="X"
         android:textStyle="bold"
-        android:layout_gravity="end"
+        android:layout_marginEnd="12dp"
         android:gravity="center"
         android:background="@drawable/rounded_corners_close"/>
     <LinearLayout
@@ -22,8 +23,8 @@
         android:orientation="vertical">
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/moreInfoRabbitPic"
-            android:layout_width="150dp"
-            android:layout_height="140dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
             android:padding="1dp"
             android:src="@drawable/rpic5"
             android:layout_gravity="center"
@@ -72,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:text="22/05/25"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textColor="@color/wGreen"/>
         </LinearLayout>
         <LinearLayout
@@ -95,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:text="Vick"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textColor="@color/wGreen"/>
         </LinearLayout>
         <LinearLayout
@@ -118,7 +119,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Bunny"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/wGreen"/>
         </LinearLayout>
@@ -149,7 +150,7 @@
                 android:layout_height="wrap_content"
                 android:text="My Farm"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textColor="@color/wGreen"/>
         </LinearLayout>
         <LinearLayout
@@ -172,7 +173,7 @@
                 android:layout_height="wrap_content"
                 android:text="White"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textColor="@color/wGreen"/>
         </LinearLayout>
         <LinearLayout
@@ -194,7 +195,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="22/04/23"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/wGreen"/>
         </LinearLayout>
@@ -225,7 +226,7 @@
                 android:layout_height="wrap_content"
                 android:text="Califonia"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textColor="@color/wGreen"/>
         </LinearLayout>
         <LinearLayout
@@ -248,7 +249,7 @@
                 android:layout_height="wrap_content"
                 android:text="Breeder"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textColor="@color/wGreen"/>
         </LinearLayout>
 
@@ -278,7 +279,7 @@
                 android:layout_height="wrap_content"
                 android:text="Best in the farm"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textColor="@color/wGreen"/>
         </LinearLayout>
 
@@ -289,6 +290,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Done"
+        android:textSize="18dp"
         android:layout_marginTop="25dp"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/button_background"
