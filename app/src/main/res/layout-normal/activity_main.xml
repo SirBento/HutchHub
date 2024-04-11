@@ -67,7 +67,7 @@
 
                 android:id="@+id/breedAndCare"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="90dp"
                 android:layout_margin="5dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/back_1_1"
@@ -82,7 +82,7 @@
                     android:layout_marginLeft="8dp"
                     android:text="Breading\nand Care"
                     android:textColor="#0020bf"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/constraintLayout1"
                     app:layout_constraintStart_toEndOf="@+id/constraintLayout1"
@@ -90,8 +90,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout1"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
@@ -103,8 +103,8 @@
 
                     <ImageView
                         android:id="@+id/breadingIcon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -116,7 +116,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/pregTrack"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="90dp"
                 android:layout_margin="5dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/back_2_1"
@@ -131,7 +131,7 @@
                     android:layout_marginLeft="8dp"
                     android:text="Pregnancy\nTracker"
                     android:textColor="#0020bf"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
                     app:layout_constraintStart_toEndOf="@+id/constraintLayout2"
@@ -139,8 +139,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout2"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
@@ -172,7 +172,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/Chat"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="90dp"
                 android:layout_margin="5dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/back_3_1"
@@ -181,12 +181,12 @@
 
                 <TextView
                     android:id="@+id/ChatText"
-                    android:layout_width="74dp"
-                    android:layout_height="24dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:text="Chat"
                     android:textColor="#0020bf"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/constraintLayout5"
                     app:layout_constraintStart_toEndOf="@+id/constraintLayout5"
@@ -207,8 +207,8 @@
 
                     <ImageView
                         android:id="@+id/chatIcon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -220,7 +220,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/FeedingSchedule"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="90dp"
                 android:layout_margin="5dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/back_4_1"
@@ -235,7 +235,7 @@
                     android:layout_marginLeft="8dp"
                     android:text="Feeding\nSchedule"
                     android:textColor="#0020bf"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/constraintLayout3"
                     app:layout_constraintStart_toEndOf="@+id/constraintLayout3"
@@ -243,8 +243,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout3"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
@@ -256,8 +256,8 @@
 
                     <ImageView
                         android:id="@+id/FeedingScheduleIcon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -276,7 +276,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/buySell"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="90dp"
                 android:layout_margin="5dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/back_5_1"
@@ -291,7 +291,7 @@
                     android:layout_marginLeft="8dp"
                     android:text="Buy and\nSell"
                     android:textColor="#0020bf"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/constraintLayout4"
                     app:layout_constraintStart_toEndOf="@+id/constraintLayout4"
@@ -299,8 +299,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout4"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
@@ -312,8 +312,8 @@
 
                     <ImageView
                         android:id="@+id/buySellIcon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -325,7 +325,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/records"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="90dp"
                 android:layout_margin="5dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/back_6_1"
@@ -340,7 +340,7 @@
                     android:layout_marginLeft="8dp"
                     android:text="Record\nKeeping"
                     android:textColor="#0020bf"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/constraintLayout6"
                     app:layout_constraintStart_toEndOf="@+id/constraintLayout6"
@@ -348,8 +348,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout6"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
@@ -361,8 +361,8 @@
 
                     <ImageView
                         android:id="@+id/recordIcon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -381,7 +381,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/growthAndWeight"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="90dp"
                 android:layout_margin="5dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/back_7_1"
@@ -396,7 +396,7 @@
                     android:layout_marginLeft="8dp"
                     android:text="Growth &amp;\nWeight"
                     android:textColor="#0020bf"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/constraintLayout7"
                     app:layout_constraintStart_toEndOf="@+id/constraintLayout7"
@@ -404,8 +404,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout7"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
@@ -430,7 +430,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/knowledge"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="90dp"
                 android:layout_margin="5dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/back_8_1"
@@ -445,7 +445,7 @@
                     android:layout_marginLeft="8dp"
                     android:text="Get\nKnowledge"
                     android:textColor="#0020bf"
-                    android:textSize="19sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
                     app:layout_constraintStart_toEndOf="@+id/constraintLayout"
@@ -453,8 +453,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
@@ -487,7 +487,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/btn_Logout"
                 android:layout_width="30dp"
-                android:layout_height="100dp"
+                android:layout_height="90dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/back_9_1"
                 tools:layout_margin="10dp"
@@ -509,8 +509,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout8"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
@@ -522,8 +522,8 @@
 
                     <ImageView
                         android:id="@+id/img_logout"
-                        android:layout_width="54dp"
-                        android:layout_height="53dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
