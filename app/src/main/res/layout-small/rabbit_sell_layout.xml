@@ -6,7 +6,7 @@
     android:background="#E0F3FF">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
@@ -16,8 +16,9 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/users_profile_image"
-            android:layout_width="100dp"
-            android:layout_height="126dp"
+            android:layout_width="50dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
             android:padding="5dp"
             android:src="@drawable/rabbit" />
 
@@ -33,7 +34,7 @@
 
                 <TextView
                     android:id="@+id/rabbitBreedName"
-                    android:layout_width="200dp"
+                    android:layout_width="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="serif"
@@ -41,7 +42,7 @@
                     android:gravity="start"
                     android:text="Breed"
                     android:textAlignment="textStart"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -57,7 +58,7 @@
                 android:gravity="start"
                 android:text="Price"
                 android:textAlignment="textStart"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textStyle="italic" />
             <TextView
                 android:id="@+id/rabbitQuantity"
@@ -69,7 +70,7 @@
                 android:gravity="start"
                 android:text="Quantity"
                 android:textAlignment="textStart"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textStyle="italic" />
 
             <LinearLayout
@@ -80,25 +81,27 @@
 
                 <Button
                     android:id="@+id/btnOrder"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
+                    android:layout_width="70dp"
+                    android:layout_height="28dp"
                     android:background="#8FCC00"
                     android:text="Order"
+                    android:textStyle="bold"
                     android:textAllCaps="false"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     android:visibility="invisible" />
 
                 <Button
                     android:id="@+id/btnDelete"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
-                    android:layout_marginStart="18dp"
-                    android:layout_marginLeft="18dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="1dp"
                     android:background="@android:color/holo_red_light"
                     android:text="Delete"
+                    android:textStyle="bold"
                     android:textAllCaps="false"
                     android:textColor="@android:color/background_light"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     android:visibility="invisible" />
 
 

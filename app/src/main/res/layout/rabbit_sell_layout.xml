@@ -33,7 +33,7 @@
 
                 <TextView
                     android:id="@+id/rabbitBreedName"
-                    android:layout_width="200dp"
+                    android:layout_width="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="serif"
@@ -81,7 +81,7 @@
                 <Button
                     android:id="@+id/btnOrder"
                     android:layout_width="wrap_content"
-                    android:layout_height="30dp"
+                    android:layout_height="35dp"
                     android:background="#8FCC00"
                     android:text="Order"
                     android:textAllCaps="false"
@@ -91,9 +91,8 @@
                 <Button
                     android:id="@+id/btnDelete"
                     android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="18dp"
-                    android:layout_marginLeft="18dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="25dp"
                     android:background="@android:color/holo_red_light"
                     android:text="Delete"
                     android:textAllCaps="false"
