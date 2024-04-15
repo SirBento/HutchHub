@@ -4,21 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="15dp"
+    android:padding="10dp"
     android:layout_marginTop="10dp"
     android:background="#E0F3FF" >
 
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/rabbitPic"
-        android:layout_width="150dp"
-        android:layout_height="140dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:padding="1dp"
         android:src="@drawable/rpic5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.493" />
 
     <TextView
         android:id="@+id/rabbitName"
@@ -28,7 +28,7 @@
         android:gravity="center"
         android:text="Name"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@id/rabbitPic"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
@@ -42,7 +42,7 @@
         android:gravity="center"
         android:text="DOB"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@id/rabbitPic"
         app:layout_constraintTop_toBottomOf="@+id/rabbitName" />
 
@@ -55,7 +55,7 @@
         android:gravity="center"
         android:text="Sex"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@id/rabbitPic"
         app:layout_constraintTop_toBottomOf="@+id/rabbitDOB" />
 
@@ -68,43 +68,52 @@
         android:gravity="center"
         android:text="Breed"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@id/rabbitPic"
         app:layout_constraintTop_toBottomOf="@+id/rabbitSex" />
 
-    <Button
-        android:id="@+id/btnViewMoreRabbitInfo"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_marginStart="8dp"
-        android:background="#8FCC00"
-        android:gravity="center"
-        android:text="View More"
-        android:textStyle="bold"
-        android:textAllCaps="false"
-        android:textSize="16sp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="2dp"
         app:layout_constraintStart_toEndOf="@id/rabbitPic"
-        app:layout_constraintTop_toBottomOf="@+id/rabbit_Breed" />
+        app:layout_constraintTop_toBottomOf="@+id/rabbit_Breed" >
 
-    <Button
-        android:id="@+id/btnDeleteRabbitInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_marginStart="116dp"
-        android:background="#A40D19"
-        android:gravity="center"
-        android:text="Delete"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:textAllCaps="false"
-        android:textSize="16sp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/rabbitPic"
-        app:layout_constraintTop_toBottomOf="@+id/rabbit_Breed"
-        app:layout_constraintVertical_bias="0.423" />
+        <Button
+            android:id="@+id/btnViewMoreRabbitInfo"
+            android:layout_width="70dp"
+            android:layout_height="25dp"
+            android:background="#8FCC00"
+            android:gravity="center"
+            android:text="View More"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:textSize="14sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/rabbitPic"
+            app:layout_constraintTop_toBottomOf="@+id/rabbit_Breed" />
+
+        <Button
+            android:id="@+id/btnDeleteRabbitInfo"
+            android:layout_width="70dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="5dp"
+            android:background="#A40D19"
+            android:gravity="center"
+            android:text="Delete"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/rabbitPic"
+            app:layout_constraintTop_toBottomOf="@+id/rabbit_Breed"
+            app:layout_constraintVertical_bias="0.423" />
+    </LinearLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

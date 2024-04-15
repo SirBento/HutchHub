@@ -11,8 +11,8 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/rabbitPic"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="110dp"
+        android:layout_height="120dp"
         android:padding="1dp"
         android:src="@drawable/rpic5"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -75,8 +75,9 @@
     <Button
         android:id="@+id/btnViewMoreRabbitInfo"
         android:layout_width="wrap_content"
-        android:layout_height="25dp"
+        android:layout_height="30dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
         android:background="#8FCC00"
         android:gravity="center"
         android:text="View More"
@@ -91,9 +92,10 @@
     <Button
         android:id="@+id/btnDeleteRabbitInfo"
         android:layout_width="wrap_content"
-        android:layout_height="25dp"
+        android:layout_height="30dp"
         android:layout_marginStart="116dp"
         android:background="#A40D19"
+        android:layout_marginTop="4dp"
         android:gravity="center"
         android:text="Delete"
         android:textColor="@color/white"

@@ -75,7 +75,7 @@
     <Button
         android:id="@+id/btnViewMoreRabbitInfo"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="35dp"
         android:layout_marginStart="8dp"
         android:background="#8FCC00"
         android:gravity="center"
@@ -91,7 +91,7 @@
     <Button
         android:id="@+id/btnDeleteRabbitInfo"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="35dp"
         android:layout_marginStart="116dp"
         android:background="#A40D19"
         android:gravity="center"
