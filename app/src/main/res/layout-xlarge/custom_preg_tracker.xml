@@ -11,8 +11,8 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/rabbitPic"
-        android:layout_width="144dp"
-        android:layout_height="149dp"
+        android:layout_width="200dp"
+        android:layout_height="210dp"
         android:padding="1dp"
         android:src="@drawable/rpic5"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -28,7 +28,7 @@
             android:gravity="center"
             android:text="Name"
             android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textSize="25sp"
             app:layout_constraintStart_toEndOf="@id/rabbitPic"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
@@ -42,7 +42,7 @@
             android:gravity="center"
             android:text="DOB"
             android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textSize="25sp"
             app:layout_constraintStart_toEndOf="@id/rabbitPic"
             app:layout_constraintTop_toBottomOf="@+id/pregrabbitName" />
 
@@ -55,7 +55,7 @@
             android:gravity="center"
             android:text="Crossed Dated"
             android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textSize="25sp"
             app:layout_constraintStart_toEndOf="@id/rabbitPic"
             app:layout_constraintTop_toBottomOf="@+id/pegrabbitDOB" />
 
@@ -68,7 +68,7 @@
             android:gravity="center"
             android:text="Palpate:"
             android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textSize="25sp"
             app:layout_constraintStart_toEndOf="@id/rabbitPic"
             app:layout_constraintTop_toBottomOf="@+id/pregRabbitCrossDate" />
 
@@ -81,7 +81,7 @@
         android:gravity="center"
         android:text="Box:"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="25sp"
         app:layout_constraintStart_toEndOf="@id/rabbitPic"
         app:layout_constraintTop_toBottomOf="@+id/pregRabbitPalpatingDate" />
 
@@ -94,7 +94,7 @@
         android:gravity="center"
         android:text="Weaning:"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="25sp"
         app:layout_constraintStart_toEndOf="@id/rabbitPic"
         app:layout_constraintTop_toBottomOf="@+id/pregRabbitBreedingBox" />
 
