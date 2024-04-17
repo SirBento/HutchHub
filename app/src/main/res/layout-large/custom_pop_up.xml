@@ -1,38 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="350dp"
-    android:layout_height="575dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@color/greenish"
     android:padding="5dp"
     android:layout_gravity="center">
     <TextView
         android:id="@+id/txtclose"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         android:textColor="@color/white"
         android:text="X"
+        android:textSize="30dp"
         android:textStyle="bold"
         android:layout_gravity="end"
         android:gravity="center"
         android:background="@drawable/rounded_corners_close"/>
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:orientation="vertical">
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/moreInfoRabbitPic"
-            android:layout_width="150dp"
-            android:layout_height="140dp"
+            android:layout_width="200dp"
+            android:layout_height="180dp"
             android:padding="1dp"
             android:src="@drawable/rpic5"
             android:layout_gravity="center"
-            android:layout_marginTop="15dp" />
+            android:layout_marginTop="5dp" />
         <TextView
             android:id="@+id/moreInfoRabbitName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Rabbit Name"
+            android:textSize="18dp"
             android:textStyle="bold"
             android:textColor="@color/wGreen"
             android:layout_gravity="center_horizontal"
@@ -42,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sex"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textColor="@color/skyBlue"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="4dp"/>
@@ -58,13 +61,13 @@
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="50dp">
+            android:layout_height="60dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="DOB:"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textColor="@color/brown"/>
             <TextView
                 android:id="@+id/moreInfoDOB"
@@ -81,13 +84,13 @@
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="50dp">
+            android:layout_height="60dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Father:"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textColor="@color/brown"/>
             <TextView
                 android:id="@+id/moreInfoFather"
@@ -104,13 +107,13 @@
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="50dp">
+            android:layout_height="60dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Mother:"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textColor="@color/brown"/>
 
             <TextView
@@ -135,13 +138,13 @@
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="50dp">
+            android:layout_height="60dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Origin"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textColor="@color/brown"/>
             <TextView
                 android:id="@+id/moreInfoOrigin"
@@ -158,13 +161,13 @@
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="50dp">
+            android:layout_height="60dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Color"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textColor="@color/brown"/>
             <TextView
                 android:id="@+id/moreInfoColor"
@@ -181,13 +184,13 @@
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="50dp">
+            android:layout_height="60dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Weaning"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textColor="@color/brown"/>
             <TextView
                 android:id="@+id/moreInfoWeaning"
@@ -211,13 +214,13 @@
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="50dp">
+            android:layout_height="60dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Breed"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textColor="@color/brown"/>
             <TextView
                 android:id="@+id/moreInfoBreed"
@@ -234,13 +237,13 @@
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="50dp">
+            android:layout_height="60dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Purpose"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textColor="@color/brown"/>
             <TextView
                 android:id="@+id/moreInfoPurpose"
@@ -264,13 +267,13 @@
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="50dp">
+            android:layout_height="60dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Additional Notes"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textColor="@color/brown"/>
             <TextView
                 android:id="@+id/moreInfoNotes"
@@ -289,7 +292,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Done"
-        android:layout_marginTop="25dp"
+        android:textSize="23sp"
+        android:layout_marginTop="40dp"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/button_background"
         android:textColor="@color/white"/>

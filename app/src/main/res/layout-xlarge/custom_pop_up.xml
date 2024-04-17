@@ -1,29 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="350dp"
-    android:layout_height="575dp"
+    android:layout_width="560dp"
+    android:layout_height="wrap_content"
     android:background="@color/greenish"
-    android:padding="5dp"
+    android:paddingBottom="20dp"
+
     android:layout_gravity="center">
     <TextView
         android:id="@+id/txtclose"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:textColor="@color/white"
         android:text="X"
+        android:textSize="30sp"
         android:textStyle="bold"
         android:layout_gravity="end"
         android:gravity="center"
         android:background="@drawable/rounded_corners_close"/>
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:orientation="vertical">
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/moreInfoRabbitPic"
-            android:layout_width="150dp"
-            android:layout_height="140dp"
+            android:layout_width="210dp"
+            android:layout_height="240dp"
             android:padding="1dp"
             android:src="@drawable/rpic5"
             android:layout_gravity="center"
@@ -33,6 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Rabbit Name"
+            android:textSize="25sp"
             android:textStyle="bold"
             android:textColor="@color/wGreen"
             android:layout_gravity="center_horizontal"
@@ -42,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sex"
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:textColor="@color/skyBlue"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="4dp"/>
@@ -58,13 +62,13 @@
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="50dp">
+            android:layout_height="70dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="DOB:"
-                android:textSize="18sp"
+                android:textSize="25sp"
                 android:textColor="@color/brown"/>
             <TextView
                 android:id="@+id/moreInfoDOB"
@@ -72,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:text="22/05/25"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textColor="@color/wGreen"/>
         </LinearLayout>
         <LinearLayout
@@ -81,13 +85,13 @@
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="50dp">
+            android:layout_height="70dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Father:"
-                android:textSize="18sp"
+                android:textSize="25sp"
                 android:textColor="@color/brown"/>
             <TextView
                 android:id="@+id/moreInfoFather"
@@ -95,7 +99,7 @@
                 android:layout_height="wrap_content"
                 android:text="Vick"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textColor="@color/wGreen"/>
         </LinearLayout>
         <LinearLayout
@@ -104,13 +108,13 @@
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="50dp">
+            android:layout_height="70dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Mother:"
-                android:textSize="18sp"
+                android:textSize="25sp"
                 android:textColor="@color/brown"/>
 
             <TextView
@@ -118,7 +122,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Bunny"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/wGreen"/>
         </LinearLayout>
@@ -135,13 +139,13 @@
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="50dp">
+            android:layout_height="70dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Origin"
-                android:textSize="18sp"
+                android:textSize="25sp"
                 android:textColor="@color/brown"/>
             <TextView
                 android:id="@+id/moreInfoOrigin"
@@ -149,7 +153,7 @@
                 android:layout_height="wrap_content"
                 android:text="My Farm"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textColor="@color/wGreen"/>
         </LinearLayout>
         <LinearLayout
@@ -158,13 +162,13 @@
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="50dp">
+            android:layout_height="70dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Color"
-                android:textSize="18sp"
+                android:textSize="25sp"
                 android:textColor="@color/brown"/>
             <TextView
                 android:id="@+id/moreInfoColor"
@@ -172,7 +176,7 @@
                 android:layout_height="wrap_content"
                 android:text="White"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textColor="@color/wGreen"/>
         </LinearLayout>
         <LinearLayout
@@ -181,20 +185,20 @@
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="50dp">
+            android:layout_height="70dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Weaning"
-                android:textSize="18sp"
+                android:textSize="25sp"
                 android:textColor="@color/brown"/>
             <TextView
                 android:id="@+id/moreInfoWeaning"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="22/04/23"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/wGreen"/>
         </LinearLayout>
@@ -211,13 +215,13 @@
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="50dp">
+            android:layout_height="70dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Breed"
-                android:textSize="18sp"
+                android:textSize="25sp"
                 android:textColor="@color/brown"/>
             <TextView
                 android:id="@+id/moreInfoBreed"
@@ -225,7 +229,7 @@
                 android:layout_height="wrap_content"
                 android:text="Califonia"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textColor="@color/wGreen"/>
         </LinearLayout>
         <LinearLayout
@@ -234,13 +238,13 @@
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="50dp">
+            android:layout_height="70dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Purpose"
-                android:textSize="18sp"
+                android:textSize="25sp"
                 android:textColor="@color/brown"/>
             <TextView
                 android:id="@+id/moreInfoPurpose"
@@ -248,7 +252,7 @@
                 android:layout_height="wrap_content"
                 android:text="Breeder"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textColor="@color/wGreen"/>
         </LinearLayout>
 
@@ -264,13 +268,13 @@
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="50dp">
+            android:layout_height="70dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Additional Notes"
-                android:textSize="18sp"
+                android:textSize="25sp"
                 android:textColor="@color/brown"/>
             <TextView
                 android:id="@+id/moreInfoNotes"
@@ -278,7 +282,7 @@
                 android:layout_height="wrap_content"
                 android:text="Best in the farm"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textColor="@color/wGreen"/>
         </LinearLayout>
 
@@ -290,6 +294,7 @@
         android:layout_height="wrap_content"
         android:text="Done"
         android:layout_marginTop="25dp"
+        android:textSize="30sp"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/button_background"
         android:textColor="@color/white"/>
