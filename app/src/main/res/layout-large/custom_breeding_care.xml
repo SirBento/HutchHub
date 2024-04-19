@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="1dp"
     android:background="#E0F3FF" >
@@ -27,7 +27,7 @@
             android:text="Doe Information"
             android:textColor="@color/green"
             android:textStyle="italic"
-            android:textSize="22sp"
+            android:textSize="25sp"
             tools:layout_editor_absoluteX="173dp" />
 
         <TextView
@@ -79,15 +79,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="70dp"
-        android:paddingRight="4dp"
         android:background="@color/wGreen"
         android:orientation="vertical"
+        android:paddingRight="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintHorizontal_bias="0.852"
         app:layout_constraintStart_toEndOf="@+id/secondtInfoLayout"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.071">
+        app:layout_constraintVertical_bias="0.091">
 
         <TextView
             android:layout_width="wrap_content"
@@ -97,7 +97,7 @@
             android:gravity="center"
             android:text="Buck Information"
             android:textColor="@color/brown"
-            android:textSize="22sp"
+            android:textSize="25sp"
             android:textStyle="italic"
             tools:layout_editor_absoluteX="173dp" />
 
@@ -331,23 +331,22 @@
         app:layout_constraintTop_toBottomOf="@+id/CustomBreedRecommendedFood" />
 
 
-
     <TextView
         android:id="@+id/CustomBreedFoodQuantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
-        android:gravity="center"
-        android:text="Food Quantity"
-        android:inputType="textMultiLine"
-        android:textColor="@color/deepBrown"
-        app:layout_goneMarginTop="12dp"
-        android:textSize="20sp"
         android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:inputType="textMultiLine"
+        android:text="Food Quantity"
+        android:textColor="@color/deepBrown"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.225"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0.005"
-        app:layout_constraintTop_toBottomOf="@+id/lblFoodQuantity" />
+        app:layout_constraintTop_toBottomOf="@+id/CustomBreedRecommendedFood"
+        app:layout_goneMarginTop="12dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

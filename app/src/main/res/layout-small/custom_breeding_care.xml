@@ -5,12 +5,14 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:padding="1dp"
+    android:layout_gravity="center"
     android:background="#E0F3FF" >
 
     <LinearLayout
         android:id="@+id/secondtInfoLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity=""
         android:background="@color/brown"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,7 +29,7 @@
             android:text="Doe Information"
             android:textColor="@color/green"
             android:textStyle="italic"
-            android:textSize="22sp"
+            android:textSize="14sp"
             tools:layout_editor_absoluteX="173dp" />
 
         <TextView
@@ -40,7 +42,7 @@
             android:text="Doe Name:"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:textSize="20sp"
+            android:textSize="12sp"
             tools:layout_editor_absoluteX="173dp" />
 
         <TextView
@@ -54,7 +56,7 @@
             android:text="Doe Age:"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="12sp"
             tools:layout_editor_absoluteX="173dp" />
 
         <TextView
@@ -68,7 +70,7 @@
             android:text="Doe Breed:"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="12sp"
             app:layout_constraintTop_toBottomOf="@+id/GW_CustomRabbitFirstWeight"
             tools:layout_editor_absoluteX="173dp" />
 
@@ -78,16 +80,14 @@
         android:id="@+id/thirdInfoLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="70dp"
-        android:paddingRight="4dp"
         android:background="@color/wGreen"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintHorizontal_bias="0.659"
         app:layout_constraintStart_toEndOf="@+id/secondtInfoLayout"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.071">
+        app:layout_constraintVertical_bias="0.102">
 
         <TextView
             android:layout_width="wrap_content"
@@ -97,7 +97,7 @@
             android:gravity="center"
             android:text="Buck Information"
             android:textColor="@color/brown"
-            android:textSize="22sp"
+            android:textSize="14sp"
             android:textStyle="italic"
             tools:layout_editor_absoluteX="173dp" />
 
@@ -110,7 +110,7 @@
             android:gravity="center"
             android:text="Buck Name:"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="173dp" />
 
@@ -124,7 +124,7 @@
             android:gravity="center"
             android:text="Buck Age:"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="173dp" />
 
@@ -138,7 +138,7 @@
             android:gravity="center"
             android:text="Buck Breed:"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@+id/GW_CustomRabbitFirstWeight"
             tools:layout_editor_absoluteX="173dp" />
@@ -154,7 +154,7 @@
         android:text="Successful Falls:  "
         android:textColor="@color/deepBrown"
         app:layout_goneMarginTop="12dp"
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed"
         app:layout_constraintEnd_toEndOf="parent"
@@ -172,7 +172,7 @@
         android:gravity="center"
         android:text="4"
         android:textColor="@color/deepBrown"
-        android:textSize="20sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.005"
         app:layout_constraintStart_toEndOf="@+id/lblfalls"
@@ -188,7 +188,7 @@
         android:text="Crossing Date: "
         android:textStyle="bold"
         app:layout_goneMarginTop="12dp"
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:textColor="@color/deepBrown"
         android:fontFamily="sans-serif-condensed"
         app:layout_constraintEnd_toEndOf="parent"
@@ -204,7 +204,7 @@
         android:gravity="center"
         android:text="Crossing Date"
         app:layout_goneMarginTop="12dp"
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:textColor="@color/deepBrown"
         android:fontFamily="sans-serif-condensed"
         app:layout_constraintEnd_toEndOf="parent"
@@ -222,7 +222,7 @@
         android:textColor="@color/deepBrown"
         android:textStyle="bold"
         app:layout_goneMarginTop="12dp"
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:fontFamily="sans-serif-condensed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.005"
@@ -237,7 +237,7 @@
         android:text="Palpating Date"
         android:textColor="@color/deepBrown"
         app:layout_goneMarginTop="12dp"
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:fontFamily="sans-serif-condensed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.005"
@@ -256,7 +256,7 @@
         android:textColor="@color/deepBrown"
         android:textStyle="bold"
         app:layout_goneMarginTop="12dp"
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:fontFamily="sans-serif-condensed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.005"
@@ -271,7 +271,7 @@
         android:text="Birth Date"
         android:textColor="@color/deepBrown"
         app:layout_goneMarginTop="12dp"
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:fontFamily="sans-serif-condensed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.005"
@@ -289,7 +289,7 @@
         android:textColor="@color/deepBrown"
         android:textStyle="bold"
         app:layout_goneMarginTop="12dp"
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:fontFamily="sans-serif-condensed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.005"
@@ -306,7 +306,7 @@
         android:inputType="textMultiLine"
         android:textColor="@color/deepBrown"
         app:layout_goneMarginTop="12dp"
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:fontFamily="sans-serif-condensed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.005"
@@ -323,7 +323,7 @@
         android:textStyle="bold"
         android:textColor="@color/deepBrown"
         app:layout_goneMarginTop="12dp"
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:fontFamily="sans-serif-condensed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.005"
@@ -331,23 +331,22 @@
         app:layout_constraintTop_toBottomOf="@+id/CustomBreedRecommendedFood" />
 
 
-
     <TextView
         android:id="@+id/CustomBreedFoodQuantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
-        android:gravity="center"
-        android:text="Food Quantity"
-        android:inputType="textMultiLine"
-        android:textColor="@color/deepBrown"
-        app:layout_goneMarginTop="12dp"
-        android:textSize="20sp"
         android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:inputType="textMultiLine"
+        android:text="Food Quantity"
+        android:textColor="@color/deepBrown"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0.005"
-        app:layout_constraintTop_toBottomOf="@+id/lblFoodQuantity" />
+        app:layout_constraintTop_toBottomOf="@+id/CustomBreedRecommendedFood"
+        app:layout_goneMarginTop="12dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
