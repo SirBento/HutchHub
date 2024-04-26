@@ -26,8 +26,10 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
     public class MessageViewHolder extends RecyclerView.ViewHolder
     {
-        public TextView senderMessageText, receiverMessageText,receiver_username;
-        public ConstraintLayout constraintLayout_sender;
+        public TextView senderMessageText, sender_date, sender_time,
+                receiverMessageText,receiver_date, receiver_time, receiver_username;
+        public ConstraintLayout constraintLayout_receiver, constraintLayout_sender;
+
 
         public MessageViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -35,7 +37,12 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             senderMessageText = itemView.findViewById(R.id.sender_message_text);
             receiverMessageText = itemView.findViewById(R.id.receiver_message_text);
             receiver_username = itemView.findViewById(R.id.receiver_username);
+            constraintLayout_receiver = itemView.findViewById(R.id.constraintLayout_receiver);
             constraintLayout_sender = itemView.findViewById(R.id.constraintLayout_sender);
+            sender_date = itemView.findViewById(R.id.sender_date);
+            sender_time = itemView.findViewById(R.id.sender_time);
+            receiver_time = itemView.findViewById(R.id.receiver_time);
+            receiver_date = itemView.findViewById(R.id.receiver_date);
         }
     }
 
@@ -58,24 +65,37 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
         if(messageSenderID.equals(fromUserID)){
 
 
-            holder.constraintLayout_sender.setVisibility(View.INVISIBLE);
+            holder.constraintLayout_receiver.setVisibility(View.INVISIBLE);
             holder.receiverMessageText.setVisibility(View.INVISIBLE);
             holder.receiver_username.setVisibility(View.INVISIBLE);
+            //holder.receiver_date.setVisibility(View.VISIBLE);
+            //holder.receiver_time.setVisibility(View.VISIBLE);
+            holder.sender_date.setVisibility(View.VISIBLE);
+            holder.sender_time.setVisibility(View.VISIBLE);
 
-            holder.senderMessageText.setTextColor(Color.BLACK);
-            holder.senderMessageText.setVisibility(View.VISIBLE);
-            holder.senderMessageText.setBackgroundResource(R.drawable.sender_messeges_layout);
-            holder.senderMessageText.setText(messages.getMessage() + "\n \n" + messages.getTime() + "\n" + messages.getDate());
+           // holder.senderMessageText.setTextColor(Color.BLACK);
+          //  holder.senderMessageText.setVisibility(View.VISIBLE);
+            //holder.senderMessageText.setBackgroundResource(R.drawable.sender_messeges_layout);
+            holder.senderMessageText.setText(messages.getMessage());
+            holder.receiver_date.setText(messages.getTime());
+            holder.receiver_time.setText(messages.getDate());
 
         }else{
+            holder.constraintLayout_sender.setVisibility(View.INVISIBLE);
             holder.receiverMessageText.setVisibility(View.VISIBLE);
             holder.receiver_username.setVisibility(View.VISIBLE);
+            //holder.sender_date.setVisibility(View.VISIBLE);
+            //holder.sender_time.setVisibility(View.VISIBLE);
             holder.senderMessageText.setVisibility(View.INVISIBLE);
+            holder.receiver_date.setVisibility(View.VISIBLE);
+            holder.receiver_time.setVisibility(View.VISIBLE);
 
             holder.senderMessageText.setTextColor(Color.BLACK);
             holder.receiverMessageText.setBackgroundResource(R.drawable.receiver_messages_layout);
             holder.receiver_username.setText(messages.getName());
-            holder.receiverMessageText.setText(messages.getMessage() + "\n \n" + messages.getTime() + "\n" + messages.getDate());
+            holder.receiverMessageText.setText(messages.getMessage());
+            holder.sender_date.setText(messages.getTime());
+            holder.sender_time.setText(messages.getDate());
         }
     }
     @Override

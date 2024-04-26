@@ -197,7 +197,7 @@ public class Chat extends AppCompatActivity {
 
 
     private void SendNotification(String displaymessage) {
-
+        // TODO
         /** try to use the subscribe feature **/
            /*
         try{
