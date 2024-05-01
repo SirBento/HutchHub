@@ -46,7 +46,7 @@
         app:layout_constraintTop_toBottomOf="@+id/welcometxt" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_get_started"
         style="@android:style/Widget.Button"
         android:layout_width="100dp"
         android:layout_height="30dp"
