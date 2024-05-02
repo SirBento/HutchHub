@@ -5,14 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Records"
-    >
+    android:background="#00668B">
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rabbit_Record_List"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/rpic6"
         android:padding="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
