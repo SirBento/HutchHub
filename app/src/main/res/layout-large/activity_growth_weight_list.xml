@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#00668B"
     tools:context=".GrowthWeightList">
 
     <androidx.appcompat.widget.SearchView
@@ -29,7 +30,6 @@
         android:clipToPadding="true"
         android:fillViewport="false"
         android:paddingTop="15dp"
-        android:background="@drawable/rpic6"
         android:padding="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#00668B"
     tools:context=".GrowthWeightList">
 
     <androidx.appcompat.widget.SearchView
@@ -29,7 +30,6 @@
         android:clipToPadding="true"
         android:fillViewport="false"
         android:paddingTop="15dp"
-        android:background="@drawable/rpic6"
         android:padding="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,16 +55,16 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_addRabbitGrowthWeight"
-        android:layout_width="80dp"
-        android:layout_height="55dp"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
         android:layout_gravity="end|bottom"
         android:layout_margin="16dp"
         android:src="@drawable/add_circle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.916"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.916" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
