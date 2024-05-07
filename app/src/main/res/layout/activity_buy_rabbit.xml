@@ -45,7 +45,7 @@
         android:layout_marginTop="357dp"
         android:layout_marginBottom="276dp"
         android:text="No Rabbits are being sold"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/black"
         android:textSize="22sp"
         android:textStyle="italic"
         android:visibility="invisible"
