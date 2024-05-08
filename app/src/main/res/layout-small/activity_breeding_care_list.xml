@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BreedingCareList">
+    tools:context=".BreedingCareList"
+    android:background="#00668B">
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/Breed_Care_SearchView"
@@ -26,8 +27,6 @@
         android:layout_height="0dp"
         android:layout_marginTop="3dp"
         android:clipToPadding="true"
-
-        android:background="@drawable/rpic6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
