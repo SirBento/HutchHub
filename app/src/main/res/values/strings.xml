@@ -3,12 +3,8 @@
     <string name="default_notification_channel_id">PushNotifications</string>
 
 
-    <string name="last_seen">Last Seen</string>
     <string name="sender_messages">Sender messages ...</string>
     <string name="receiver_messages">Receiver messages ...</string>
-    <string name="write_your_message_here">Write your message here...</string>
-    <string name="display_username">Display Username</string>
-    <string name="todo">TODO</string>
 
     <string-array name="rabbitBreeds">
         <item>Alaska</item>
