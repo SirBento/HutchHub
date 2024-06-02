@@ -26,7 +26,6 @@
             app:srcCompat="@drawable/backtop" />
 
         <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/lottieHome"
             android:layout_width="330dp"
             android:layout_height="320dp"
             android:layout_marginBottom="51dp"
@@ -47,7 +46,6 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:id="@+id/scrollable"
     app:layout_constraintTop_toBottomOf="@id/pic"
     android:layout_marginTop="10dp"
     >
@@ -74,7 +72,6 @@
                 android:clickable="true">
 
                 <TextView
-                    android:id="@+id/breading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -101,7 +98,6 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/breadingIcon"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -122,7 +118,6 @@
                 android:clickable="true">
 
                 <TextView
-                    android:id="@+id/pregnancyTrackertext"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -149,7 +144,6 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/pregnancyTrackerIcon"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -177,7 +171,6 @@
                 android:clickable="true">
 
                 <TextView
-                    android:id="@+id/ChatText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -203,7 +196,6 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/chatIcon"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -224,7 +216,6 @@
                 android:clickable="true">
 
                 <TextView
-                    android:id="@+id/FeedingScheduletext"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -251,7 +242,6 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/FeedingScheduleIcon"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -279,7 +269,6 @@
                 android:clickable="true">
 
                 <TextView
-                    android:id="@+id/buySelltext"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -306,7 +295,6 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/buySellIcon"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -327,7 +315,6 @@
                 android:clickable="true">
 
                 <TextView
-                    android:id="@+id/recordsText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -354,7 +341,6 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/recordIcon"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -382,7 +368,6 @@
                 android:clickable="true">
 
                 <TextView
-                    android:id="@+id/growthAndWeightText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -409,7 +394,6 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/imageView3"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -430,7 +414,6 @@
                 android:clickable="true">
 
                 <TextView
-                    android:id="@+id/knowledgeText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -457,7 +440,6 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/lottie"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -486,7 +468,6 @@
                 android:clickable="true">
 
                 <TextView
-                    android:id="@+id/btn_LogoutText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -513,7 +494,6 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/img_logout"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         app:layout_constraintBottom_toBottomOf="parent"
