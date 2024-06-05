@@ -22,7 +22,6 @@
         tools:srcCompat="@drawable/top_background" />
 
     <TextView
-        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -105,7 +104,6 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textView5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="50dp"
@@ -188,7 +186,6 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textView7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="120dp"
