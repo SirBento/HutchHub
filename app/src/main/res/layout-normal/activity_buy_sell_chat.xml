@@ -35,7 +35,6 @@
 
 
         <EditText
-            android:id="@+id/BuySellChatInput_message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toStartOf="@+id/BuySellChatSend_message_bnt"
