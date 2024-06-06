@@ -1,9 +1,11 @@
 package com.example.hutchhub;
 
 import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.net.Uri;
@@ -15,6 +17,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.hutchhub.R;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -59,6 +63,22 @@ public class Add_PregRabbit_Details extends AppCompatActivity {
         setContentView(R.layout.activity_add_preg_rabbit_details);
 
         InitializeValues();
+
+
+        imagePickLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if(result.getResultCode() == Activity.RESULT_OK){
+                        Intent data = result.getData();
+                        if(data!=null && data.getData()!=null){
+                            resultUri= data.getData();
+                            Glide.with(Add_PregRabbit_Details.this)
+                                    .load(resultUri)
+                                    .apply(RequestOptions.circleCropTransform())
+                                    .into(rabbit_Preg_Record_image);
+                        }
+                    }
+                }
+        );
 
         rabbit_Preg_Record_CrossDate.setOnClickListener(view -> {
             DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
