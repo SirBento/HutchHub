@@ -20,7 +20,6 @@
         tools:srcCompat="@drawable/top_background" />
 
     <TextView
-        android:id="@+id/textView3"
         android:layout_width="269dp"
         android:layout_height="193dp"
         android:layout_marginStart="32dp"
