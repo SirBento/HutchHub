@@ -56,16 +56,37 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView5"
             app:layout_constraintVertical_bias="0.267">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/rabbit_Preg_Record_image"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center"
-                android:src="@drawable/rpic1"
-                app:civ_border_color="@color/colorPrimaryDark"
-                app:civ_border_width="5dp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/rabbit_Preg_Record_image"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:src="@drawable/rpic1"
+                    app:civ_border_color="@color/colorPrimaryDark"
+                    app:civ_border_width="5dp" />
+
+                <ImageView
+                    android:id="@+id/addImg"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignEnd="@id/rabbit_Preg_Record_image"
+                    android:layout_alignRight="@id/rabbit_Preg_Record_image"
+                    android:layout_alignBottom="@id/rabbit_Preg_Record_image"
+                    android:layout_marginEnd="-11dp"
+                    android:layout_marginRight="-11dp"
+                    android:layout_marginBottom="-3dp"
+                    android:src="@drawable/addphoto" />
+
+
+            </RelativeLayout>
+
 
             <EditText
                 android:id="@+id/rabbit_Preg_Record_name"

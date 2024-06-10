@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
-        android:paddingBottom="180dp"
+        android:paddingBottom="120dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,14 +23,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="188dp"
-        android:text="Rabbit Pregnancy\nTracker "
+        android:layout_marginBottom="120dp"
+        android:text="Rabbit\nPregnancy\nTracker "
         android:textColor="@color/white"
         android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintHorizontal_bias="0.097"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ScrollView
@@ -54,16 +54,35 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView5"
             app:layout_constraintVertical_bias="0.267">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/rabbit_Preg_Record_image"
-                android:layout_width="250dp"
-                android:layout_height="250dp"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center"
-                android:src="@drawable/rpic1"
-                app:civ_border_color="@color/colorPrimaryDark"
-                app:civ_border_width="5dp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/rabbit_Preg_Record_image"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:src="@drawable/rpic1"
+                    app:civ_border_color="@color/colorPrimaryDark"
+                    app:civ_border_width="5dp" />
+
+                <ImageView
+                    android:id="@+id/addImg"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignEnd="@id/rabbit_Preg_Record_image"
+                    android:layout_alignRight="@id/rabbit_Preg_Record_image"
+                    android:layout_alignBottom="@id/rabbit_Preg_Record_image"
+                    android:layout_marginEnd="-2dp"
+                    android:layout_marginRight="-2dp"
+                    android:layout_marginBottom="9dp"
+                    android:src="@drawable/addphoto" />
+
+
+            </RelativeLayout>
 
             <EditText
                 android:id="@+id/rabbit_Preg_Record_name"
