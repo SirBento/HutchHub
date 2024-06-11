@@ -1,10 +1,12 @@
-package com.example.hutchhub;
+package com.example.hutchhub.Classses;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.view.LayoutInflater;
 
-    public class LoadingDialog {
+import com.example.hutchhub.R;
+
+public class LoadingDialog {
 
         Activity activity;
         AlertDialog dialog;
@@ -16,7 +18,7 @@ import android.view.LayoutInflater;
 
         }
 
-        void  startLoadingDialog(){
+        public void  startLoadingDialog(){
 
             AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 
@@ -28,7 +30,7 @@ import android.view.LayoutInflater;
 
         }
 
-        void dismissDialog(){
+        public void dismissDialog(){
 
             dialog.dismiss();
         }

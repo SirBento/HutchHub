@@ -1,4 +1,4 @@
-package com.example.hutchhub;
+package com.example.hutchhub.Classses;
 
 public class User {
     public String firstname, Email, password;
