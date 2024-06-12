@@ -14,7 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hutchhub.Adapters.BuyRabbitAdapter;
-import com.example.hutchhub.Adapters.RabbitForSaleAdapter;
+import com.example.hutchhub.Classses.LoadingDialog;
 import com.example.hutchhub.Models.RabbitForSale;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;

@@ -122,8 +122,8 @@ public class GrowthWeight extends AppCompatActivity {
 
                 DatePickerDialog datePickerDialog = new DatePickerDialog(GrowthWeight.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
-                    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                        GnW_FirstWeighingDate.setText(i2+"/"+(i1+1)+"/"+i);
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                        GnW_FirstWeighingDate.setText(day+"/"+(month+1)+"/"+year);
                     }
                 },year,month,day);
 
@@ -134,8 +134,8 @@ public class GrowthWeight extends AppCompatActivity {
 
                 DatePickerDialog datePickerDialog = new DatePickerDialog(GrowthWeight.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
-                    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                        GnW_SecondWeighingDate.setText(i2+"/"+(i1+1)+"/"+i);
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                        GnW_SecondWeighingDate.setText(day+"/"+(month+1)+"/"+year);
                     }
                 },year,month,day);
 
@@ -148,8 +148,8 @@ public class GrowthWeight extends AppCompatActivity {
 
                     DatePickerDialog datePickerDialog = new DatePickerDialog(GrowthWeight.this, new DatePickerDialog.OnDateSetListener() {
                         @Override
-                        public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                            GnW_ThirdWeighingDate.setText(i2+"/"+(i1+1)+"/"+i);
+                        public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                            GnW_ThirdWeighingDate.setText(day+"/"+(month+1)+"/"+year);
                         }
                     },year,month,day);
 
@@ -225,6 +225,11 @@ public class GrowthWeight extends AppCompatActivity {
         year = calendar.get(Calendar.YEAR);
         month = calendar.get(Calendar.MONTH);
         day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        GnW_RabbitDOB.setText(day+"/"+month+"/"+year);
+        GnW_FirstWeighingDate.setText(day+"/"+month+"/"+year);
+        GnW_SecondWeighingDate.setText(day+"/"+month+"/"+year);
+        GnW_ThirdWeighingDate.setText(day+"/"+month+"/"+year);
     }
 
 

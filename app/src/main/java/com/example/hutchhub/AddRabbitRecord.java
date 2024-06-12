@@ -14,10 +14,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.hutchhub.Classses.LoadingDialog;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -29,9 +31,6 @@ import com.google.firebase.storage.StorageReference;
 import java.util.Calendar;
 import java.util.HashMap;
 import de.hdodenhof.circleimageview.CircleImageView;
-import kotlin.Unit;
-import kotlin.jvm.functions.Function1;
-
 
 
 public class AddRabbitRecord extends AppCompatActivity {
@@ -42,6 +41,7 @@ public class AddRabbitRecord extends AppCompatActivity {
                      rabbit_Record_MotherName,rabbit_Record_Color,
                      rabbit_Record_DOB,rabbit_Record_Weaned, rabbit_Record_Notes;
     private Button btn_rabbit_Record_Save;
+    private ImageView addRecordImg;
 
     private CircleImageView rabbit_Record_image;
     final Calendar calendar = Calendar.getInstance();
@@ -91,10 +91,10 @@ public class AddRabbitRecord extends AppCompatActivity {
 
                 DatePickerDialog datePickerDialog = new DatePickerDialog(AddRabbitRecord.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
-                    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
 
-                        rabbit_Record_DOB.setText(i2+"/"+(i1+1)+"/"+i);
-                        //rabbit_Record_DOB.setText(SimpleDateFormat.getDateInstance().format(calendar.getTime()));
+                        rabbit_Record_DOB.setText(day+"/"+(month+1)+"/"+year);
+
                     }
                 },year,month,day);
 
@@ -109,9 +109,8 @@ public class AddRabbitRecord extends AppCompatActivity {
 
             DatePickerDialog datePickerDialog = new DatePickerDialog(AddRabbitRecord.this, new DatePickerDialog.OnDateSetListener() {
                 @Override
-                public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                    rabbit_Record_Weaned.setText(i2+"/"+(i1+1)+"/"+i);
-                    //rabbit_Record_Weaned.setText(SimpleDateFormat.getDateInstance().format(calendar.getTime()));
+                public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                    rabbit_Record_Weaned.setText(day+"/"+(month+1)+"/"+year);
                 }
             },year,month,day);
 
@@ -121,21 +120,23 @@ public class AddRabbitRecord extends AppCompatActivity {
 
 
 
-        rabbit_Record_image.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                ImagePicker.with(AddRabbitRecord.this).cropSquare().compress(512).maxResultSize(512,512)
-                        .createIntent(new Function1<Intent, Unit>() {
-                            @Override
-                            public Unit invoke(Intent intent) {
-                                imagePickLauncher.launch(intent);
-                                return null;
-                            }
-                        });
-            }
-        });
+        rabbit_Record_image.setOnClickListener(v -> ImagePicker
+                        .with(AddRabbitRecord.this)
+                        .cropSquare().compress(512)
+                        .maxResultSize(512,512)
+                .createIntent(intent -> {
+                    imagePickLauncher.launch(intent);
+                    return null;
+                }));
 
+        addRecordImg.setOnClickListener(v -> ImagePicker
+                .with(AddRabbitRecord.this)
+                .cropSquare().compress(512)
+                .maxResultSize(512,512)
+                .createIntent(intent -> {
+                    imagePickLauncher.launch(intent);
+                    return null;
+                }));
 
 
         btn_rabbit_Record_Save.setOnClickListener(view -> {
@@ -190,6 +191,7 @@ public class AddRabbitRecord extends AppCompatActivity {
      rabbit_Record_Breeds = findViewById(R.id.rabbit_Record_Breeds);
      rabbit_Record_Purpose = findViewById(R.id.rabbit_Record_Purpose);
      rabbit_Record_Origin = findViewById(R.id.rabbit_Record_Origin);
+     addRecordImg = findViewById(R.id.addRecordImg);
 
      //Edit Texts
      rabbit_Record_name = findViewById(R.id.rabbit_Record_name);
@@ -236,6 +238,9 @@ public class AddRabbitRecord extends AppCompatActivity {
      year = calendar.get(Calendar.YEAR);
      month = calendar.get(Calendar.MONTH);
      day = calendar.get(Calendar.DAY_OF_MONTH);
+
+     rabbit_Record_DOB.setText(day+"/"+month+"/"+year);
+     rabbit_Record_Weaned.setText(day+"/"+month+"/"+year);
 
  }
 

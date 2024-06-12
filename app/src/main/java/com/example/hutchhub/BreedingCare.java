@@ -38,8 +38,8 @@ public class BreedingCare extends AppCompatActivity {
         rabbit_Breed_Date.setOnClickListener(view -> {
             DatePickerDialog datePickerDialog = new DatePickerDialog(BreedingCare.this, new DatePickerDialog.OnDateSetListener() {
                 @Override
-                public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                    rabbit_Breed_Date.setText(i2+"/"+(i1+1)+"/"+i);
+                public void onDateSet(DatePicker datePicker, int i, int month, int i2) {
+                    rabbit_Breed_Date.setText(day+"/"+(month+1)+"/"+year);
                 }
             },year,month,day);
 
@@ -134,6 +134,8 @@ private void initializeValues(){
     year = calendar.get(Calendar.YEAR);
     month = calendar.get(Calendar.MONTH);
     day = calendar.get(Calendar.DAY_OF_MONTH);
+
+    rabbit_Breed_Date.setText(day+"/"+month+"/"+year);
 }
 
 

@@ -68,7 +68,7 @@ public class BuySellChat extends AppCompatActivity {
         userRef = FirebaseDatabase.getInstance().getReference().child("Users");
 
 
-        /**this hase to change to point a different node that contains buy sell messages**/
+        /**this has to change to point a different node that contains buy sell messages**/
         messagedb = FirebaseDatabase.getInstance().getReference().child("Buy_Sell_Messages");
         getUserName();
         BuySellChat_messages_list_of_users = findViewById(R.id.BuySellChat_messages_list_of_users);

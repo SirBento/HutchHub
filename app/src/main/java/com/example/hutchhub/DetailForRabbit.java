@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.hutchhub.Classses.GlobalValues;
+import com.example.hutchhub.Classses.LoadingDialog;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -59,6 +60,8 @@ public class DetailForRabbit extends AppCompatActivity {
 
         btn_detForDone.setOnClickListener(view -> {
             loadingDialog.startLoadingDialog();
+
+            // TODO send the notification to the person who is selling the rabbit
             SendNotification("Hello" + sellerUsername
                     + ", there is someone interested " +
                              "in the rabbits you listed for sale");
