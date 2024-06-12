@@ -11,15 +11,15 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.example.hutchhub.R;
+import com.example.hutchhub.Classses.LoadingDialog;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -39,6 +39,7 @@ import kotlin.jvm.functions.Function1;
 public class Add_PregRabbit_Details extends AppCompatActivity {
 
     CircleImageView rabbit_Preg_Record_image;
+    ImageView addImg;
     EditText rabbit_Preg_Record_name, rabbit_Preg_Record_DOB,rabbit_Preg_Record_CrossDate;
     Button btn_rabbit_Preg_Record_Save;
     private int year, month, day;
@@ -83,8 +84,8 @@ public class Add_PregRabbit_Details extends AppCompatActivity {
         rabbit_Preg_Record_CrossDate.setOnClickListener(view -> {
             DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
                 @Override
-                public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                    rabbit_Preg_Record_CrossDate.setText(i2+"/"+(i1+1)+"/"+i);
+                public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                    rabbit_Preg_Record_CrossDate.setText(day+"/"+(month+1)+"/"+year);
                 }
             },year,month,day);
 
@@ -94,14 +95,27 @@ public class Add_PregRabbit_Details extends AppCompatActivity {
         rabbit_Preg_Record_DOB.setOnClickListener(view -> {
             DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
                 @Override
-                public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                    rabbit_Preg_Record_DOB.setText(i2+"/"+(i1+1)+"/"+i);
+                public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                    rabbit_Preg_Record_DOB.setText(day+"/"+(month+1)+"/"+year);
                 }
             },year,month,day);
 
             datePickerDialog.show();
         });
 
+        addImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ImagePicker.with(Add_PregRabbit_Details.this).cropSquare().compress(512).maxResultSize(512,512)
+                        .createIntent(new Function1<Intent, Unit>() {
+                            @Override
+                            public Unit invoke(Intent intent) {
+                                imagePickLauncher.launch(intent);
+                                return null;
+                            }
+                        });
+            }
+        });
         rabbit_Preg_Record_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
@@ -162,24 +176,29 @@ public class Add_PregRabbit_Details extends AppCompatActivity {
         rabbit_Preg_Record_DOB = findViewById(R.id.rabbit_Preg_Record_DOB);
         rabbit_Preg_Record_CrossDate = findViewById(R.id.rabbit_Preg_Record_CrossDate);
         btn_rabbit_Preg_Record_Save = findViewById(R.id.btn_rabbit_Preg_Record_Save);
+        addImg =findViewById(R.id.addImg);
 
         mAuth = FirebaseAuth.getInstance();
-        RabbitPicRef = FirebaseStorage.getInstance().getReference().child("PreRabbitRecord");
+        RabbitPicRef = FirebaseStorage.getInstance().getReference().child("PregRabbitRecord");
         currentUserID = mAuth.getCurrentUser().getUid();
-
-
         year = calendar.get(Calendar.YEAR);
         month = calendar.get(Calendar.MONTH);
         day = calendar.get(Calendar.DAY_OF_MONTH);
+        rabbit_Preg_Record_CrossDate.setText(day+"/"+month+"/"+year);
+        rabbit_Preg_Record_DOB.setText(day+"/"+month+"/"+year);
 
     }
-
+    // ToDO : calcualate palpatung dates and kindling date and breeding box
     private void SaveRabbitRecords(){
 
         HashMap<String, String> rabbitRecord = new HashMap<>();
+        rabbitRecord.put("Id", FirebaseAuth.getInstance().getCurrentUser().getUid());
         rabbitRecord.put("Name",  rabbit_Preg_Record_name.getText().toString().trim());
-        rabbitRecord.put("CrossDate", rabbit_Preg_Record_CrossDate.getText().toString().trim());
         rabbitRecord.put("DOB", rabbit_Preg_Record_DOB.getText().toString().trim());
+        rabbitRecord.put("CrossDate", rabbit_Preg_Record_CrossDate.getText().toString().trim());
+        //rabbitRecord.put("Palpating", );
+        //rabbitRecord.put("BreedingBox", );
+        //rabbitRecord.put("Kindling", ); adding breeding box
         rabbitRecord.put("Image",downloadUrl);
 
         databaseRef.child(currentUserID).push().setValue(rabbitRecord).addOnCompleteListener(new OnCompleteListener<Void>() {
