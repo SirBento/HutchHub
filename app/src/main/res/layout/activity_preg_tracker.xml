@@ -45,7 +45,7 @@
         android:layout_marginBottom="276dp"
         android:gravity="center"
         android:text="No data available"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/brown"
         android:textSize="23sp"
         android:textStyle="italic"
         android:visibility="invisible"
