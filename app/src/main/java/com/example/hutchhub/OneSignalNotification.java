@@ -3,6 +3,15 @@ import com.onesignal.OneSignal;
 import com.onesignal.debug.LogLevel;
 import com.onesignal.Continue;
 import android.app.Application;
+import android.util.Log;
+
+import java.io.IOException;
+
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class OneSignalNotification  extends Application {
 
@@ -23,5 +32,20 @@ public class OneSignalNotification  extends Application {
         // NOTE: It's recommended to use a OneSignal In-App Message to prompt instead.
         OneSignal.getNotifications().requestPermission(false, Continue.none());
 
+         //current user  id
+        String id = OneSignal.getUser().getOnesignalId();
+        String pushId = OneSignal.getUser().getPushSubscription().getId();
+
+
+
+        OneSignal.getNotifications().addClickListener(iNotificationClickEvent -> {
+
+            Log.e("Notification Clicked", "TRUE!!!");
+        });
+
     }
+
+
+
+
 }

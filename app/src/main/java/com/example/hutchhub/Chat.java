@@ -6,7 +6,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.StrictMode;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -20,6 +25,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.onesignal.OneSignal;
 
 import org.json.JSONObject;
 
@@ -48,13 +54,16 @@ public class Chat extends AppCompatActivity {
 
     ImageButton sendButton;
     EditText input_message;
-   List<Message> message;
-   MessageAdapter messageAdapter;
-   RecyclerView messageRecyclerView;
-   LinearLayoutManager linearLayoutManager;
-
-   Toolbar chatToolbar;
+    List<Message> message;
+    MessageAdapter messageAdapter;
+    RecyclerView messageRecyclerView;
+    LinearLayoutManager linearLayoutManager;
+    Toolbar chatToolbar;
     String currentuserId, currentusername,CurrentTime,date, Displaymessage;
+
+    int iconId = R.drawable.message;
+    Uri iconUri = Uri.parse("android.resource://" + getPackageName() + "/" + iconId);
+    String iconUrl = iconUri.toString();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,12 +92,20 @@ public class Chat extends AppCompatActivity {
         linearLayoutManager = new LinearLayoutManager(this);
         messageRecyclerView.setLayoutManager(linearLayoutManager);
         messageRecyclerView.setAdapter(messageAdapter);
+//TODO: Fix chat scrolling
 
+        //remove network restrictions NB should be in debug mode only
+          int  SDK_INT = Build.VERSION.SDK_INT;
+        if(SDK_INT >8){
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
+                    .permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+        }
 
         sendButton.setOnClickListener(v -> {
             if(validateMessage()){
               SaveMessage();
-              SendNotification(Displaymessage);
+              sendNotification();
               input_message.setText("");
             }
         });
@@ -116,7 +133,6 @@ public class Chat extends AppCompatActivity {
 
                     @Override
                     public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
 
                         if(dataSnapshot.exists()){
 
@@ -196,59 +212,86 @@ public class Chat extends AppCompatActivity {
     }
 
 
-    private void SendNotification(String displaymessage) {
-        // TODO
-        /** try to use the subscribe feature **/
-           /*
-        try{
-            JSONObject jsonObject  = new JSONObject();
+    //sending to a specific user
 
-            JSONObject notificationObj = new JSONObject();
-            notificationObj.put("title",sellerUsername);
-            notificationObj.put("body",displaymessage);
+    private void sendNotification(){
 
-            JSONObject dataObj = new JSONObject();
-            dataObj.put("userId",FirebaseAuth.getInstance().getCurrentUser().getUid());
 
-            jsonObject.put("notification",notificationObj);
-            jsonObject.put("data",dataObj);
-            jsonObject.put("to",key);
-
-            callApi(jsonObject);
-            Toast.makeText(this, "Seller has been notified! But you can also use there listed number to call them", Toast.LENGTH_LONG).show();
-            loadingDialog.dismissDialog();
-            startActivity(new Intent(DetailForRabbit.this,BuySellChat.class));
-
-        }catch (Exception e){
-
-            Toast.makeText(this, "Error: Something Happened, Please Retry", Toast.LENGTH_LONG).show();
-            loadingDialog.dismissDialog();
-
-        }
-
-        * */
-    }
-
-    void callApi(JSONObject jsonObject){
-        MediaType JSON = MediaType.get("application/json; charset=utf-8");
         OkHttpClient client = new OkHttpClient();
-        String url = "https://fcm.googleapis.com/fcm/send";
-        RequestBody body = RequestBody.create(jsonObject.toString(),JSON);
+
+        /*
+          RequestBody body = RequestBody.create(mediaType,
+            "{\"contents\":{\"en\":\"New Group Message\"},\"app_id\":\"93d4ec61-14a4-407f-a606-55d50aa98198\",\"included_segments\":[\"All\"],\"excluded_segments\":[\"device_id_to_exclude\"],\"large_icon\":\"" + iconUrl + "\"}");
+        * */
+        MediaType mediaType = MediaType.parse("application/json; charset=utf-8");
+        RequestBody body = RequestBody.create(mediaType,
+                "{\"contents\":{\"en\":\"New Group Message\"},\"app_id\":\"93d4ec61-14a4-407f-a606-55d50aa98198\",\"included_segments\":[\"All\"],\"large_icon\":\"" + iconUrl + "\"}");
+
         Request request = new Request.Builder()
-                .url(url)
+                .url("https://api.onesignal.com/api/v1/notifications")
                 .post(body)
-                .header("Authorization","Bearer 9018976dd8f78d5aa658d1d0cf1d5f76e561a224")
+                .addHeader("Accept","application/json")
+                .addHeader("Authorization","Basic YzI5NzQxNTYtZTA0ZC00ZGVkLTkxYmEtMWJiYTE1NzU2ZTQ1")
+                .addHeader ("Content-Type","application/json")
                 .build();
-        client.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(@NonNull Call call, @NonNull IOException e) {
-            }
-            @Override
-            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+        Response response;
 
-            }
-        });
+        {
+            try {
+                response = client.newCall(request).execute();
 
+                // Check response code and return message
+                if (response.isSuccessful()) {
+                    Log.e("Notification Response", "Notification sent successfully!");
+                } else {
+                    Log.e("Notification Response","Error sending notification: " + response.code() + " - " + response.body().string());
+                }
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
+
+
+
+
+
+
+
+    /**  SENDING TO A SPECIFIC DEVICE
+
+     private void sendMessage(String playerId) {
+     OkHttpClient client = new OkHttpClient();
+
+     MediaType mediaType = MediaType.parse("application/json; charset=utf-8");
+     RequestBody body = RequestBody.create(mediaType,
+     "{\"contents\":{\"en\":\"New Group Message\"},\"app_id\":\"93d4ec61-14a4-407f-a606-55d50aa98198\",\"include_player_ids\":[\"" + playerId + "\"]}");
+
+     Request request = new Request.Builder()
+     .url("https://api.onesignal.com/api/v1/notifications")
+     .post(body)
+     .addHeader("Accept", "application/json")
+     .addHeader("Authorization", "Basic YzI5NzQxNTYtZTA0ZC00ZGVkLTkxYmEtMWJiYTE1NzU2ZTQ1")
+     .addHeader("Content-Type", "application/json")
+     .build();
+
+     Response response;
+
+     try {
+     response = client.newCall(request).execute();
+
+     // Check response code and return message
+     if (response.isSuccessful()) {
+     Log.e("Notification Response", "Notification sent successfully!");
+     } else {
+     Log.e("Notification Response", "Error sending notification: " + response.code() + " - " + response.body().string());
+     }
+
+     } catch (IOException e) {
+     throw new RuntimeException(e);
+     }
+     }
+     * */
 
 }

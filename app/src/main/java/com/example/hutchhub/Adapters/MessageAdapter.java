@@ -64,38 +64,43 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
         if(messageSenderID.equals(fromUserID)){
 
-
-            holder.constraintLayout_receiver.setVisibility(View.INVISIBLE);
-            holder.receiverMessageText.setVisibility(View.INVISIBLE);
-            holder.receiver_username.setVisibility(View.INVISIBLE);
-            //holder.receiver_date.setVisibility(View.VISIBLE);
-            //holder.receiver_time.setVisibility(View.VISIBLE);
             holder.sender_date.setVisibility(View.VISIBLE);
             holder.sender_time.setVisibility(View.VISIBLE);
+            holder.senderMessageText.setText(messages.getMessage());
 
+
+
+            holder.constraintLayout_receiver.setVisibility(View.GONE);
+            holder.receiverMessageText.setVisibility(View.INVISIBLE);
+            holder.receiver_username.setVisibility(View.INVISIBLE);
+            holder.receiver_date.setVisibility(View.INVISIBLE);
+            holder.receiver_time.setVisibility(View.INVISIBLE);
+            //holder.receiver_date.setText(messages.getTime());
+            //holder.receiver_time.setText(messages.getDate());
            // holder.senderMessageText.setTextColor(Color.BLACK);
           //  holder.senderMessageText.setVisibility(View.VISIBLE);
             //holder.senderMessageText.setBackgroundResource(R.drawable.sender_messeges_layout);
-            holder.senderMessageText.setText(messages.getMessage());
-            holder.receiver_date.setText(messages.getTime());
-            holder.receiver_time.setText(messages.getDate());
+
 
         }else{
-            holder.constraintLayout_sender.setVisibility(View.INVISIBLE);
-            holder.receiverMessageText.setVisibility(View.VISIBLE);
-            holder.receiver_username.setVisibility(View.VISIBLE);
-            //holder.sender_date.setVisibility(View.VISIBLE);
-            //holder.sender_time.setVisibility(View.VISIBLE);
-            holder.senderMessageText.setVisibility(View.INVISIBLE);
-            holder.receiver_date.setVisibility(View.VISIBLE);
-            holder.receiver_time.setVisibility(View.VISIBLE);
 
-            holder.senderMessageText.setTextColor(Color.BLACK);
+            holder.receiverMessageText.setVisibility(View.VISIBLE);
             holder.receiverMessageText.setBackgroundResource(R.drawable.receiver_messages_layout);
             holder.receiver_username.setText(messages.getName());
             holder.receiverMessageText.setText(messages.getMessage());
-            holder.sender_date.setText(messages.getTime());
-            holder.sender_time.setText(messages.getDate());
+            holder.receiver_username.setVisibility(View.VISIBLE);
+            holder.receiver_date.setVisibility(View.VISIBLE);
+            holder.receiver_time.setVisibility(View.VISIBLE);
+            holder.receiver_date.setText(messages.getTime());
+            holder.receiver_time.setText(messages.getDate());
+
+
+            //holder.sender_date.setVisibility(View.VISIBLE);
+            //holder.sender_time.setVisibility(View.VISIBLE);
+            holder.constraintLayout_sender.setVisibility(View.GONE);
+            holder.senderMessageText.setVisibility(View.INVISIBLE);
+            //holder.sender_date.setText(messages.getTime());
+            //holder.sender_time.setText(messages.getDate());
         }
     }
     @Override
