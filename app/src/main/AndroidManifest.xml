@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:name=".OneSignalNotification"
@@ -116,13 +117,7 @@
             android:name=".MainActivity"
             android:exported="false" />
 
-        <service
-            android:name=".Sevices.MyFirebaseMessagingService"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
+
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
@@ -135,10 +130,14 @@
             android:value="@string/default_notification_channel_id" />
 
         <receiver
-            android:name=".NotificationReceiver"
+            android:name=".Broadcasters.AlarmReceiver"
             android:enabled="true"
             android:exported="false" />
-        <receiver android:name=".Classses.AlertReceiver" />
+
+        <receiver android:name=".Broadcasters.AlertReceiver" />
+
+
+
     </application>
 
 </manifest>
