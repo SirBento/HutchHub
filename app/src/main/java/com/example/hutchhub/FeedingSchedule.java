@@ -2,6 +2,8 @@ package com.example.hutchhub;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
+import androidx.work.OneTimeWorkRequest;
+import androidx.work.WorkManager;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -17,16 +19,18 @@ import android.widget.LinearLayout;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import com.example.hutchhub.Classses.AlertReceiver;
+import com.example.hutchhub.Broadcasters.AlarmReceiver;
+import com.example.hutchhub.Broadcasters.AlertReceiver;
 import com.example.hutchhub.Classses.LoadingDialog;
 import com.example.hutchhub.Classses.TimePickerFragment;
+import com.example.hutchhub.Workers.ReminderWorker;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
 import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 
 public class FeedingSchedule extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener{
@@ -48,32 +52,7 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feeding_schedule);
 
-        // Database instance
-        feedsDB = FirebaseDatabase
-                .getInstance()
-                .getReference("FeedingSchedule")
-                .child(FirebaseAuth.getInstance().getCurrentUser().getUid());
-
-        //Initialising Layouts
-        time1_Layout = findViewById(R.id.time1_Layout);
-        time2_Layout = findViewById(R.id.time2_Layout);
-        time3_Layout = findViewById(R.id.time3_Layout);
-
-        //initialising Buttons
-        FeedingSchedule_Next = findViewById(R.id.FeedingSchedule_Next);
-        FeedingSchedule_Done  = findViewById(R.id.FeedingSchedule_Done);
-        btn_FeedingSchedule_Time1 = findViewById(R.id.btn_FeedingSchedule_Time1);
-        btn_FeedingSchedule_Time2 = findViewById(R.id.btn_FeedingSchedule_Time2);
-        btn_FeedingSchedule_Time3 = findViewById(R.id.btn_FeedingSchedule_Time3);
-
-        //initialising EditText
-
-        FeedingSchedule_NumberOfRabbits =findViewById(R.id.FeedingSchedule_NumberOfRabbits);
-        FeedingSchedule_TypeOfFeed =findViewById(R.id. FeedingSchedule_TypeOfFeed);
-        FeedingSchedule_FeedingTimes =findViewById(R.id.FeedingSchedule_FeedingTimes);
-        FeedingSchedule_Time1  =findViewById(R.id.FeedingSchedule_Time1);
-        FeedingSchedule_Time2   =findViewById(R.id.FeedingSchedule_Time2);
-        FeedingSchedule_Time3  =findViewById(R.id.FeedingSchedule_Time3);
+        initializeItems();
 
 
         FeedingSchedule_Next.setOnClickListener(view -> {
@@ -92,7 +71,6 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
                 time1_Layout.setVisibility(View.VISIBLE);
                 FeedingSchedule_Done.setVisibility(View.VISIBLE);
 
-
             }else if(FeedingSchedule_FeedingTimes.getText().toString().equals("2")){
 
                 time1_Layout.setVisibility(View.VISIBLE);
@@ -109,13 +87,11 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
 
             }
             /** May cause issues**/
-            if(!FeedingSchedule_FeedingTimes.getText().toString().equals("1")
-                    ||!FeedingSchedule_FeedingTimes.getText().toString().equals("2")
-                    ||!FeedingSchedule_FeedingTimes.getText().toString().equals("3")){
 
-                FeedingSchedule_FeedingTimes.setError("Invalid:Use the range of 1 to 3 ");
+            // May cause issues
+            if (!isValidFeedingTimes(FeedingSchedule_FeedingTimes.getText().toString())) {
+                FeedingSchedule_FeedingTimes.setError("Invalid: Use the range of 1 to 3 ");
                 FeedingSchedule_FeedingTimes.requestFocus();
-
             }
 
         });
@@ -192,7 +168,7 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
 
 
             }
-
+            loadingDialog.startLoadingDialog();
 
             HashMap<String, Object> saveFeedingInfo = new HashMap<>();
             saveFeedingInfo.put("RabbitCount",FeedingSchedule_NumberOfRabbits.getText().toString());
@@ -219,9 +195,13 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
                 if(task.isSuccessful()){
 
                     Toast.makeText(FeedingSchedule.this, "Reminders have been set for you", Toast.LENGTH_LONG).show();
+                    loadingDialog.dismissDialog();
                     startActivity(new Intent(this,SavedFeedingSchedule.class));
+
                 }else{
+
                     Toast.makeText(FeedingSchedule.this, "ERROR: Please check you internet connection", Toast.LENGTH_LONG).show();
+                    loadingDialog.dismissDialog();
                 }
             });
 
@@ -262,17 +242,38 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
     }
 
     private void startAlarm(Calendar c) {
-        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(this, AlertReceiver.class);
-        final int id = (int) System.currentTimeMillis();
 
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, id, intent, PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_MUTABLE);
+        final int id = (int) System.currentTimeMillis();
 
         if (c.before(Calendar.getInstance())) {
             c.add(Calendar.DATE, 1);
         }
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
        // alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
+
+        // Get the AlarmManager instance
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+        // Create an Intent to trigger the BroadcastReceiver
+        Intent alarmIntent = new Intent(this, AlarmReceiver.class);
+
+        // Set the alarm
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, id, alarmIntent, PendingIntent.FLAG_IMMUTABLE);
+
+        // Schedule a repeating alarm for every 24 hours
+        //alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), TimeUnit.DAYS.toMillis(1), pendingIntent);
+
+        // using setExactAndAllowWhileIdle for more precise scheduling
+        alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
+
+
+
+        // Create a OneTimeWorkRequest
+        OneTimeWorkRequest workRequest = new OneTimeWorkRequest.Builder(ReminderWorker.class)
+                .setInitialDelay(c.getTimeInMillis() - System.currentTimeMillis(), TimeUnit.MILLISECONDS)
+                .build();
+
+       // Enqueue the WorkRequest
+        WorkManager.getInstance(this).enqueue(workRequest);
     }
 
 
@@ -299,5 +300,45 @@ public class FeedingSchedule extends AppCompatActivity implements TimePickerDial
             return true;
         }
 
+    }
+
+    private boolean isValidFeedingTimes(String feedingTimes) {
+        try {
+            int times = Integer.parseInt(feedingTimes);
+            return times >= 1 && times <= 3;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    private void initializeItems(){
+
+
+        // Database instance
+        feedsDB = FirebaseDatabase
+                .getInstance()
+                .getReference("FeedingSchedule")
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+        //Initialising Layouts
+        time1_Layout = findViewById(R.id.time1_Layout);
+        time2_Layout = findViewById(R.id.time2_Layout);
+        time3_Layout = findViewById(R.id.time3_Layout);
+
+        //initialising Buttons
+        FeedingSchedule_Next = findViewById(R.id.FeedingSchedule_Next);
+        FeedingSchedule_Done  = findViewById(R.id.FeedingSchedule_Done);
+        btn_FeedingSchedule_Time1 = findViewById(R.id.btn_FeedingSchedule_Time1);
+        btn_FeedingSchedule_Time2 = findViewById(R.id.btn_FeedingSchedule_Time2);
+        btn_FeedingSchedule_Time3 = findViewById(R.id.btn_FeedingSchedule_Time3);
+
+        //initialising EditText
+
+        FeedingSchedule_NumberOfRabbits =findViewById(R.id.FeedingSchedule_NumberOfRabbits);
+        FeedingSchedule_TypeOfFeed =findViewById(R.id. FeedingSchedule_TypeOfFeed);
+        FeedingSchedule_FeedingTimes =findViewById(R.id.FeedingSchedule_FeedingTimes);
+        FeedingSchedule_Time1  =findViewById(R.id.FeedingSchedule_Time1);
+        FeedingSchedule_Time2   =findViewById(R.id.FeedingSchedule_Time2);
+        FeedingSchedule_Time3  =findViewById(R.id.FeedingSchedule_Time3);
     }
 }
