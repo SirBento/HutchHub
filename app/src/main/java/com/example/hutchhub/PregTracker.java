@@ -22,8 +22,10 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class PregTracker extends AppCompatActivity {
 
@@ -50,7 +52,7 @@ public class PregTracker extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         currentuserId =auth.getCurrentUser().getUid();
-        detailsfromdb = FirebaseDatabase.getInstance().getReference().child("PregRabbitRecord");
+        detailsfromdb = FirebaseDatabase.getInstance().getReference().child("PregRabbitRecords/"+currentuserId);
 
         PregRabbitDetailsArrayList = new ArrayList<>();
         pregRabbitDetailsAdapter = new PregRabbitDetailsAdapter(PregRabbitDetailsArrayList);
@@ -96,13 +98,20 @@ public class PregTracker extends AppCompatActivity {
         });
 
 
-
-        detailsfromdb.addChildEventListener(new ChildEventListener() {
+        detailsfromdb.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 if(snapshot.exists()){
-                    String id = snapshot.child("Id").getValue().toString();
+
+                    String rabbitRecord = snapshot.getValue().toString();
+                    PregRabbitDetails pregRabbitDetails =  snapshot.getValue(PregRabbitDetails.class);
+                    PregRabbitDetailsArrayList.add(pregRabbitDetails);
+                    pregRabbitDetailsAdapter.notifyDataSetChanged();
+                    rabbit_Preg_List.smoothScrollToPosition(rabbit_Preg_List.getAdapter().getItemCount());
+                    //String id = snapshot.child("Id").getValue().toString();
+                   //String id = snapshot.getValue().toString();
+                    /*
                     if(id.equals(currentuserId)){
                         PregRabbitDetails pregRabbitDetails =  snapshot.getValue(PregRabbitDetails.class);
                         PregRabbitDetailsArrayList.add(pregRabbitDetails);
@@ -112,25 +121,11 @@ public class PregTracker extends AppCompatActivity {
                     }else{
 
                         noPregData.setVisibility(View.VISIBLE);
-                    }
+                    }*/
 
                 }else{
                     noPregData.setVisibility(View.VISIBLE);
                 }
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
 
             }
 
@@ -139,6 +134,7 @@ public class PregTracker extends AppCompatActivity {
 
             }
         });
+
     }
 
 

@@ -1,9 +1,11 @@
-package com.example.hutchhub.Classses;
+package com.example.hutchhub.Broadcasters;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import androidx.core.app.NotificationCompat;
+
+import com.example.hutchhub.Classses.NotificationHelper;
 
 
 public class AlertReceiver extends BroadcastReceiver {

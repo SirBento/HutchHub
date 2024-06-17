@@ -1,17 +1,18 @@
 package com.example.hutchhub.Models;
 
 public class PregRabbitDetails {
-    String name,dob,crossDate,palpating,kindling;
+    String name,dob,crossDate,palpating,kindling, breadingBox;
 
     public PregRabbitDetails() {
     }
 
-    public PregRabbitDetails(String name, String dob, String crossDate, String palpating, String kindling) {
+    public PregRabbitDetails(String name, String dob, String crossDate, String palpating, String kindling, String breadingBox) {
         this.name = name;
         this.dob = dob;
         this.crossDate = crossDate;
         this.palpating = palpating;
         this.kindling = kindling;
+        this.breadingBox = breadingBox;
     }
 
     public String getName() {
@@ -52,5 +53,13 @@ public class PregRabbitDetails {
 
     public void setKindling(String kindling) {
         this.kindling = kindling;
+    }
+
+    public String getBreadingBox() {
+        return breadingBox;
+    }
+
+    public void setBreadingBox(String breadingBox) {
+        this.breadingBox = breadingBox;
     }
 }

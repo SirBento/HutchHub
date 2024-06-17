@@ -4,7 +4,6 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -16,7 +15,6 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.hutchhub.Classses.LoadingDialog;
@@ -29,8 +27,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Locale;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import kotlin.Unit;
@@ -49,6 +49,8 @@ public class Add_PregRabbit_Details extends AppCompatActivity {
     private StorageReference RabbitPicRef;
     private DatabaseReference RootRef = FirebaseDatabase.getInstance().getReference();
     private DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference("PregRabbitRecords");
+
+    String palpatingDateString,breedingBoxDateString, gestationDateString;
 
 
     String downloadUrl;
@@ -86,6 +88,10 @@ public class Add_PregRabbit_Details extends AppCompatActivity {
                 @Override
                 public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                     rabbit_Preg_Record_CrossDate.setText(day+"/"+(month+1)+"/"+year);
+                    Calendar crossingDate = Calendar.getInstance();
+                    crossingDate.set(year, month, day);
+                    //calculate breeding and palpating dates
+                    calculateAndDisplayDates(crossingDate);
                 }
             },year,month,day);
 
@@ -188,24 +194,25 @@ public class Add_PregRabbit_Details extends AppCompatActivity {
         rabbit_Preg_Record_DOB.setText(day+"/"+month+"/"+year);
 
     }
-    // ToDO : calcualate palpatung dates and kindling date and breeding box
+
+
     private void SaveRabbitRecords(){
 
         HashMap<String, String> rabbitRecord = new HashMap<>();
-        rabbitRecord.put("Id", FirebaseAuth.getInstance().getCurrentUser().getUid());
-        rabbitRecord.put("Name",  rabbit_Preg_Record_name.getText().toString().trim());
-        rabbitRecord.put("DOB", rabbit_Preg_Record_DOB.getText().toString().trim());
-        rabbitRecord.put("CrossDate", rabbit_Preg_Record_CrossDate.getText().toString().trim());
-        //rabbitRecord.put("Palpating", );
-        //rabbitRecord.put("BreedingBox", );
-        //rabbitRecord.put("Kindling", ); adding breeding box
-        rabbitRecord.put("Image",downloadUrl);
+        rabbitRecord.put("id", FirebaseAuth.getInstance().getCurrentUser().getUid());
+        rabbitRecord.put("name",  rabbit_Preg_Record_name.getText().toString().trim());
+        rabbitRecord.put("dob", rabbit_Preg_Record_DOB.getText().toString().trim());
+        rabbitRecord.put("crossDate", rabbit_Preg_Record_CrossDate.getText().toString().trim());
+        rabbitRecord.put("palpating",palpatingDateString);
+        rabbitRecord.put("breedingBox", breedingBoxDateString);
+        rabbitRecord.put("gestation",gestationDateString );
+        rabbitRecord.put("image",downloadUrl);
 
         databaseRef.child(currentUserID).push().setValue(rabbitRecord).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
-                    Toast.makeText(Add_PregRabbit_Details.this, "Rabbit Record Saved Successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Add_PregRabbit_Details.this, "Record Saved Successfully", Toast.LENGTH_SHORT).show();
                     finish();
                 }
             }
@@ -227,6 +234,25 @@ public class Add_PregRabbit_Details extends AppCompatActivity {
             return true;
         }
 
+    }
+
+
+
+    private void calculateAndDisplayDates(Calendar crossingDate) {
+        Calendar palpatingDate = (Calendar) crossingDate.clone();
+        palpatingDate.add(Calendar.DAY_OF_MONTH, 14); // Palpating date
+
+        Calendar breedingBoxDate = (Calendar) crossingDate.clone();
+        breedingBoxDate.add(Calendar.DAY_OF_MONTH, 26); // Breeding box date (31 - 5)
+
+        Calendar gestationDate = (Calendar) crossingDate.clone();
+        gestationDate.add(Calendar.DAY_OF_MONTH, 31); // Gestation (31)
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+
+        palpatingDateString = dateFormat.format(palpatingDate.getTime());
+        breedingBoxDateString = dateFormat.format(breedingBoxDate.getTime());
+        gestationDateString= dateFormat.format(gestationDate.getTime());
 
     }
 }
